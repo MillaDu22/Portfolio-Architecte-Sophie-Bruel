@@ -9,10 +9,124 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
+	<script src="https://kit.fontawesome.com/aa04c98466.js" crossorigin="anonymous"></script>
 </head>
 <body>
+	<div class="editMod">
+		<i class="fa-regular fa-pen-to-square"></i>Mode édition
+		<button type="button" name="ChangePost" class="changePost">Publier les changements</button>
+	</div>
+	<div class="galleryEdit">
+		<div class="windowEdit">
+			<div class="iconsGallery">
+				<a href="./index.html"><i class="fa-solid fa-xmark"></i></a>
+			</div>
+		<h1 class="h1Edit">Gallerie photo</h1>
+		<section class="sectionEdit">
+			<div class="photoEdit">
+			<img class="photo-edit" alt="luminaire">
+			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
+			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
+			<p class="pGalleryEdit"></p>
+			</div>
+			<div class="photoEdit">
+				<img class="photo-edit" alt="pouf">
+				<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
+				<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
+				<p class="pGalleryEdit"></p>
+			</div>
+			<div class="photoEdit">
+				<img class="photo-edit"alt="verriere">
+			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
+			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
+			<p class="pGalleryEdit"></p>
+			</div>
+			<div class="photoEdit">
+				<img class="photo-edit" alt="cocoonChair">
+			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
+			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
+			<p class="pGalleryEdit"></p>
+			</div>
+			<div class="photoEdit">
+				<img class="photo-edit" alt="circle">
+			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
+			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
+			<p class="pGalleryEdit"></p>
+			</div>
+			<div class="photoEdit">
+				<img class="photo-edit" alt="kitchen">
+			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
+			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
+			<p class="pGalleryEdit"></p>
+			</div>
+			<div class="photoEdit">
+				<img class="photo-edit" alt="white">
+			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
+			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
+			<p class="pGalleryEdit"></p>
+			</div>
+			<div class="photoEdit">
+				<img class="photo-edit" alt="bedroom">
+			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
+			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
+			<p class="pGalleryEdit"></p>
+			</div>
+			<div class="photoEdit">
+				<img class="photo-edit" alt="greenWood">
+			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
+			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
+			<p class="pGalleryEdit"></p>
+			</div>
+			<div class="photoEdit">
+				<img class="photo-edit" alt="blueBar">
+			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
+			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
+			<p class="pGalleryEdit"></p>
+			</div>
+			<div class="photoEdit">
+				<img class="photo-edit" alt="corridor">
+			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
+			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
+			<p class="pGalleryEdit"></p>
+			</div>
+		</section>
+			<span class="liseretEdit"></span>
+			<button type="button" name="Ajout" class="ajoutEdit">Ajouter une photo</button>
+			<button type="button" name="Suprim" class="suprimEdit">Supprimer la gallerie</button>
+		</div>
+	</div>
+	<div class="ajout">
+		<div class="windowAjout">
+			<div class="iconsAjout">
+				<a href="index.html"><i class="fa-solid fa-arrow-left"></i></a>
+				<a href="index.html"><i class="fa-solid fa-xmark" id="xmarkAjout"></i></a>
+			</div>
+		<h1 class="h1Ajout">Ajout photo</h1>
+		<section class="sectionAjout">
+			<i class="fa-solid fa-image"></i>
+			<input type="button" class="ajoutAjout" value="+ Ajouter photo">
+			<p class="pAjout">jpg, png : 4mo max</p>
+			</section>
+			<div class="formAjout">
+				<label class="labelAjout" for="titre">Titre</label>
+				<input type="text" id="titre" name="titre">
+			</div>
+			<div class="formAjout">
+				<label class="labelAjout" for="categorie">Catégorie</label>
+				<div class="navAjout"><i class="fa-solid fa-chevron-down"></i>
+					<ul class="ulAjout">
+						<li class="liAjout">Objet</li>
+						<li class="liAjout">Appartement</li>
+						<li class="liAjout">Hôtel & Restaurant</li>
+					</ul>
+				</div>
+			</div>
+			<span class="liseretAjout"></span>
+			<input type="submit" value="Valider" class="submitAjout">
+		</div>
+	</div>
 <header>
-	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+	<h1>Sophie Bluel <span>Architecte d'interieur</span></h1>
 	<nav>
 		<ul>
 			<li>projets</li>
@@ -26,8 +140,10 @@
 	<section id="introduction">
 		<figure>
 			<img src="./assets/images/sophie-bluel.png" alt="">
+			<span class="projectMod"><i class="fa-solid fa-pen-to-square"></i>modifier</span>
 		</figure>
 		<article>
+			<span class="projectMod1"><i class="fa-solid fa-pen-to-square"></i>modifier</span>
 			<h2>Designer d'espace</h2>
 			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
 			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
@@ -35,51 +151,61 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
+		<h2>Mes Projets<span class="projectMod"><i class="fa-solid fa-pen-to-square"></i>modifier</span></h2>
+		<div class="btnFilters">
+			<button type="button" class="tous" name="Tous">Tous</button>
+			<button type="button" class="objet" name="Objets">Objets</button>
+			<button type="button" class="appart" name="Appartements">Appartements</button>
+			<button type="button" class="resto" name="Resto">Hôtels & restaurants</button>
+		</div>
 		<div class="gallery">
-			<figure>
-				<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
-				<figcaption>Abajour Tahina</figcaption>
+			<figure class="filtered-fig" id="object" data-objet="objet">
+				<img class="figure-img" alt="Abajour Tahina">
+				<figcaption></figcaption>
 			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-v.png" alt="Appartement Paris V">
-				<figcaption>Appartement Paris V</figcaption>
+			<figure class="filtered-fig" id="appartement" data-appartement="appartement">
+				<img class="figure-img" alt="Appartement Paris V">
+				<figcaption></figcaption>
 			</figure>
-			<figure>
-				<img src="assets/images/restaurant-sushisen-londres.png" alt="Restaurant Sushisen - Londres">
-				<figcaption>Restaurant Sushisen - Londres</figcaption>
+			<figure class="filtered-fig" id="restaurant" data-restaurant="restaurant">
+				<img class="figure-img" alt="Restaurant Sushisen - Londres">
+				<figcaption></figcaption>
 			</figure>
-			<figure>
-				<img src="assets/images/la-balisiere.png" alt="Villa “La Balisiere” - Port Louis">
-				<figcaption>Villa “La Balisiere” - Port Louis</figcaption>
+			<figure class="filtered-fig" id="appartement" data-appartement="appartemnent">
+				<img class="figure-img" alt="Villa “La Balisiere” - Port Louis">
+				<figcaption></figcaption>
 			</figure>
-			<figure>
-				<img src="assets/images/structures-thermopolis.png" alt="Structures Thermopolis">
-				<figcaption>Structures Thermopolis</figcaption>
+			<figure class="filtered-fig"  id="object" data-objet="objet">
+				<img class="figure-img" alt="Structures Thermopolis">
+				<figcaption></figcaption>
 			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-x.png" alt="Appartement Paris X">
-				<figcaption>Appartement Paris X</figcaption>
+			<figure class="filtered-fig" id="appartement" data-appartement="appartement">
+				<img class="figure-img" alt="Appartement Paris X">
+				<figcaption></figcaption>
 			</figure>
-			<figure>
-				<img src="assets/images/le-coteau-cassis.png" alt="Pavillon “Le coteau” - Cassis">
-				<figcaption>Pavillon “Le coteau” - Cassis</figcaption>
+			<figure class="filtered-fig" id="appartement" data-appartement="appartement">
+				<img class="figure-img" alt="Pavillon “Le coteau” - Cassis">
+				<figcaption></figcaption>
 			</figure>
-			<figure>
-				<img src="assets/images/villa-ferneze.png" alt="Villa Ferneze - Isola d’Elba">
-				<figcaption>Villa Ferneze - Isola d’Elba</figcaption>
+			<figure class="filtered-fig" id="appartement" data-appartement="appartement">
+				<img class="figure-img" alt="Villa Ferneze - Isola d’Elba">
+				<figcaption></figcaption>
 			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-xviii.png" alt="Appartement Paris XVIII">
-				<figcaption>Appartement Paris XVIII</figcaption>
+			<figure class="filtered-fig" id="appartement" data-appartement="appartement">
+				<img class="figure-img" alt="Appartement Paris XVIII">
+				<figcaption></figcaption>
 			</figure>
-			<figure>
-				<img src="assets/images/bar-lullaby-paris.png" alt="Bar “Lullaby” - Paris">
-				<figcaption>Bar “Lullaby” - Paris</figcaption>
+			<figure class="filtered-fig" id="restaurant" data-restaurant="restaurant">
+				<img class="figure-img" alt="Bar “Lullaby” - Paris">
+				<figcaption></figcaption>
 			</figure>
-			<figure>
-				<img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
-				<figcaption>Hotel First Arte - New Delhi</figcaption>
+			<figure class="filtered-fig" id="restaurant" data-restaurant="restaurant">
+				<img class="figure-img" alt="Hotel First Arte - New Delhi">
+				<figcaption></figcaption>
+			</figure>
+			<figure class="filtered-fig" id="restaurant" data-restaurant="restaurant">
+				<img class="figure-img" alt="Hotel First Arte - New Delhi">
+				<figcaption></figcaption>
 			</figure>
 		</div>
 	</section>
@@ -97,7 +223,6 @@
 		</form>
 	</section>
 </main>
-
 <footer>
 	<nav>
 		<ul>
@@ -105,5 +230,6 @@
 		</ul>
 	</nav>
 </footer>
+<script src="./script.js"></script>
 </body>
 </html>
