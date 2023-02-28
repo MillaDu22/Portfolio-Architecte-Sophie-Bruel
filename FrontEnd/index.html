@@ -95,11 +95,11 @@
 			<button type="button" name="Suprim" class="suprimEdit">Supprimer la gallerie</button>
 		</div>
 	</div>
-	<div class="ajout">
+	<div class="ajout"><a id="Amodifier"></a>
 		<div class="windowAjout">
 			<div class="iconsAjout">
-				<a href="index.html"><i class="fa-solid fa-arrow-left"></i></a>
-				<a href="index.html"><i class="fa-solid fa-xmark" id="xmarkAjout"></i></a>
+				<a href="./index.html"><i class="fa-solid fa-arrow-left"></i></a>
+				<a href="./index.html"><i class="fa-solid fa-xmark" id="xmarkAjout"></i></a>
 			</div>
 		<h1 class="h1Ajout">Ajout photo</h1>
 		<section class="sectionAjout">
@@ -129,10 +129,10 @@
 	<h1>Sophie Bluel <span>Architecte d'interieur</span></h1>
 	<nav>
 		<ul>
-			<li>projets</li>
-			<li>contact</li>
-			<li>login</li>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+			<li><a href="#Aprojets" class="Aprojets">projets</li></a>
+			<li><a href ="#Acontact" class="Acontact">contact</li></a>
+			<li><a class="aLogin" href="./connexion.html">login</a></li>
+			<li><a href="https://www.instagram.com/openclassrooms/?hl=fr"><img src="./assets/icons/instagram.png" alt="Instagram"></a></li>
 		</ul>
 	</nav>
 </header>
@@ -151,7 +151,7 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets<span class="projectMod"><i class="fa-solid fa-pen-to-square"></i>modifier</span></h2>
+		<h2><a id="Aprojets"></a>Mes Projets</a><span class="projectMod"><i class="fa-solid fa-pen-to-square"></i><a href="#Amofifier" class="Amodifier">modifier</a></span></h2>
 		<div class="btnFilters">
 			<button type="button" class="tous" name="Tous">Tous</button>
 			<button type="button" class="objet" name="Objets">Objets</button>
@@ -210,7 +210,7 @@
 		</div>
 	</section>
 	<section id="contact">
-		<h2>Contact</h2>
+		<a id="Acontact"><h2>Contact</h2></a>
 		<p>Vous avez un projet ? Discutons-en !</p>
 		<form action="#" method="post">
 			<label for="name">Nom</label>

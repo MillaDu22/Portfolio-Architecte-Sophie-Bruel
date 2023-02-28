@@ -14,18 +14,18 @@ fetch ("http://localhost:5678/api/categories")
 
 ///tableau img HomePage///
 const imgHome =document.querySelectorAll('.figure-img');
-imgHome [0].src = "./assets/images/abajour-tahina.png";
-imgHome [1].src = "./assets/images/appartement-paris-v.png";
-imgHome [2].src = "./assets/images/restaurant-sushisen-londres.png";
-imgHome [3].src = "./assets/images/la-balisiere.png";
-imgHome [4].src = "./assets/images/structures-thermopolis.png";
-imgHome [5].src = "./assets/images/appartement-paris-x.png";
-imgHome [6].src = "./assets/images/le-coteau-cassis.png";
-imgHome [7].src = "./assets/images/villa-ferneze.png";
-imgHome [8].src = "./assets/images/appartement-paris-xviii.png";
-imgHome [9].src = "./assets/images/bar-lullaby-paris.png";
-imgHome [10].src = "./assets/images/hotel-first-arte-new-delhi.png";
-imgHome [11].src = "./assets/images/hotel-first-arte-new-delhi.png";
+imgHome [0].src = 'http://localhost:5678/images/abajour-tahina1651286843956.png';
+imgHome [1].src = 'http://localhost:5678/images/appartement-paris-v1651287270508.png';
+imgHome [2].src = 'http://localhost:5678/images/restaurant-sushisen-londres1651287319271.png';
+imgHome [3].src = 'http://localhost:5678/images/la-balisiere1651287350102.png';
+imgHome [4].src = 'http://localhost:5678/images/structures-thermopolis1651287380258.png';
+imgHome [5].src = 'http://localhost:5678/images/appartement-paris-x1651287435459.png';
+imgHome [6].src = 'http://localhost:5678/images/le-coteau-cassis1651287469876.png';
+imgHome [7].src = 'http://localhost:5678/images/villa-ferneze1651287511604.png';
+imgHome [8].src = 'http://localhost:5678/images/appartement-paris-xviii1651287541053.png';
+imgHome [9].src = 'http://localhost:5678/images/bar-lullaby-paris1651287567130.png';
+imgHome [10].src = 'http://localhost:5678/images/hotel-first-arte-new-delhi1651287605585.png';
+imgHome [11].src = 'http://localhost:5678/images/hotel-first-arte-new-delhi1651287605585.png';
 /////tableau innerHTML HomePage/////
 const txtWorks = document.querySelectorAll('figcaption');
 txtWorks[0].innerHTML = 'Abat-jour - Tahina';
@@ -43,7 +43,24 @@ txtWorks[11].innerHTML = 'Malt & Juniper - New-York';
 
 
 
-/////Login connexion///////
+/////Login connexion////////////////
+function SeConnecter() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    if ( username == "" || username !== "sophie.bluel@test.tld") {
+        alert("Erreur dans l'dentifiant ou le mot de passe.");
+        return false;
+    }
+    if ( password == "" ||  password !== "S0phie") {
+        alert("Erreur dans l'identifiant ou le mot de passe.");
+        return false;
+    }
+    if ( username == "sophie.bluel@test.tld" || password == "S0phie")
+    alert('Identifiant et mot de passe corrects');
+    window.location=('./index.html');
+};
+///////Fin login connexion/////////////
+
 
 
 ///Filters
@@ -92,19 +109,22 @@ function showRestaurants() {
     })
 };
 ///////GalleryEdit/////////////////////////////////////////////
+
 ////////Tableau photos GalleryEdit////////////////////////////
 const imgEdit =document.querySelectorAll('.photo-edit');
-imgEdit [0].src = "./assets/images/abajour-tahina.png";
-imgEdit [1].src = "./assets/images/appartement-paris-v.png";
-imgEdit [2].src = "./assets/images/restaurant-sushisen-londres.png";
-imgEdit [3].src = "./assets/images/la-balisiere.png";
-imgEdit [4].src = "./assets/images/structures-thermopolis.png";
-imgEdit [5].src = "./assets/images/appartement-paris-x.png";
-imgEdit[6].src = "./assets/images/le-coteau-cassis.png";
-imgEdit [7].src = "./assets/images/villa-ferneze.png";
-imgEdit [8].src = "./assets/images/appartement-paris-xviii.png";
-imgEdit [9].src = "./assets/images/bar-lullaby-paris.png";
-imgEdit [10].src = "./assets/images/hotel-first-arte-new-delhi.png";
+imgEdit [0].src = 'http://localhost:5678/images/abajour-tahina1651286843956.png';
+imgEdit [1].src = 'http://localhost:5678/images/appartement-paris-v1651287270508.png';
+imgEdit [2].src = 'http://localhost:5678/images/restaurant-sushisen-londres1651287319271.png';
+imgEdit [3].src = 'http://localhost:5678/images/la-balisiere1651287350102.png';
+imgEdit [4].src = 'http://localhost:5678/images/structures-thermopolis1651287380258.png';
+imgEdit [5].src = 'http://localhost:5678/images/appartement-paris-x1651287435459.png';
+imgEdit [6].src = 'http://localhost:5678/images/le-coteau-cassis1651287469876.png';
+imgEdit [7].src = 'http://localhost:5678/images/villa-ferneze1651287511604.png';
+imgEdit [8].src = 'http://localhost:5678/images/appartement-paris-xviii1651287541053.png';
+imgEdit [9].src = 'http://localhost:5678/images/bar-lullaby-paris1651287567130.png';
+imgEdit [10].src = 'http://localhost:5678/images/hotel-first-arte-new-delhi1651287605585.png';
+//////////Fin tableau GalleryEdit/////////////////////////////////
+
 /////tableau innerHTML  Gallery Edit/////
 const pEdit = document.querySelectorAll('.pGalleryEdit');
 pEdit[0].innerHTML = 'éditer';

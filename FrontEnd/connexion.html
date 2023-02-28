@@ -24,15 +24,15 @@
     </header>
     <section> 
         <h2>Log in</h2>
-        <div>
+        <div name="loginForm" onSubmit="return login();" action ="./index.html" method="post">
             <label for="email">E-mail</label>
-                <input type="email" id="email" pattern=".@globex\.com" size="30" requred>
+                <input type="text" name="username" id="username" placeholder="sophie.bluel@test.tld">
         </div>
         <div>
             <label for="pass">Mot de passe</label>
-                <input type="password" id="pass" name="password" minlength="8" required>
+                <input type="password" placeholder="S0phie" name="password" id="password">
         </div>
-        <input type="submit" value="Se connecter" class="submit">
+        <input type="button" id="submit" value="Se connecter" class="submit" onclick="SeConnecter();"/>
         <a href="#">Mot de passe oublié</a>
     </section>
     <footer>
@@ -42,5 +42,6 @@
             </ul>
         </nav>
     </footer>
+    <script src="./script.js"></script>
 </body>
 </html>
