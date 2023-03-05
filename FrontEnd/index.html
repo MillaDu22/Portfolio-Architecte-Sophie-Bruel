@@ -12,79 +12,79 @@
 	<script src="https://kit.fontawesome.com/aa04c98466.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<div class="editMod">
+	<div class="editMod" id="ModeEdition">
 		<i class="fa-regular fa-pen-to-square"></i>Mode édition
 		<button type="button" name="ChangePost" class="changePost">Publier les changements</button>
 	</div>
-	<div class="galleryEdit">
+	<div class="galleryEdit" id="GalleryWindow">
 		<div class="windowEdit">
 			<div class="iconsGallery">
-				<a href="./index.html"><i class="fa-solid fa-xmark"></i></a>
+				<a href="./index.html" onclick="closeGalleryEdition();"><i class="fa-solid fa-xmark"></i></a>
 			</div>
 		<h1 class="h1Edit">Gallerie photo</h1>
 		<section class="sectionEdit">
 			<div class="photoEdit">
-			<img class="photo-edit" alt="luminaire">
+			<img src="http://localhost:5678/images/abajour-tahina1651286843956.png" class="photo-edit" alt="luminaire">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
 			<p class="pGalleryEdit"></p>
 			</div>
 			<div class="photoEdit">
-				<img class="photo-edit" alt="pouf">
+				<img src="http://localhost:5678/images/appartement-paris-v1651287270508.png" class="photo-edit" alt="pouf">
 				<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 				<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
 				<p class="pGalleryEdit"></p>
 			</div>
 			<div class="photoEdit">
-				<img class="photo-edit"alt="verriere">
+				<img src="http://localhost:5678/images/restaurant-sushisen-londres1651287319271.png" class="photo-edit"alt="verriere">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
 			<p class="pGalleryEdit"></p>
 			</div>
 			<div class="photoEdit">
-				<img class="photo-edit" alt="cocoonChair">
+				<img src="http://localhost:5678/images/la-balisiere1651287350102.png" class="photo-edit" alt="cocoonChair">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
 			<p class="pGalleryEdit"></p>
 			</div>
 			<div class="photoEdit">
-				<img class="photo-edit" alt="circle">
+				<img src="http://localhost:5678/images/structures-thermopolis1651287380258.png" class="photo-edit" alt="circle">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
 			<p class="pGalleryEdit"></p>
 			</div>
 			<div class="photoEdit">
-				<img class="photo-edit" alt="kitchen">
+				<img src="http://localhost:5678/images/appartement-paris-x1651287435459.png" class="photo-edit" alt="kitchen">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
 			<p class="pGalleryEdit"></p>
 			</div>
 			<div class="photoEdit">
-				<img class="photo-edit" alt="white">
+				<img src= "http://localhost:5678/images/le-coteau-cassis1651287469876.png" class="photo-edit" alt="white">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
 			<p class="pGalleryEdit"></p>
 			</div>
 			<div class="photoEdit">
-				<img class="photo-edit" alt="bedroom">
+				<img src="http://localhost:5678/images/villa-ferneze1651287511604.png" class="photo-edit" alt="bedroom">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
 			<p class="pGalleryEdit"></p>
 			</div>
 			<div class="photoEdit">
-				<img class="photo-edit" alt="greenWood">
+				<img src="http://localhost:5678/images/appartement-paris-xviii1651287541053.png" class="photo-edit" alt="greenWood">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
 			<p class="pGalleryEdit"></p>
 			</div>
 			<div class="photoEdit">
-				<img class="photo-edit" alt="blueBar">
+				<img src= "http://localhost:5678/images/bar-lullaby-paris1651287567130.png" class="photo-edit" alt="blueBar">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
 			<p class="pGalleryEdit"></p>
 			</div>
 			<div class="photoEdit">
-				<img class="photo-edit" alt="corridor">
+				<img src="http://localhost:5678/images/hotel-first-arte-new-delhi1651287605585.png" class="photo-edit" alt="corridor">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
 			<p class="pGalleryEdit"></p>
@@ -95,7 +95,7 @@
 			<button type="button" name="Suprim" class="suprimEdit">Supprimer la gallerie</button>
 		</div>
 	</div>
-	<div class="ajout"><a id="Amodifier"></a>
+	<div class="ajout" id="ajoutWind"><a id="Amodifier"></a>
 		<div class="windowAjout">
 			<div class="iconsAjout">
 				<a href="./index.html"><i class="fa-solid fa-arrow-left"></i></a>
@@ -131,7 +131,7 @@
 		<ul>
 			<li><a href="#Aprojets" class="Aprojets">projets</li></a>
 			<li><a href ="#Acontact" class="Acontact">contact</li></a>
-			<li><a class="aLogin" href="./connexion.html">login</a></li>
+			<li><a class="aLogin"id="logout" href="./connexion.html">login</a></li>
 			<li><a href="https://www.instagram.com/openclassrooms/?hl=fr"><img src="./assets/icons/instagram.png" alt="Instagram"></a></li>
 		</ul>
 	</nav>
@@ -152,59 +152,59 @@
 	</section>
 	<section id="portfolio">
 		<h2><a id="Aprojets"></a>Mes Projets</a><span class="projectMod"><i class="fa-solid fa-pen-to-square"></i><a href="#Amofifier" class="Amodifier">modifier</a></span></h2>
-		<div class="btnFilters">
+		<div id="btnFilters">
 			<button type="button" class="tous" name="Tous">Tous</button>
 			<button type="button" class="objet" name="Objets">Objets</button>
 			<button type="button" class="appart" name="Appartements">Appartements</button>
 			<button type="button" class="resto" name="Resto">Hôtels & restaurants</button>
 		</div>
 		<div class="gallery">
-			<figure class="filtered-fig" id="object" data-objet="objet">
-				<img class="figure-img" alt="Abajour Tahina">
+			<figure class="filtered-fig work" id="object" data-objet="objet">
+				<img src= "http://localhost:5678/images/abajour-tahina1651286843956.png" class="figure-img" alt="Abajour Tahina">
 				<figcaption></figcaption>
 			</figure>
-			<figure class="filtered-fig" id="appartement" data-appartement="appartement">
-				<img class="figure-img" alt="Appartement Paris V">
+			<figure class="filtered-fig work" id="appartement" data-appartement="appartement">
+				<img src="http://localhost:5678/images/appartement-paris-v1651287270508.png" class="figure-img" alt="Appartement Paris V">
 				<figcaption></figcaption>
 			</figure>
-			<figure class="filtered-fig" id="restaurant" data-restaurant="restaurant">
-				<img class="figure-img" alt="Restaurant Sushisen - Londres">
+			<figure class="filtered-fig work" id="restaurant" data-restaurant="restaurant">
+				<img src= "http://localhost:5678/images/restaurant-sushisen-londres1651287319271.png" class="figure-img" alt="Restaurant Sushisen - Londres">
 				<figcaption></figcaption>
 			</figure>
-			<figure class="filtered-fig" id="appartement" data-appartement="appartemnent">
-				<img class="figure-img" alt="Villa “La Balisiere” - Port Louis">
+			<figure class="filtered-fig work" id="appartement" data-appartement="appartemnent">
+				<img src="http://localhost:5678/images/la-balisiere1651287350102.png" class="figure-img" alt="Villa “La Balisiere” - Port Louis">
 				<figcaption></figcaption>
 			</figure>
-			<figure class="filtered-fig"  id="object" data-objet="objet">
-				<img class="figure-img" alt="Structures Thermopolis">
+			<figure class="filtered-fig work"  id="object" data-objet="objet">
+				<img src="http://localhost:5678/images/structures-thermopolis1651287380258.png" class="figure-img" alt="Structures Thermopolis">
 				<figcaption></figcaption>
 			</figure>
-			<figure class="filtered-fig" id="appartement" data-appartement="appartement">
-				<img class="figure-img" alt="Appartement Paris X">
+			<figure class="filtered-fig work" id="appartement" data-appartement="appartement">
+				<img src= "http://localhost:5678/images/appartement-paris-x1651287435459.png" class="figure-img" alt="Appartement Paris X">
 				<figcaption></figcaption>
 			</figure>
-			<figure class="filtered-fig" id="appartement" data-appartement="appartement">
-				<img class="figure-img" alt="Pavillon “Le coteau” - Cassis">
+			<figure class="filtered-fig work" id="appartement" data-appartement="appartement">
+				<img src="http://localhost:5678/images/le-coteau-cassis1651287469876.png" class="figure-img" alt="Pavillon “Le coteau” - Cassis">
 				<figcaption></figcaption>
 			</figure>
-			<figure class="filtered-fig" id="appartement" data-appartement="appartement">
-				<img class="figure-img" alt="Villa Ferneze - Isola d’Elba">
+			<figure class="filtered-fig work" id="appartement" data-appartement="appartement">
+				<img src="http://localhost:5678/images/villa-ferneze1651287511604.png" class="figure-img" alt="Villa Ferneze - Isola d’Elba">
 				<figcaption></figcaption>
 			</figure>
-			<figure class="filtered-fig" id="appartement" data-appartement="appartement">
-				<img class="figure-img" alt="Appartement Paris XVIII">
+			<figure class="filtered-fig work" id="appartement" data-appartement="appartement">
+				<img src="http://localhost:5678/images/appartement-paris-xviii1651287541053.png" class="figure-img" alt="Appartement Paris XVIII">
 				<figcaption></figcaption>
 			</figure>
-			<figure class="filtered-fig" id="restaurant" data-restaurant="restaurant">
-				<img class="figure-img" alt="Bar “Lullaby” - Paris">
+			<figure class="filtered-fig work" id="restaurant" data-restaurant="restaurant">
+				<img src="http://localhost:5678/images/bar-lullaby-paris1651287567130.png" class="figure-img" alt="Bar “Lullaby” - Paris">
 				<figcaption></figcaption>
 			</figure>
-			<figure class="filtered-fig" id="restaurant" data-restaurant="restaurant">
-				<img class="figure-img" alt="Hotel First Arte - New Delhi">
+			<figure class="filtered-fig work" id="restaurant" data-restaurant="restaurant">
+				<img src="http://localhost:5678/images/hotel-first-arte-new-delhi1651287605585.png" class="figure-img" alt="Hotel First Arte - New Delhi">
 				<figcaption></figcaption>
 			</figure>
-			<figure class="filtered-fig" id="restaurant" data-restaurant="restaurant">
-				<img class="figure-img" alt="Hotel First Arte - New Delhi">
+			<figure class="filtered-fig work" id="restaurant" data-restaurant="restaurant">
+				<img src="http://localhost:5678/images/hotel-first-arte-new-delhi1651287605585.png" class="figure-img" alt="Hotel First Arte - New Delhi">
 				<figcaption></figcaption>
 			</figure>
 		</div>

@@ -59,7 +59,7 @@ header {
 	margin: 50px 0;
 }
 /*----------------------------------Début barre mode edition--------------------------*/
-.editMod {
+#ModeEdition {
 	position:relative;
 	align-items: center;
 	width:100%;
@@ -75,7 +75,7 @@ header {
 	color:white;
 	padding-top:10px;
 	padding-bottom:11px;
-	display:none;
+	visibility:hidden;
 }
 .fa-regular.fa-pen-to-square {
 	color:white;
@@ -108,7 +108,6 @@ header {
     margin:0;
 	z-index: 2;
 	padding-bottom:3600px;
-	display:none;
 }
 .windowEdit {
 	position:absolute;
@@ -230,7 +229,6 @@ header {
     margin:0;
 	z-index: 4;
 	padding-bottom: 3600px;
-	display:none;
 }
 .windowAjout {
 	position:absolute;
@@ -483,7 +481,7 @@ li:hover, .aLogin:hover, .Acontact:hover, .Aprojets:hover, .Amodifier:hover {
 }
 /*--------------------------------Fin icons editions--------------------*/
 /*--------------------------------Début filtres-----------------------------*/
-.btnFilters {
+#btnFilters {
 	width:65%;
 	display:flex;
 	flex-direction:row;
