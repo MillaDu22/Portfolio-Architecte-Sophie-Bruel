@@ -108,6 +108,7 @@ header {
     margin:0;
 	z-index: 2;
 	padding-bottom:3600px;
+	visibility:hidden;
 }
 .windowEdit {
 	position:absolute;
@@ -229,6 +230,7 @@ header {
     margin:0;
 	z-index: 4;
 	padding-bottom: 3600px;
+	visibility: hidden;
 }
 .windowAjout {
 	position:absolute;
@@ -489,7 +491,7 @@ li:hover, .aLogin:hover, .Acontact:hover, .Aprojets:hover, .Amodifier:hover {
 	position:relative;
 	margin:0 auto;
 }
-.tous, .objet, .appart, .resto {
+.tous, .apparts, .objets, .restos{
 	height:37px;
 	font-family:"Syne";
 	font-weight: 700;
@@ -501,25 +503,20 @@ li:hover, .aLogin:hover, .Acontact:hover, .Aprojets:hover, .Amodifier:hover {
 	border:1px solid #1D6154;
 	background: white;
 }
-.tous, .objet {
-	width:100px;
+.remove {
+	display:block;
 }
-.appart {
-	width:157px;
+.hide {
+	display:none;
 }
-.resto {
-	width:198px;
-}
-.tous:active, .objet:active, .appart:active, .resto:active {
+.active { 
 	background:#1D6154;
 	color:white;
 }
-.remove {
+.show {
 	display:none;
 }
-.show {
-	display:block;
-}
+
 /* ---------------------------------------Fin filtres-----------------------------*/
 .gallery {
 	width: 100%;
