@@ -53,58 +53,57 @@ let works = [
 const btn = document.querySelectorAll('.btnFilter');
 function filtrage() {
 
-function activeBtn(){
-    btn.forEach((btn) => btn.classList.remove('active'));
-    //document.querySelector(`.btnFilter[data-btn="${btn}"]`).classList.add('active');
-}
-activeBtn();
+    function activeBtn(){
+        btn.forEach((btn) => btn.classList.remove('active'));
+      //document.querySelector(`.btnFilter[data-btn="${btn}"]`).classList.add('active');
+    }
+    activeBtn();
 
     const filterAll = document.querySelector('.tous')
     filterAll.addEventListener('click', showAll)
     function showAll() {
-    let Tous = works.filter(elements => {
-    return elements.categoryName !=="" 
+        let Tous = works.filter(elements => {
+        return elements.categoryName !=="" 
         })
-activeBtn();
-console.log(Tous);
-}   
-showAll();
+        activeBtn();
+        console.log(Tous);
+    }   
+    showAll();
 
 
-const filterObjets = document.querySelector('.objets')
-filterObjets.addEventListener('click', showObjets)
-function showObjets() {
-let Objets = works.filter(elements => {
-    return elements.categoryId !== 2 && elements.categoryId !== 3
-    
-})
-activeBtn();
-console.log(Objets);
-}
-showObjets();
+    const filterObjets = document.querySelector('.objets')
+    filterObjets.addEventListener('click', showObjets)
+    function showObjets() {
+        let Objets = works.filter(elements => {
+            return elements.categoryId !== 2 && elements.categoryId !== 3
+        })
+        activeBtn();
+        console.log(Objets);
+    }
+    showObjets();
 
 
-const filterAppartements = document.querySelector('.apparts')
-filterAppartements.addEventListener('click', showAppartements)
-function showAppartements(){
-let Appartements = works.filter(elements => {
-    return elements.categoryId !== 1 &&  elements.categoryId !== 3
-})
-activeBtn();
-console.log(Appartements);
-}
-showAppartements()
+    const filterAppartements = document.querySelector('.apparts')
+    filterAppartements.addEventListener('click', showAppartements)
+    function showAppartements(){
+        let Appartements = works.filter(elements => {
+            return elements.categoryId !== 1 &&  elements.categoryId !== 3
+        })
+        activeBtn();
+        console.log(Appartements);
+    }
+    showAppartements()
 
-const filterRestaurants = document.querySelector('.restos')
-filterRestaurants.addEventListener('click', showRestaurants)
-function showRestaurants(){
-let Restaurants = works.filter(elements => {
-    return elements.categoryId !== 1 &&  elements.categoryId !== 2
-})
-activeBtn();
-console.log(Restaurants);
-}
-showRestaurants()
+    const filterRestaurants = document.querySelector('.restos')
+    filterRestaurants.addEventListener('click', showRestaurants)
+    function showRestaurants(){
+        let Restaurants = works.filter(elements => {
+            return elements.categoryId !== 1 &&  elements.categoryId !== 2
+        })
+        activeBtn();
+        console.log(Restaurants);
+    }
+    showRestaurants()
 }
 filtrage()
 
@@ -128,7 +127,7 @@ function SeConnecter() {
     alert('Identifiant et mot de passe corrects');
     window.location=('./index.html');
     return true;
-};
+    };
 }
 SeConnecter();
 
@@ -138,38 +137,38 @@ SeConnecter();
 const imgEdit =document.querySelectorAll('.photo-edit');
 const pEdit = document.querySelectorAll('.pGalleryEdit');
 const worksEdit = document.querySelectorAll('.photoEdit') [
-imgEdit [0].src = 'http://localhost:5678/images/abajour-tahina1651286843956.png',
-pEdit[0].innerHTML = 'éditer',
+    imgEdit [0].src = 'http://localhost:5678/images/abajour-tahina1651286843956.png',
+    pEdit[0].innerHTML = 'éditer',
 
-imgEdit [1].src = 'http://localhost:5678/images/appartement-paris-v1651287270508.png',
-pEdit[1].innerHTML = 'éditer',
+    imgEdit [1].src = 'http://localhost:5678/images/appartement-paris-v1651287270508.png',
+    pEdit[1].innerHTML = 'éditer',
 
-imgEdit [2].src = 'http://localhost:5678/images/restaurant-sushisen-londres1651287319271.png',
-pEdit[2].innerHTML = 'éditer',
+    imgEdit [2].src = 'http://localhost:5678/images/restaurant-sushisen-londres1651287319271.png',
+    pEdit[2].innerHTML = 'éditer',
 
-imgEdit [3].src = 'http://localhost:5678/images/la-balisiere1651287350102.png',
-pEdit[3].innerHTML = 'éditer',
+    imgEdit [3].src = 'http://localhost:5678/images/la-balisiere1651287350102.png',
+    pEdit[3].innerHTML = 'éditer',
 
-imgEdit [4].src = 'http://localhost:5678/images/structures-thermopolis1651287380258.png',
-pEdit[4].innerHTML = 'éditer',
+    imgEdit [4].src = 'http://localhost:5678/images/structures-thermopolis1651287380258.png',
+    pEdit[4].innerHTML = 'éditer',
 
-imgEdit [5].src = 'http://localhost:5678/images/appartement-paris-x1651287435459.png',
-pEdit[5].innerHTML = 'éditer',
+    imgEdit [5].src = 'http://localhost:5678/images/appartement-paris-x1651287435459.png',
+    pEdit[5].innerHTML = 'éditer',
 
-imgEdit [6].src = 'http://localhost:5678/images/le-coteau-cassis1651287469876.png',
-pEdit[6].innerHTML = 'éditer',
+    imgEdit [6].src = 'http://localhost:5678/images/le-coteau-cassis1651287469876.png',
+    pEdit[6].innerHTML = 'éditer',
 
-imgEdit [7].src = 'http://localhost:5678/images/villa-ferneze1651287511604.png',
-pEdit[7].innerHTML = 'éditer',
+    imgEdit [7].src = 'http://localhost:5678/images/villa-ferneze1651287511604.png',
+    pEdit[7].innerHTML = 'éditer',
 
-imgEdit [8].src = 'http://localhost:5678/images/appartement-paris-xviii1651287541053.png',
-pEdit[8].innerHTML = 'éditer',
+    imgEdit [8].src = 'http://localhost:5678/images/appartement-paris-xviii1651287541053.png',
+    pEdit[8].innerHTML = 'éditer',
 
-imgEdit [9].src = 'http://localhost:5678/images/bar-lullaby-paris1651287567130.png',
-pEdit[9].innerHTML = 'éditer',
+    imgEdit [9].src = 'http://localhost:5678/images/bar-lullaby-paris1651287567130.png',
+    pEdit[9].innerHTML = 'éditer',
 
-imgEdit [10].src = 'http://localhost:5678/images/hotel-first-arte-new-delhi1651287605585.png',
-pEdit[10].innerHTML = 'éditer'
+    imgEdit [10].src = 'http://localhost:5678/images/hotel-first-arte-new-delhi1651287605585.png',
+    pEdit[10].innerHTML = 'éditer'
 ];
 
 
