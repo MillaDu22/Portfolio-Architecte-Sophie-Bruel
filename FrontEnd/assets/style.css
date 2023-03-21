@@ -303,6 +303,13 @@ header {
     font-weight: 500;
     font-size:14px;
     line-height:16px;
+	z-index: 1;
+}
+.inputFile {
+	width:173px;
+	z-index: 2;
+	position: relative;
+	top:-20px;
 }
 .pAjout {
     position:relative;

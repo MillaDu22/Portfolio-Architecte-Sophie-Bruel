@@ -129,7 +129,7 @@ function SeConnecter() {
     return true;
     };
 }
-SeConnecter();
+SeConnecter;
 
 
 
@@ -173,7 +173,21 @@ const worksEdit = document.querySelectorAll('.photoEdit') [
 
 
 
+////////////////////////////////////////////////////////////////Uploader/////////////////////////////////////////////////////////////////////
 
+const image_input = document.querySelector("#image_input");
+image_input.style.opacity= 0;
+
+var uploaded_image ="";
+
+image_input.addEventListener("change", function() {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => {
+        uploaded_image = reader.result;
+        document.querySelector("#display_image").getElementsByClassName.backgroundImage = `url(${uploaded_image})`;
+    })
+    reader.readAsDataURL(this.files[0]);
+})
 
 
 
