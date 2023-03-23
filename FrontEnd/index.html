@@ -19,10 +19,10 @@
 	<div class="galleryEdit" id="GalleryWindow">
 		<div class="windowEdit">
 			<div class="iconsGallery">
-				<a href="./index.html" onclick="closeGalleryEdition();"><i class="fa-solid fa-xmark"></i></a>
+				<a href="./index.html" title="close" onclick="closeGalleryEdition();"><i class="fa-solid fa-xmark"></i></a>
 			</div>
 		<h1 class="h1Edit">Gallerie photo</h1>
-		<section class="sectionEdit">
+		<div class="sectionEdit">
 			<div class="photoEdit">
 			<img src="http://localhost:5678/images/abajour-tahina1651286843956.png" class="photo-edit" alt="luminaire">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
@@ -36,7 +36,7 @@
 				<p class="pGalleryEdit"></p>
 			</div>
 			<div class="photoEdit">
-				<img src="http://localhost:5678/images/restaurant-sushisen-londres1651287319271.png" class="photo-edit"alt="verriere">
+				<img src="http://localhost:5678/images/restaurant-sushisen-londres1651287319271.png" class="photo-edit" alt="verriere">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
 			<p class="pGalleryEdit"></p>
@@ -89,7 +89,7 @@
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
 			<p class="pGalleryEdit"></p>
 			</div>
-		</section>
+		</div>
 			<span class="liseretEdit"></span>
 			<button type="button" name="Ajout" class="ajoutEdit">Ajouter une photo</button>
 			<button type="button" name="Suprim" class="suprimEdit">Supprimer la gallerie</button>
@@ -98,22 +98,22 @@
 	<div class="ajout" id="ajoutWind"><a id="Amodifier"></a>
 		<div class="windowAjout">
 			<div class="iconsAjout">
-				<a href="./index.html"><i class="fa-solid fa-arrow-left"></i></a>
-				<a href="./index.html"><i class="fa-solid fa-xmark" id="xmarkAjout"></i></a>
+				<a href="./index.html" title="retour"><i class="fa-solid fa-arrow-left"></i></a>
+				<a href="./index.html" title="closeWindow"><i class="fa-solid fa-xmark" id="xmarkAjout"></i></a>
 			</div>
 		<h1 class="h1Ajout">Ajout photo</h1>
-		<section class="sectionAjout" id="display_image">
+		<div class="sectionAjout" id="display_image">
 			<i class="fa-solid fa-image"></i>
 			<label class=" ajoutAjout">+ Ajouter photo</label>
-			<input type="file" class="inputFile" id="image_input" accept=".png, .jpg">
+			<input type="file" class="inputFile" id="image_input" accept=".png, .jpg" title="buttonFile">
 			<p class="pAjout">jpg, png : 4mo max</p>
-			</section>
+		</div>
 			<div class="formAjout">
 				<label class="labelAjout" for="titre">Titre</label>
 				<input type="text" id="titre" name="titre">
 			</div>
 			<div class="formAjout">
-				<label class="labelAjout" for="categorie">Catégorie</label>
+				<label class="labelAjout" id="categorie">Catégorie</label>
 				<div class="navAjout"><i class="fa-solid fa-chevron-down"></i>
 					<ul class="ulAjout">
 						<li class="liAjout">Objet</li>
@@ -130,15 +130,15 @@
 	<h1>Sophie Bluel <span>Architecte d'interieur</span></h1>
 	<nav>
 		<ul>
-			<li><a href="#Aprojets" class="Aprojets">projets</li></a>
-			<li><a href ="#Acontact" class="Acontact">contact</li></a>
-			<li class="liLogin"><a class="aLogin"id="logout" href="./connexion.html">login</a></li>
+			<li><a href="#Aprojets" class="Aprojets">projets</a></li>
+			<li><a href ="#Acontact" class="Acontact">contact</a></li>
+			<li class="liLogin"><a class="aLogin" id="logout" href="./connexion.html">login</a></li>
 			<li><a href="https://www.instagram.com/openclassrooms/?hl=fr"><img src="./assets/icons/instagram.png" alt="Instagram"></a></li>
 		</ul>
 	</nav>
 </header>
 <main>
-	<section id="introduction">
+	<div id="introduction">
 		<figure>
 			<img src="./assets/images/sophie-bluel.png" alt="">
 			<span class="projectMod"><i class="fa-solid fa-pen-to-square"></i>modifier</span>
@@ -150,14 +150,10 @@
 			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
 			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
 		</article>
-	</section>
+	</div>
 	<section id="portfolio">
-		<h2><a id="Aprojets"></a>Mes Projets</a><span class="projectMod"><i class="fa-solid fa-pen-to-square"></i><a href="#Amofifier" class="Amodifier">modifier</a></span></h2>
+		<h2><a id="Aprojets">Mes Projets</a><span class="projectMod"><i class="fa-solid fa-pen-to-square"></i><a href="#Amofifier" class="Amodifier">modifier</a></span></h2>
 		<div id="btnFilters">
-			<button type="button" class="btnFilter tous active" name="Tous" data-btn="0">Tous</button>
-			<button type="button" class="btnFilter objets" name="Objets" data-btn="1">Objets</button>
-			<button type="button" class="btnFilter apparts" name="Appartements" data-btn="2">Appartements</button>
-			<button type="button" class="btnFilter restos" name="Restaurants" data-btn="3">Hôtels & restaurants</button>
 		</div>
 		<div id="projects" class="gallery"></div>
 	</section>

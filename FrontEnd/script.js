@@ -10,18 +10,14 @@ const getWorks = () => {
     })
     .then(function (data){
         console.log(data);
-        for(figure in data) {
-            projets.innerHTML += `<figure class ="figure" data-figure="" id="figure">
-            <img src= "${data[figure].imageUrl}" alt="${data[figure].altTxt}"/>
-            <figcaption id="figcaption">${data [figure].title}</figcaption>
-        </figure>`
-        }
     });
 };
 getWorks()
 
 
+
 //////////////////////////////////////////////////////////////////Catégories /////////////////////////////////////////////////////////////////
+const btns = document.getElementById('btnFilters')
 const urlCategories = "http://localhost:5678/api/categories";
 const getCategories =() => {
     fetch (urlCategories)
@@ -29,15 +25,28 @@ const getCategories =() => {
         return response.json()
     })
     .then(function (data){
-    console.log(data);
+        console.log(data);
     });
 };
 getCategories()
 
-///////////////////////////////////////////////////////Filtrage///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////Filtrage///////////////////////////////////////////////////////////////////////////////
+const boutons = [{allId: "Tous", name: 'Tous'}, {id: 1, name:'Objets'}, {id:2, name: 'Appartements'}, {id: 3, name: 'Hotels & restaurants'} ];
+const filters = [...new Set ( boutons.map (( bouton ) => {
+    return bouton
+    }
+))]
+
+document.getElementById('btnFilters').innerHTML=filters.map((bouton) => {
+    var {name, id} = bouton;
+    return (
+        "<button type = 'button' class = 'btnFilter' onclick = 'filterFigures("+(id)+`)'>${name}</button>`
+    )
+}).join('');
+
 
 let works = [
-    {"id": 1, "title": "Abajour Tahina", "imageUrl": "http://localhost:5678/images/abajour-tahina1651286843956.png", "categoryId": 1, "categoryName": "Objets", "userId": 1},
+    {"id": 1, "title": "Abajour Tahina", "imageUrl": "http://localhost:5678/images/abajour-tahina1651286843956.png", "categoryId": 1, "categoryName": "Objets", "userId": 1, "categoryAllId":4},
     {"id": 2, "title": "Appartement Paris V", "imageUrl": "http://localhost:5678/images/appartement-paris-v1651287270508.png", "categoryId": 2, "CategoryName": "Appartements", "userId": 1},
     {"id": 3, "title": "Restaurant Sushisen - Londres", "imageUrl": "http://localhost:5678/images/restaurant-sushisen-londres1651287319271.png", "categoryId": 3, "categoryName": "Hotels & restaurants", "userId": 1},
     {"id": 4, "title": "Villa La Balisiere - Port Louis", "imageUrl": "http://localhost:5678/images/la-balisiere1651287350102.png", "categoryId": 2, "categoryName": "Appartements", "userId": 1},
@@ -49,63 +58,33 @@ let works = [
     {"id": 10, "title": "Bar “Lullaby” - Paris", "imageUrl": "http://localhost:5678/images/bar-lullaby-paris1651287567130.png", "categoryId": 3, "categoryName": "Hotels & restaurants", "userId": 1},
     {"id": 11, "title": "Hotel First Arte - New Delhi", "imageUrl": "http://localhost:5678/images/hotel-first-arte-new-delhi1651287605585.png", "categoryId": 3, "categoryName":"Hotels & restaurants", "userId": 1}
 ] ;
+const categories =[...new Set(works.map((figure) => {
+    return figure} ))]
 
-const btn = document.querySelectorAll('.btnFilter');
-function filtrage() {
-
-    function activeBtn(){
-        btn.forEach((btn) => btn.classList.remove('active'));
-      //document.querySelector(`.btnFilter[data-btn="${btn}"]`).classList.add('active');
+const filterFigures =(a)=> {
+    const filterCategories = categories.filter(figure);
+    function figure(value) {
+        if(value.categoryId==a || value.allId==a) {
+            return(
+                value.categoryId || value.allId 
+            )
+        }
     }
-    activeBtn();
-
-    const filterAll = document.querySelector('.tous')
-    filterAll.addEventListener('click', showAll)
-    function showAll() {
-        let Tous = works.filter(elements => {
-        return elements.categoryName !=="" 
-        })
-        activeBtn();
-        console.log(Tous);
-    }   
-    showAll();
-
-
-    const filterObjets = document.querySelector('.objets')
-    filterObjets.addEventListener('click', showObjets)
-    function showObjets() {
-        let Objets = works.filter(elements => {
-            return elements.categoryId !== 2 && elements.categoryId !== 3
-        })
-        activeBtn();
-        console.log(Objets);
-    }
-    showObjets();
-
-
-    const filterAppartements = document.querySelector('.apparts')
-    filterAppartements.addEventListener('click', showAppartements)
-    function showAppartements(){
-        let Appartements = works.filter(elements => {
-            return elements.categoryId !== 1 &&  elements.categoryId !== 3
-        })
-        activeBtn();
-        console.log(Appartements);
-    }
-    showAppartements()
-
-    const filterRestaurants = document.querySelector('.restos')
-    filterRestaurants.addEventListener('click', showRestaurants)
-    function showRestaurants(){
-        let Restaurants = works.filter(elements => {
-            return elements.categoryId !== 1 &&  elements.categoryId !== 2
-        })
-        activeBtn();
-        console.log(Restaurants);
-    }
-    showRestaurants()
+    displayFigure(filterCategories)
 }
-filtrage()
+
+const displayFigure = (figures) => {
+    document.getElementById('projects').innerHTML= figures.map((figure) => {
+        var {imageUrl, title} = figure;
+        return (
+            `<figure class ="figure" data-figure="" id="figure">
+            <img src= "${imageUrl}"/>
+            <figcaption id="figcaption">${title}</figcaption>
+            </figure>`
+        )
+    }).join('');
+}
+displayFigure(categories);
 
 
 //////////////////////////////////////////////////////////////////Login connexion///////////////////////////////////////////////////////////////
@@ -188,6 +167,11 @@ image_input.addEventListener("change", function() {
     })
     reader.readAsDataURL(this.files[0]);
 })
+
+
+
+
+
 
 
 

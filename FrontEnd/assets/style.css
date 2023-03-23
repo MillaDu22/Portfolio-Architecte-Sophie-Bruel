@@ -1,6 +1,6 @@
 /* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
+    v2.0 | 20110126
+    License: none (public domain)
 */
 
 html, body, div, span, applet, object, iframe,
@@ -158,7 +158,7 @@ header {
 .maximize:hover, .trash:hover {
     display:block;
 }
-.fa-maximize, .fa-trash-can{
+.fa-maximize, .fa-trash-can {
     position:absolute;
     color:white;
     font-size:11px;
@@ -189,7 +189,7 @@ header {
     display: flex;
     flex-direction: column;
 }
-.liseretEdit{
+.liseretEdit {
     position:relative;
     margin:47px auto 32px auto;
     width:420px;
@@ -289,7 +289,6 @@ header {
     margin:28px auto 0px auto;
     font-size: 46px;
     color: #B9C5CC;
-    
 }
 .ajoutAjout {
     position:relative;
@@ -353,7 +352,6 @@ header {
 	top:3px;
     padding-right:15px;
     padding-top: 17px;
-
 }
 .navAjout:hover {  
     overflow:visible;
@@ -391,7 +389,7 @@ header {
     font-weight:700;
     font-size:14px;
     line-height:17px;
-    color:white
+    color:white;
 }
 .submitAjout:hover {
     background:#1D6154;
@@ -399,7 +397,7 @@ header {
 
 /*---------------------------------Fin window édition------------------------------*/
 section {
-	margin: 50px 0
+	margin: 50px 0;
 }
 h1{
 	display: flex;
@@ -413,13 +411,12 @@ h1 > span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
-;
 }
 h2{
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
-	color: #1D6154
+	color: #1D6154;
 }
 nav ul {
 	display: flex;
@@ -442,7 +439,7 @@ li:hover, .aLogin:hover, .Acontact:hover, .Aprojets:hover, .Amodifier:hover {
 	align-items: center;
 }
 #introduction figure {
-	flex: 1
+	flex: 1;
 }
 #introduction img {
 	display: block;
@@ -498,7 +495,7 @@ li:hover, .aLogin:hover, .Acontact:hover, .Aprojets:hover, .Amodifier:hover {
 	position:relative;
 	margin:0 auto;
 }
-.tous, .apparts, .objets, .restos{
+.btnFilter{
 	height:37px;
 	font-family:"Syne";
 	font-weight: 700;
@@ -510,18 +507,15 @@ li:hover, .aLogin:hover, .Acontact:hover, .Aprojets:hover, .Amodifier:hover {
 	border:1px solid #1D6154;
 	background: white;
 }
-.remove {
-	display:block;
-}
-.hide {
-	display:none;
-}
-.active { 
+
+
+.btnFilter:hover { 
 	background:#1D6154;
 	color:white;
 }
-.show {
-	display:none;
+.active {
+	background:#1D6154;
+	color:white;
 }
 
 /* ---------------------------------------Fin filtres-----------------------------*/
