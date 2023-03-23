@@ -97,10 +97,10 @@ fetch(urlAuth, {
     body:JSON.stringify ({
         email: email,
         password: password
-}),
-headers: {
+    }),
+    headers: {
     "Content-Type": "application/json"
-}
+    }
 })
 .then (function (response) {
     return response.json()
