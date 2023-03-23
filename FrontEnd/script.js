@@ -88,13 +88,36 @@ displayFigure(categories);
 
 
 //////////////////////////////////////////////////////////////////Login connexion///////////////////////////////////////////////////////////////
+const urlAuth = "http://localhost:5678/api/users/login";
+const email = "sophie.bluel@test.tld";
+const password = "S0phie";
+
+fetch(urlAuth, {
+    method: "POST",
+    body:JSON.stringify ({
+        email: email,
+        password: password
+}),
+headers: {
+    "Content-Type": "application/json"
+}
+})
+.then (function (response) {
+    return response.json()
+})
+.then(function (data){
+    console.log(data);
+})
+.catch((err) => {
+    console.log(err)
+});
 
 
 function SeConnecter() {
-    const username = document.getElementById("username").value;
+    const email = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    if ( username == "" || username !== "sophie.bluel@test.tld") {
+    if ( email == "" || email !== "sophie.bluel@test.tld") {
         alert("Erreur dans l'dentifiant ou le mot de passe.");
         return false ;
     }
@@ -102,7 +125,7 @@ function SeConnecter() {
         alert("Erreur dans l'identifiant ou le mot de passe.");
         return false;
     }
-    else if ( username == 'sophie.bluel@test.tld' || password == 'S0phie') {
+    else if ( email == 'sophie.bluel@test.tld' || password == 'S0phie') {
     alert('Identifiant et mot de passe corrects');
     window.location=('./index.html');
     return true;

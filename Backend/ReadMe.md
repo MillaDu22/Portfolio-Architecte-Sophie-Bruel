@@ -19,3 +19,14 @@ Lien pour voir la
 [documentation Swagger](http://localhost:5678/api-docs/)
 
 Pour lire la documentation, utiliser Chrome ou Firefox
+
+{
+    "email": "sophie.bluel@test.tld",
+    "password": "S0phie"
+    }
+
+
+{
+    "userId": 1,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY3OTU3OTkzMCwiZXhwIjoxNjc5NjY2MzMwfQ.opzetg03x94EaK_wRRqCBLbsyZkHL8WIiWN9VvuBOhw"
+}
