@@ -309,6 +309,7 @@ header {
 	z-index: 2;
 	position: relative;
 	top:-20px;
+	opacity:0;
 }
 .pAjout {
     position:relative;

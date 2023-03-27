@@ -9,12 +9,16 @@ const getWorks = () => {
         return response.json()
     })
     .then(function (data){
-        console.log(data);
+        console.log(data)
+        /*for(works in data) {
+            projets.innerHTML += `<figure class ="figure" data-figure="" id="figure">
+            <img src= "${data[works].imageUrl}" alt="${data[works].altTxt}"/>
+            <figcaption id="figcaption">${data[works].title}</figcaption>
+            </figure>`
+        }*/
     });
 };
 getWorks()
-
-
 
 //////////////////////////////////////////////////////////////////Catégories /////////////////////////////////////////////////////////////////
 const btns = document.getElementById('btnFilters')
@@ -26,6 +30,9 @@ const getCategories =() => {
     })
     .then(function (data){
         console.log(data);
+        /*for(categories in data) {
+            btns.innerHTML +=  `<button type = 'button' class = 'btnFilter' onclick ='filterFigures();'>${data[categories].name}</button>`
+        }*/
     });
 };
 getCategories()
@@ -40,10 +47,9 @@ const filters = [...new Set ( boutons.map (( bouton ) => {
 document.getElementById('btnFilters').innerHTML=filters.map((bouton) => {
     var {name, id} = bouton;
     return (
-        "<button type = 'button' class = 'btnFilter' onclick = 'filterFigures("+(id)+`)'>${name}</button>`
+        "<button type = 'button' class = 'btnFilter' onclick ='filterFigures("+(id)+`)'>${name}</button>`
     )
 }).join('');
-
 
 let works = [
     {"id": 1, "title": "Abajour Tahina", "imageUrl": "http://localhost:5678/images/abajour-tahina1651286843956.png", "categoryId": 1, "categoryName": "Objets", "userId": 1, "categoryAllId":4},
@@ -58,9 +64,9 @@ let works = [
     {"id": 10, "title": "Bar “Lullaby” - Paris", "imageUrl": "http://localhost:5678/images/bar-lullaby-paris1651287567130.png", "categoryId": 3, "categoryName": "Hotels & restaurants", "userId": 1},
     {"id": 11, "title": "Hotel First Arte - New Delhi", "imageUrl": "http://localhost:5678/images/hotel-first-arte-new-delhi1651287605585.png", "categoryId": 3, "categoryName":"Hotels & restaurants", "userId": 1}
 ] ;
+
 const categories =[...new Set(works.map((figure) => {
     return figure} ))]
-
 const filterFigures =(a)=> {
     const filterCategories = categories.filter(figure);
     function figure(value) {
@@ -71,6 +77,7 @@ const filterFigures =(a)=> {
         }
     }
     displayFigure(filterCategories)
+
 }
 
 const displayFigure = (figures) => {
@@ -87,18 +94,25 @@ const displayFigure = (figures) => {
 displayFigure(categories);
 
 
+
+
+
+
+
 //////////////////////////////////////////////////////////////////Login connexion///////////////////////////////////////////////////////////////
-const urlAuth = "http://localhost:5678/api/users/login";
+/*const urlAuth = "http://localhost:5678/api/users/login";
 const email = "sophie.bluel@test.tld";
 const password = "S0phie";
 
 fetch(urlAuth, {
     method: "POST",
     body:JSON.stringify ({
+        userId:1,
         email: email,
         password: password
     }),
     headers: {
+    "Accept":'application/json',
     "Content-Type": "application/json"
     }
 })
@@ -131,6 +145,39 @@ function SeConnecter() {
     return true;
     };
 }
+SeConnecter;*/
+
+const email = 'sophie.bluel@test.tld';
+const password = 'S0phie';
+function SeConnecter() {
+    const email = document.getElementById('username');
+    const password= document.getElementById('password');
+
+    let user = {
+        email: email.value,
+        password: password.value
+    };
+    const urlAuth = "http://localhost:5678/api/users/login";
+    fetch(urlAuth, {
+        method: "POST",
+        headers : {
+            "Accept" :'application/json',
+            "Content-Type" : "application/json"
+        },
+        body:JSON.stringify(user) 
+    })
+    .then((response) => response.json())
+    .then ((response)=> {
+        if (response.userId === 1) {
+            sessionStorage.setItem('token', response.token)
+            sessionStorage.setItem('userId', response.userId)
+            window.location=('./index.html')
+            return true
+        }
+        else (alert("Erreur dans l'identifiant ou le mot de passe."))
+        return false
+    });
+};
 SeConnecter;
 
 
@@ -178,7 +225,6 @@ const worksEdit = document.querySelectorAll('.photoEdit') [
 ////////////////////////////////////////////////////////////////Uploader/////////////////////////////////////////////////////////////////////
 
 const image_input = document.querySelector("#image_input");
-image_input.style.opacity= 0;
 
 var uploaded_image ="";
 
@@ -188,9 +234,8 @@ image_input.addEventListener("change", function() {
         uploaded_image = reader.result;
         document.querySelector("#display_image").getElementsByClassName.backgroundImage = `url(${uploaded_image})`;
     })
-    reader.readAsDataURL(this.files[0]);
+    reader.readAsDataURL(this.files[O]);
 })
-
 
 
 
