@@ -62,7 +62,8 @@ header {
 #ModeEdition {
 	position:relative;
 	align-items: center;
-	width:100%;
+	width:1370px;
+	left:-115px;
 	box-sizing: border-box;
 	display:flex;
 	flex-direction:row;

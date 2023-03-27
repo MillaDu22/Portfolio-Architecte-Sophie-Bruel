@@ -9,8 +9,6 @@ header {
 	justify-content: space-between;
 	padding: 50px 150px 0px 150px;
 }
-
-
 h1 {
 	display: flex;
 	flex-direction: column;
@@ -35,7 +33,7 @@ nav ul {
 	align-items: center;
 	list-style-type: none;
 }
-nav li {
+nav li, .Acontact, .Aprojets, .aLogin{
     font-family:"Work Sans";
     font-weight:400;
     line-height: 19px;
@@ -43,9 +41,6 @@ nav li {
 	font-size: 16px;
     color:black;
     text-align:center;
-}
-.login {
-    font-weight: 600;
 }
 li:hover, .aLogin:hover, .Acontact:hover, .Aprojets:hover, .Amodifier:hover {
 	color: #B1663C;
@@ -107,8 +102,6 @@ footer nav ul {
 	justify-content: flex-end;
     background: white;
 }
-
-
 footer nav ul li {
     padding:24px 107px 20px;
 }
