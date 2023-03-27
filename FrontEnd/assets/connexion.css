@@ -47,8 +47,12 @@ nav li {
 .login {
     font-weight: 600;
 }
-li:hover {
+li:hover, .aLogin:hover, .Acontact:hover, .Aprojets:hover, .Amodifier:hover {
 	color: #B1663C;
+}
+.aLogin, .Acontact, .Aprojets, .Amodifier {
+	text-decoration: none;
+	color:black;
 }
 section {
     margin: 162px auto 355px auto;

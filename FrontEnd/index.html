@@ -12,10 +12,12 @@
 	<script src="https://kit.fontawesome.com/aa04c98466.js" crossorigin="anonymous"></script>
 </head>
 <body>
+	<!---------------------------------------------------Barre Edition haut de page---------------------------------------------------->
 	<div class="editMod" id="ModeEdition">
 		<i class="fa-regular fa-pen-to-square"></i>Mode édition
-		<button type="button" name="ChangePost" class="changePost">Publier les changements</button>
+		<button type="button" name="ChangePost" class="changePost" onclick="openModale();">Publier les changements</button>
 	</div>
+	<!---------------------------------------------------Modale gallery----------------------------------------------------------------->
 	<div class="galleryEdit" id="GalleryWindow">
 		<div class="windowEdit">
 			<div class="iconsGallery">
@@ -26,80 +28,81 @@
 			<div class="photoEdit">
 			<img src="http://localhost:5678/images/abajour-tahina1651286843956.png" class="photo-edit" alt="luminaire">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
-			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
-			<p class="pGalleryEdit"></p>
+			<span class="trash" onclick="deleteWorks();"><i class="fa-regular fa-trash-can"></i></span>
+			<p class="pGalleryEdit">éditer</p>
 			</div>
 			<div class="photoEdit">
 				<img src="http://localhost:5678/images/appartement-paris-v1651287270508.png" class="photo-edit" alt="pouf">
 				<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 				<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
-				<p class="pGalleryEdit"></p>
+				<p class="pGalleryEdit">éditer</p>
 			</div>
 			<div class="photoEdit">
 				<img src="http://localhost:5678/images/restaurant-sushisen-londres1651287319271.png" class="photo-edit" alt="verriere">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
-			<p class="pGalleryEdit"></p>
+			<p class="pGalleryEdit">éditer</p>
 			</div>
 			<div class="photoEdit">
 				<img src="http://localhost:5678/images/la-balisiere1651287350102.png" class="photo-edit" alt="cocoonChair">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
-			<p class="pGalleryEdit"></p>
+			<p class="pGalleryEdit">éditer</p>
 			</div>
 			<div class="photoEdit">
 				<img src="http://localhost:5678/images/structures-thermopolis1651287380258.png" class="photo-edit" alt="circle">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
-			<p class="pGalleryEdit"></p>
+			<p class="pGalleryEdit">éditer</p>
 			</div>
 			<div class="photoEdit">
 				<img src="http://localhost:5678/images/appartement-paris-x1651287435459.png" class="photo-edit" alt="kitchen">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
-			<p class="pGalleryEdit"></p>
+			<p class="pGalleryEdit">éditer</p>
 			</div>
 			<div class="photoEdit">
 				<img src= "http://localhost:5678/images/le-coteau-cassis1651287469876.png" class="photo-edit" alt="white">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
-			<p class="pGalleryEdit"></p>
+			<p class="pGalleryEdit">éditer</p>
 			</div>
 			<div class="photoEdit">
 				<img src="http://localhost:5678/images/villa-ferneze1651287511604.png" class="photo-edit" alt="bedroom">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
-			<p class="pGalleryEdit"></p>
+			<p class="pGalleryEdit">éditer</p>
 			</div>
 			<div class="photoEdit">
 				<img src="http://localhost:5678/images/appartement-paris-xviii1651287541053.png" class="photo-edit" alt="greenWood">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
-			<p class="pGalleryEdit"></p>
+			<p class="pGalleryEdit">éditer</p>
 			</div>
 			<div class="photoEdit">
 				<img src= "http://localhost:5678/images/bar-lullaby-paris1651287567130.png" class="photo-edit" alt="blueBar">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
-			<p class="pGalleryEdit"></p>
+			<p class="pGalleryEdit">éditer</p>
 			</div>
 			<div class="photoEdit">
 				<img src="http://localhost:5678/images/hotel-first-arte-new-delhi1651287605585.png" class="photo-edit" alt="corridor">
 			<span class="maximize"><i class="fa-solid fa-maximize"></i></span>
 			<span class="trash"><i class="fa-regular fa-trash-can"></i></span>
-			<p class="pGalleryEdit"></p>
+			<p class="pGalleryEdit">éditer</p>
 			</div>
 		</div>
 			<span class="liseretEdit"></span>
-			<button type="button" name="Ajout" class="ajoutEdit">Ajouter une photo</button>
-			<button type="button" name="Suprim" class="suprimEdit">Supprimer la gallerie</button>
+			<button type="button" name="Ajout" class="ajoutEdit" onclick="openNextWindow();">Ajouter une photo</button>
+			<button type="button" name="Suprim" class="suprimEdit" onclick="clearGallery();">Supprimer la gallerie</button>
 		</div>
 	</div>
+	<!------------------------------------------------------Modale d'ajout------------------------------------------------------------------>
 	<div class="ajout" id="ajoutWind"><a id="Amodifier"></a>
 		<div class="windowAjout">
 			<div class="iconsAjout">
-				<a href="./index.html" title="retour"><i class="fa-solid fa-arrow-left"></i></a>
-				<a href="./index.html" title="closeWindow"><i class="fa-solid fa-xmark" id="xmarkAjout"></i></a>
+				<a href="./index.html" title="retour" onclick="retourModaleGallery();"><i class="fa-solid fa-arrow-left"></i></a>
+				<a href="./index.html" title="closeWindow" onclick="closeModaleAjout();"><i class="fa-solid fa-xmark" id="xmarkAjout"></i></a>
 			</div>
 		<h1 class="h1Ajout">Ajout photo</h1>
 		<div class="sectionAjout" id="display_image">
@@ -110,22 +113,23 @@
 		</div>
 			<div class="formAjout">
 				<label class="labelAjout" for="titre">Titre</label>
-				<input type="text" id="titre" name="titre">
+				<input type="text" id="titre" name="titre" placeholder="Malt & Juniper - New York">
 			</div>
 			<div class="formAjout">
 				<label class="labelAjout" id="categorie">Catégorie</label>
 				<div class="navAjout"><i class="fa-solid fa-chevron-down"></i>
 					<ul class="ulAjout">
-						<li class="liAjout">Objet</li>
-						<li class="liAjout">Appartement</li>
-						<li class="liAjout">Hôtel & Restaurant</li>
+						<li class="liAjout"><a class="catObjets">Objets</a></li>
+						<li class="liAjout"><a class="catAppartements">Appartements</a></li>
+						<li class="liAjout"><a class="catRestaurants">Hôtels & Restaurants</a></li>
 					</ul>
 				</div>
 			</div>
 			<span class="liseretAjout"></span>
-			<input type="submit" value="Valider" class="submitAjout">
+			<input type="submit" value="Valider" class="submitAjout" onclick="ajoutValidate();">
 		</div>
 	</div>
+	<!-------------------------------------------------------------Header----------------------------------------------------------------------------->
 <header>
 	<h1>Sophie Bluel <span>Architecte d'interieur</span></h1>
 	<nav>
@@ -137,14 +141,16 @@
 		</ul>
 	</nav>
 </header>
+<!--------------------------------------------------------------Texte d'introduction------------------------------------------------------------------------------------------>
 <main>
 	<div id="introduction">
 		<figure>
 			<img src="./assets/images/sophie-bluel.png" alt="">
-			<span class="projectMod"><i class="fa-solid fa-pen-to-square"></i>modifier</span>
+
+			<span class="projectMod"><i class="fa-solid fa-pen-to-square"></i><a href="#Amofifier" class="Amodifier">modifier</a></span>
 		</figure>
 		<article>
-			<span class="projectMod1"><i class="fa-solid fa-pen-to-square"></i>modifier</span>
+			<span class="projectMod1"><i class="fa-solid fa-pen-to-square"></i><a href="#Amofifier" class="Amodifier">modifier</a></span>
 			<h2>Designer d'espace</h2>
 			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
 			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
@@ -153,10 +159,13 @@
 	</div>
 	<section id="portfolio">
 		<h2><a id="Aprojets">Mes Projets</a><span class="projectMod"><i class="fa-solid fa-pen-to-square"></i><a href="#Amofifier" class="Amodifier">modifier</a></span></h2>
-		<div id="btnFilters">
+		<!-----------------------------------------------------------Filtres-------------------------------------------------------------------------->
+		<div class="filterBtns" id="btnFilters">
 		</div>
+		<!-----------------------------------------------------------Gallerie des Projets-------------------------------------------------------------------------->
 		<div id="projects" class="gallery"></div>
 	</section>
+	<!------------------------------------------------------Formulaire de contact------------------------------------------------------------------->
 	<section id="contact">
 		<a id="Acontact"><h2>Contact</h2></a>
 		<p>Vous avez un projet ? Discutons-en !</p>

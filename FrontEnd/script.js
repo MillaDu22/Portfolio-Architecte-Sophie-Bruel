@@ -93,60 +93,7 @@ const displayFigure = (figures) => {
 }
 displayFigure(categories);
 
-
-
-
-
-
-
 //////////////////////////////////////////////////////////////////Login connexion///////////////////////////////////////////////////////////////
-/*const urlAuth = "http://localhost:5678/api/users/login";
-const email = "sophie.bluel@test.tld";
-const password = "S0phie";
-
-fetch(urlAuth, {
-    method: "POST",
-    body:JSON.stringify ({
-        userId:1,
-        email: email,
-        password: password
-    }),
-    headers: {
-    "Accept":'application/json',
-    "Content-Type": "application/json"
-    }
-})
-.then (function (response) {
-    return response.json()
-})
-.then(function (data){
-    console.log(data);
-})
-.catch((err) => {
-    console.log(err)
-});
-
-
-function SeConnecter() {
-    const email = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-
-    if ( email == "" || email !== "sophie.bluel@test.tld") {
-        alert("Erreur dans l'dentifiant ou le mot de passe.");
-        return false ;
-    }
-    if ( password == "" ||  password !== "S0phie") {
-        alert("Erreur dans l'identifiant ou le mot de passe.");
-        return false;
-    }
-    else if ( email == 'sophie.bluel@test.tld' || password == 'S0phie') {
-    alert('Identifiant et mot de passe corrects');
-    window.location=('./index.html');
-    return true;
-    };
-}
-SeConnecter;*/
-
 const email = 'sophie.bluel@test.tld';
 const password = 'S0phie';
 function SeConnecter() {
@@ -172,70 +119,88 @@ function SeConnecter() {
             sessionStorage.setItem('token', response.token)
             sessionStorage.setItem('userId', response.userId)
             window.location=('./index.html')
-            return true
+            return true;
         }
-        else (alert("Erreur dans l'identifiant ou le mot de passe."))
-        return false
+        else (alert("Erreur dans l'identifiant ou le mot de passe."));
+        return false;
     });
 };
 SeConnecter;
+let logoutUser = document.querySelector('.aLogin');
+logoutUser.innerHTML= ""
+logoutUser.innerText="logout"
+const displayEditMod = document.querySelector('.editMod');
+displayEditMod.style.visibility='visible';
+const dispearFilters =document.querySelector('.filterBtns');
+//dispearFilters.style.display='none';
+
+////////////////////////////////////////////////////////////////Gestion des Modales/////////////////////////////////////////////////////////////////////
 
 
+//////////////////////////////////////////////////////////////Modale Gallery////////////////////////////////////////////////////////////////
+const galleryEdit = document.querySelector('.galleryEdit');
+function openModale() {
+    galleryEdit.style.visibility='visible';
+};
+openModale();
 
-/////////////////////////////////////////////////////////////////Tableau Gallery///////////////////////////////////////////////////////////////////
-const imgEdit =document.querySelectorAll('.photo-edit');
-const pEdit = document.querySelectorAll('.pGalleryEdit');
-const worksEdit = document.querySelectorAll('.photoEdit') [
-    imgEdit [0].src = 'http://localhost:5678/images/abajour-tahina1651286843956.png',
-    pEdit[0].innerHTML = 'éditer',
+function closeGalleryEdition(){
+    galleryEdit.style.visibility="hidden";
+};
+closeGalleryEdition();
 
-    imgEdit [1].src = 'http://localhost:5678/images/appartement-paris-v1651287270508.png',
-    pEdit[1].innerHTML = 'éditer',
+function deleteWorks() {
 
-    imgEdit [2].src = 'http://localhost:5678/images/restaurant-sushisen-londres1651287319271.png',
-    pEdit[2].innerHTML = 'éditer',
+};
+deleteWorks();
 
-    imgEdit [3].src = 'http://localhost:5678/images/la-balisiere1651287350102.png',
-    pEdit[3].innerHTML = 'éditer',
-
-    imgEdit [4].src = 'http://localhost:5678/images/structures-thermopolis1651287380258.png',
-    pEdit[4].innerHTML = 'éditer',
-
-    imgEdit [5].src = 'http://localhost:5678/images/appartement-paris-x1651287435459.png',
-    pEdit[5].innerHTML = 'éditer',
-
-    imgEdit [6].src = 'http://localhost:5678/images/le-coteau-cassis1651287469876.png',
-    pEdit[6].innerHTML = 'éditer',
-
-    imgEdit [7].src = 'http://localhost:5678/images/villa-ferneze1651287511604.png',
-    pEdit[7].innerHTML = 'éditer',
-
-    imgEdit [8].src = 'http://localhost:5678/images/appartement-paris-xviii1651287541053.png',
-    pEdit[8].innerHTML = 'éditer',
-
-    imgEdit [9].src = 'http://localhost:5678/images/bar-lullaby-paris1651287567130.png',
-    pEdit[9].innerHTML = 'éditer',
-
-    imgEdit [10].src = 'http://localhost:5678/images/hotel-first-arte-new-delhi1651287605585.png',
-    pEdit[10].innerHTML = 'éditer'
-];
+const next = document.querySelector('.ajout');
+function openNextWindow() {
+    next.style.visibility="visible";
+    galleryEdit.style.visibility="hidden";
+};
+openNextWindow();
 
 
+function clearGallery() {
 
-////////////////////////////////////////////////////////////////Uploader/////////////////////////////////////////////////////////////////////
+};
+clearGallery();
+
+//////////////////////////////////////////////////////Modale d'ajout Uploader///////////////////////////////////////////////////////////////
+
+
+function retourModaleGallery() {
+    next.style.visibility="hidden";
+    galleryEdit.style.visibility="visible";
+};
+retourModaleGallery();
+
+
+function closeModaleAjout() {
+    next.style.visibility="hidden";
+    galleryEdit.style.visibility="hidden";
+}
+closeModaleAjout();
+
 
 const image_input = document.querySelector("#image_input");
-
 var uploaded_image ="";
-
 image_input.addEventListener("change", function() {
     const reader = new FileReader();
     reader.addEventListener("load", () => {
         uploaded_image = reader.result;
         document.querySelector("#display_image").getElementsByClassName.backgroundImage = `url(${uploaded_image})`;
-    })
+    });
     reader.readAsDataURL(this.files[O]);
-})
+});
+
+
+function ajoutValidate() {
+    
+}
+ajoutValidate();
+
 
 
 
