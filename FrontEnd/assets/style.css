@@ -151,27 +151,32 @@ header {
     background:black;
 }
 .trash{
-    margin:6px 6.37px 81.08px 50.75px ;
+    margin:3px 3px 81.08px 52px ;
 }
 .maximize {
-    margin:6px 26.37px 81.08px 30.75px;
+    margin:3px 23.37px 81.08px 32px;
 }
 .maximize:hover, .trash:hover {
-    display:block;
+    color:black;
 }
 .fa-maximize, .fa-trash-can {
     position:absolute;
     color:white;
     font-size:11px;
-    margin:3.62px 3.50px;
 }
+.fa-maximize {
+	margin:6px 26.37px 81.08px 35px;
+}
+.fa-trash-can {
+margin:6px 6.37px 81.08px 55.5px ;
+}
+
 .pGalleryEdit {
     font-family:"Work Sans";
     font-weight:400;
     font-size:12px;
     color:black;
 	height:20px;
-
 }
 .sectionEdit {
     display:flex;
