@@ -226,6 +226,9 @@ margin:6px 6.37px 81.08px 55.5px ;
 .suprimEdit:hover {
     color:#B3B3B3;
 }
+.remove {
+	visibility: hidden;
+}
 /*--------------------------------Fin galleryEdit----------------------------------*/
 /*-------------------------------Début window édition------------------------------*/
 .ajout {

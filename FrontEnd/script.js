@@ -97,6 +97,7 @@ const displayFigure = (figures) => {
 displayFigure(categories);
 
 //////////////////////////////////////////// Implementation de la modale 1 (gallery) /////////////////////////////////////////////////////////////////////////////////////////
+
 function displayModale1() {
     fetch (urlWorks)
     .then (response => {
@@ -113,14 +114,15 @@ function displayModale1() {
             const sectionEditDiv = document.createElement('div');
             sectionEditDiv.className = "photoEdit";
             const deleteImg = document.createElement('span');
-            deleteImg.classList="trash"
-            const deleteImgIcon = document.createElement('i')
-            deleteImgIcon.className= "fa-regular fa-trash-can";
+            deleteImg.classList ="trash"
+            let deleteImgIcon = document.createElement('i')
+            deleteImgIcon.className = "fa-regular fa-trash-can";
+            deleteImgIcon.onclick= "deleteWorks();"
             const sectionEditImg = document.createElement('img')
             sectionEditImg.classList="photo-edit";
             sectionEditImg.src= element.imageUrl;
             const txtImg = document.createElement('p')
-            txtImg.className="pGalleryEdit";
+            txtImg.className ="pGalleryEdit";
             txtImg.innerHTML ="éditer";
             if(index === 0) {
                 const maximizeImg =document.createElement('span');
@@ -131,51 +133,49 @@ function displayModale1() {
                 sectionEditDiv.appendChild(maximize);
             }
 
-///////////////////////////////function supprimer projet par projet de la gallery (via icon delete) //////////////////////////////////////////////////////////           
-            function deleteWorks() {
-                fetch ("http://localhost:5678/api/works", {
+///////////////////////////////function supprimer projet par projet de la gallery (via icon delete) ////////////////////////////////////////////////////////// 
+                function deleteWorks(){
+                fetch ("http://localhost:5678/api/works/:id", {
                     method: "DELETE",
                     headers: {
                         "Content-Type" : "application/json",
-                        "Authorization": "Bearer"+localStorage.getItem('token'),
+                        "Authorization": "Bearer " +localStorage.getItem('token'),
                     },
                 })
                 .then (response => {
                     if (response.ok) {
-                        sectionEditDiv.remove();
+                        sectionEditDiv.style.dysplay="none"
                     }
                     else {
-                        console.log("Suppression non effectuée")
+                        console.log("Impossible de supprimer le projet")
                     }
                 })
                 .catch(error => {
                     console.error(error)
                 });
             };
-            deleteWorks();
-
-/////////////////////////////////////////////function supprimer tous les projets de la gallery par boutons//////////////////////////////////////////////////////////   
+/////////////////////////////////////////////function supprimer tous les projets de la gallery par boutons//////////////////////////////////////////////////////////  
             function clearGallery() {
-                fetch ("http://localhost:5678/api/works", {
+                fetch ("http://localhost:5678/api/works/:id", {
                     method: "DELETE",
                     headers: {
                         "Content-Type" : "application/json",
-                        "Authorization": "Bearer"+localStorage.getItem('token'),
+                        "Authorization": "Bearer " + localStorage.getItem('token'),
                     },
                 })
                 .then (response => {
                     if (response.ok) {
-                        sectionEditDiv.remove();
+                        sectionEditDiv.style.display="none";
                     }
                     else {
-                        console.log("Suppressions non effectuées")
+                        console.log("Impossible de supprimer les projets")
                     }
                 })
                 .catch(error => {
                     console.error(error)
                 });
             };
-            clearGallery()
+            clearGallery();
             sectionEdit.appendChild(sectionEditDiv);
             sectionEditDiv.appendChild(deleteImg);
             sectionEditDiv.appendChild(deleteImgIcon)
@@ -185,6 +185,9 @@ function displayModale1() {
     })
 }
 displayModale1()
+
+
+////////////////////////////////////////////////////////// Affichage après delete ///////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////// Ouverture modale gallery ///////////////////////////////////////////////////////////////
 const galleryEdit = document.querySelector('.galleryEdit');
