@@ -31,8 +31,8 @@ function SeConnecter() {
     .then((response) => response.json())
     .then ((response)=> {
         if (response.userId === 1) {
-            sessionStorage.setItem('token', response.token)
-            sessionStorage.setItem('userId', response.userId)
+            localStorage.setItem('token', response.token)
+            localStorage.setItem('userId', response.userId)
             window.location=('./index.html')
             return true;
         }

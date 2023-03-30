@@ -45,7 +45,7 @@ function displayModale1() {
                     method: "DELETE",
                     headers: {
                         "Content-Type" : "application/json",
-                        "Authorization": "Bearer " +sessionStorage.getItem('token'),
+                        "Authorization": "Bearer " +localStorage.getItem('token'),
                     },
                 })
                 .then (response => {
@@ -67,7 +67,7 @@ function displayModale1() {
                     method: "DELETE",
                     headers: {
                         "Content-Type" : "application/json",
-                        "Authorization": "Bearer " + sessionStorage.getItem('token'),
+                        "Authorization": "Bearer " + localStorage.getItem('token'),
                     },
                 })
                 .then (response => {
