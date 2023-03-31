@@ -38,29 +38,27 @@
 				<a href="./index.html" title="retour" onclick="retourModaleGallery();"><i class="fa-solid fa-arrow-left"></i></a>
 				<a href="./index.html" title="closeWindow" onclick="closeModaleAjout();"><i class="fa-solid fa-xmark" id="xmarkAjout"></i></a>
 			</div>
+			<form method="post" url="/upload-img" enctype="multipart/form-data" id="display_image">
 			<h1 class="h1Ajout">Ajout photo</h1>
-			<div class="sectionAjout" id="display_image">
+				<div class="sectionAjout">
 				<i class="fa-solid fa-image"></i>
 				<label class=" ajoutAjout">+ Ajouter photo</label>
-				<input type="file" class="inputFile" id="image_input" accept=".png, .jpg" title="buttonFile">
+				<input type="file" class="inputFile" id="image_input" accept=".png, .jpg" title="buttonFile" name="picture" onchange="previewPicture(this)" required>
 				<p class="pAjout">jpg, png : 4mo max</p>
+				<img src="#" alt="" id="view" />
 			</div>
 			<div class="formAjout">
-				<label class="labelAjout" for="titre">Titre</label>
-				<input type="text" id="titre" name="titre" placeholder="Malt & Juniper - New York">
+				<label class="labelAjout" for="titre-select">Titre</label>
+				<input type="text" id="titre" name="titre" placeholder= "Malt & Juniper - New York">
 			</div>
 			<div class="formAjout">
-				<label class="labelAjout" id="categorie">Catégorie</label>
-				<div class="navAjout"><i class="fa-solid fa-chevron-down"></i>
-					<ul class="ulAjout">
-						<li class="liAjout"><a class="catObjets">Objets</a></li>
-						<li class="liAjout"><a class="catAppartements">Appartements</a></li>
-						<li class="liAjout"><a class="catRestaurants">Hôtels & Restaurants</a></li>
-					</ul>
-				</div>
+				<label class="labelAjout" id="categories" for="categorie">Catégorie</label>
+				<select id="categorie"  name="listCategories" class="navAjout">
+				</select>
 			</div>
 			<span class="liseretAjout"></span>
-			<input type="submit" value="Valider" class="submitAjout" onClick="ajoutValidate();">
+			<input type="submit" value="Valider" class="submitAjout" id="validerAjout">
+			</form>
 		</div>
 	</div>
 <!-------------------------------------------------------------Header----------------------------------------------------------------------------->

@@ -43,8 +43,9 @@ function SeConnecter() {
     .catch(error => console.error(error));
 };
 
-function SeDeconnecter() {
-    let logoutUser = document.querySelector('.aLogin');
+
+let logoutUser = document.querySelector('.aLogin');
+    logoutUser.addEventListener('click', function() {
     logoutUser.innerHTML= ""
     logoutUser.innerText="login"
     const displayEditMod = document.querySelector('.editMod');
@@ -52,4 +53,5 @@ function SeDeconnecter() {
     const dispearFilters =document.querySelector('.filterBtns');
     dispearFilters.style.display='flex'; 
     localStorage.clear()
-}
+})
+

@@ -40,7 +40,7 @@ function displayModale1() {
 
 ///////////////////////////////function supprimer projet par projet de la gallery (via icon delete) ////////////////////////////////////////////////////////// 
                 
-                function deleteWorks(id) {
+            function deleteWorks(id) {
                 fetch ("http://localhost:5678/api/works/"+id, {
                     method: "DELETE",
                     headers: {
@@ -59,10 +59,10 @@ function displayModale1() {
                 .catch(error => {
                     console.error(error)
                 });
-                }
+            }
                 
 /////////////////////////////////////////////function supprimer tous les projets de la gallery par boutons//////////////////////////////////////////////////////////  
-                function clearGallery(id) {
+            function clearGallery(id) {
                 fetch ("http://localhost:5678/api/works/"+id, {
                     method: "DELETE",
                     headers: {
@@ -92,69 +92,92 @@ function displayModale1() {
 }
 displayModale1()
 
-
-
-
-
-///////////////////////////////////////////////////// input File /////////////////////////////////////////////////////////////////////////////////
-
-const btnAjouterPhoto = document.querySelector("#image_input");
-btnAjouterPhoto.addEventListener("change", function() {
-    const photo = this.photos[0]
-    if(photo) {
-        const taille = photo.size;
-        const max = 4 * 1024 * 1024;
+///////////////////////////////////////////////////// input File type et size/////////////////////////////////////////////////////////////////////////////////
+const image = document.getElementById('view')
+const previewPicture = function(e) {
+    const [picture] = e.files
+    const types = ["image/jpg", "image/jpeg", "image/png"]
+    if (types.includes(picture.type)) {              
+    }
+    if(image) {
+        const taille = image.size;
+        const max = 4 * 129 * 193;
         if (taille > max) {
-            alert ("Trop lourd! jpg, png <= 4mo max");
+            alert ("Trop lourd! jpg, png < 4mo max");
             return;
         }
-        const reader = new FileReader();
-        reader.addEventListener("load", function() {
-            view.setAttribute("src", reader.result);
-            const landscape = document.querySelector(".fa-solid fa-image");
-            landscape.style.display="none";
-            const labelAjout = document.querySelector(".ajoutAjout");
-            labelAjout.style.display="none";
-            const pImgSize = document.querySelector(".pajout");
-            pImgSize.style.display="none";
-            const view =
-            view.style.display="block";
-        });
-        reader.readAsDataURL(photo);
     }
-    else {
-        view.setAttribute ("src", "")
+    if  (picture) {
+        var reader =new FileReader();
+        reader.onload=function(e) {
+            image.src = e.target.result
+        }
+        reader .readAsDataURL(picture)
     }
-});
-const formAjout= document.querySelector(".sectionAjout")
+};
+
+////////////////////////////////////////////////// Fetch GET creation select List categories /////////////////////////////////////////////////////
+const categorie = document.getElementById('categorie');
+fetch ('http://localhost:5678/api/categories', {
+    method:'GET', 
+    headers: {
+        'Content-Type':'application/json'
+    },
+})
+.then (response => response.json())
+.then (data => {
+    selectionCategorie (data, categorie);
+})
+.catch(error => console.error(error));
+const selectionCategorie = (categories, categorie)=> {
+    categories.forEach((category) => {
+        const option = document.createElement('option');
+        option.innerText = category.name;
+        option.value = category.id;
+        console.log(option);
+        categorie.appendChild(option);
+    })
+}
+
+//////////////////////////////////////// Conditions d'ajout et style Bouton valider active ////////////////////////////////////////////////////////////////////////
+const formAjout= document.getElementById("display_image");
+const txtImg = document.getElementById('titre').value;
+categorie.value;
+const btnValider = document.getElementById('validerAjout');
+const inputFile =document.getElementById('image_input').files[0];
+
 formAjout.addEventListener("input", () => {
-    if(txtImg.value !== '' && uploaded_image.value !== '' && category.value !== '') {
-        btnValiderAjout.style.background="#1D6154"
+    if(txtImg.value !== '' && image.value !== '' && categorie.value !== '') {
+        btnValider.style.background="#A7A7A7"
     }
     else {
-        btnValiderAjout.style.background="#cbc9c977"
+        btnValider.style.background="#1D6154"
     }
 })
-const btnValiderAjout = document.querySelector(".submitAjout");
-btnValiderAjout.addEventListener("submit", (e) => {
-    e.preventDefault()
-    const dataForm = new dataForm()
-    dataForm.append("image", uploaded_image.photos[0])
-    dataForm.append("title", txtImg.value)
-    dataForm.append("category",category.value )
+
+/////////////////////////////////////////////////////// fetch POST validation ajout ////////////////////////////////////////////////////////////
+btnValider.addEventListener("click", (event) => {
+    event.preventDefault()
+
+    const formData = new formData();
+    formData.append("image", image);
+    console.log(image);
+    formData.append("title", txtImg);
+    console.log(txtImg);
+    formData.append("category",categorie);
+
     fetch("http://localhost:5678/api/works", {
         method: "POST",
-        body: dataForm,
+        body: formData,
         headers: {
-            "Authorization": "Bearer" + sessionStorage.getItem("token"),
+            "Authorization": "Bearer" + localStorage.getItem("token"),
         },
     })
-    .then(response=> {
-        if(response.ok) {
-            return response.json()
-        }
-        else {
-            throw new Error("erreur");
-        }
+    .then (response => response.json())
+    .then (data => {
+        console.log ('Le projet a bien été ajouté', data);
+    })
+    .catch (error => {
+        console.error("Une erreur s'est produite, veuillez réenvoyer", error )
     })
 })

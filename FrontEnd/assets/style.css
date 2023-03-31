@@ -298,6 +298,7 @@ margin:6px 6.37px 81.08px 55.5px ;
     margin:28px auto 0px auto;
     font-size: 46px;
     color: #B9C5CC;
+	/*display:none;*/
 }
 .ajoutAjout {
     position:relative;
@@ -312,6 +313,7 @@ margin:6px 6.37px 81.08px 55.5px ;
     font-size:14px;
     line-height:16px;
 	z-index: 1;
+	/*display:none;*/
 }
 .inputFile {
 	width:173px;
@@ -319,6 +321,11 @@ margin:6px 6.37px 81.08px 55.5px ;
 	position: relative;
 	top:-20px;
 	opacity:0;
+	/*display:none;*/
+}
+#view {
+	max-width: 129px;
+	max-height: 193px;
 }
 .pAjout {
     position:relative;
@@ -328,7 +335,9 @@ margin:6px 6.37px 81.08px 55.5px ;
     font-size: 10px;
     line-height:12px;
     color:#444444;
+	/*display:none;*/
 }
+
 .formAjout {
     display: flex;
     flex-direction: column;
@@ -355,7 +364,7 @@ margin:6px 6.37px 81.08px 55.5px ;
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
     border:none;
     overflow: hidden;
-    text-align: end;
+    text-align: start;
 }
 .fa-chevron-down {
 	position:relative;
@@ -389,7 +398,10 @@ margin:6px 6.37px 81.08px 55.5px ;
     height:2px;
     background: #B3B3B3;
 }
-.submitAjout {
+#validerAjout {
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
     width:237px;
     padding:10px 49px 10px 49px;
     background: #A7A7A7;
@@ -402,9 +414,8 @@ margin:6px 6.37px 81.08px 55.5px ;
     color:white;
 }
 .submitAjout:hover {
-    background:#1D6154;
+    background:hsl(169, 54%, 25%);
 }
-
 /*---------------------------------Fin window édition------------------------------*/
 section {
 	margin: 50px 0;
