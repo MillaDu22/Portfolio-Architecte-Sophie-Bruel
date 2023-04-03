@@ -1,4 +1,21 @@
+////////////////////////////////////Création de la Barre au dessus du header//////////////////////////////////////////////////////////////////////
+
+const displayEditMod = document.querySelector('.editMod');
+const iconSquare = document.createElement('i');
+iconSquare.className = "fa-regular fa-pen-to-square";
+const pBarre = document.createElement('p');
+pBarre.className ='pBarre';
+pBarre.innerHTML = 'Mode édition';
+pBarre.style.color="white";
+const buttonBarre =document.createElement('Button');
+buttonBarre.innerHTML = 'Publier les changements';
+buttonBarre.className='changePost';
+displayEditMod.appendChild(iconSquare);
+displayEditMod.appendChild(pBarre);
+displayEditMod.appendChild(buttonBarre);
+
 ////////////////////////////////////////////////////////////Fetch Works /////////////////////////////////////////////////////////////////////////////////
+
 const projets = document.getElementById('projects');
 const urlWorks = "http://localhost:5678/api/works";
 
@@ -17,10 +34,10 @@ const getWorks = () => {
         }*/
     });
 };
-getWorks()
+getWorks();
 
 ////////////////////////////////////////////////////////////////// Fetch Catégories /////////////////////////////////////////////////////////////////
-const btns = document.getElementById('btnFilters')
+
 const urlCategories = "http://localhost:5678/api/categories";
 const getCategories =() => {
     fetch (urlCategories)
@@ -34,44 +51,87 @@ const getCategories =() => {
         }*/
     });
 };
-getCategories()
+getCategories();
 
+////////////////////////////////////////////////////////////////Affichage homepage connectée////////////////////////////////////////////////////////
+const iconPen1 = document.querySelector('.iconPen1');
+const iconPen2 = document.querySelector('.iconPen2');
+const iconPen3 = document.querySelector('.iconPen3');
+const login = document.querySelector('.aLogin');
+const logout = document.querySelector('.aLogout');
+const filtres = document.querySelector('.filterBtns');
 
+function displayPageConnected(){
+    displayEditMod.style.visibility='visible';
+    iconPen3.style.visibility='visible';
+    iconPen2.style.visibility='visible';
+    iconPen1.style.visibility='visible';
+    filtres.style.display='none';
+    logout.style.display="flex";
+    login.style.display="none";
+};
+displayPageConnected();
 
 /////////////////////////////////////////////////////////// Ouverture modale gallery ///////////////////////////////////////////////////////////////
 const galleryEdit = document.querySelector('.galleryEdit');
 function openModale() {
-    galleryEdit.style.visibility='visible';
+    buttonBarre.addEventListener('click', function() {
+        galleryEdit.style.visibility='visible';
+    });
 };
-
+openModale();
 /////////////////////////////////////////////////////////// Ouverture modale Uploader ///////////////////////////////////////////////////////////////
+const btnAjoutGallery = document.querySelector('.ajoutEdit');
 const next = document.querySelector('.ajout');
 function openNextWindow() {
-    next.style.visibility="visible";
-    galleryEdit.style.visibility="hidden";
+    btnAjoutGallery.addEventListener('click', function() {
+        next.style.visibility="visible";
+        galleryEdit.style.visibility="hidden";
+    });
 };
-
-////////////////////////////////////////////////////////////// X de fermeture Modale Gallery ////////////////////////////////////////////////////////////////////////
-
-
-function closeGalleryEdition(){
-    galleryEdit.style.visibility="hidden";
-};
-closeGalleryEdition();
-
+openNextWindow();
 //////////////////////////////////////////////////////  <-- Fleche retourModale 2 vers Modale Gallery ////////////////////////////////////////////////////////////////////
+const returnToGallery = document.querySelector('.returnToGallery');
 function retourModaleGallery() {
-    next.style.visibility="hidden";
-    galleryEdit.style.visibility="visible";
+    returnToGallery.addEventListener('click', function() {
+        next.style.visibility="hidden";
+        galleryEdit.style.visibility="visible";
+    });
 };
 retourModaleGallery();
 ///////////////////////////////////////////////////// X Fermeture de Modale 2 ///////////////////////////////////////////////////////////////////////
-
+const XbtnModale2 = document.querySelector('.XBtnModale2');
 function closeModaleAjout() {
-    next.style.visibility="hidden";
-    galleryEdit.style.visibility="hidden";
-}
+    XbtnModale2.addEventListener('click', function() {
+        next.style.visibility="hidden";
+    });
+};
 closeModaleAjout();
+
+////////////////////////////////////////////////////////////// X de fermeture Modale Gallery ////////////////////////////////////////////////////////////////////////
+const XGalleryModale =document.querySelector('.XGalleryModale');
+function closeGalleryEdition() {
+    XGalleryModale.addEventListener('click', function() {
+    galleryEdit.style.visibility="hidden";
+    });
+};
+closeGalleryEdition();
+
+//////////////////////////////////////////////////////Se deconnecter///////////////////////////////////////////////////////////////////////////
+function SeDeconnecter() {
+    logout.addEventListener('click', function() {
+        filtres.style.display='flex';
+        logout.style.display="none";
+        login.style.display="flex";
+        displayEditMod.style.visibility='hidden';
+        iconPen3.style.visibility='hidden';
+        iconPen2.style.visibility='hidden';
+        iconPen1.style.visibility='hidden';
+        localStorage.clear();
+    });
+};
+SeDeconnecter();
+
 
 
 

@@ -102,8 +102,10 @@ header {
 /*------------------------------------Fin barre mode édition----------------------------*/
 /*------------------------------------Début galleryEdit---------------------------------*/
 .galleryEdit {
-	display:block;
+	align-items: center;
+	display:flex;
 	position:absolute;
+	justify-content: center;
     width:1140px;
     background-color: rgba(128, 128, 128, 0.424);
     margin:0;
@@ -114,7 +116,8 @@ header {
 .windowEdit {
 	position:absolute;
 	top:300px;
-	left:280px;
+	margin-left:auto;
+	margin-right:auto;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -448,13 +451,17 @@ nav li  {
 	padding: 0 10px;
 	font-size: 1.2em;
 }
-li:hover, .aLogin:hover, .Acontact:hover, .Aprojets:hover, .Amodifier:hover {
+li:hover, .aLogin:hover, .Acontact:hover, .Aprojets:hover, .Amodifier:hover, .aLogout:hover {
 	color: #B1663C;
 }
-.aLogin, .Acontact, .Aprojets, .Amodifier {
+.aLogin, .Acontact, .Aprojets, .Amodifier, .aLogout {
 	text-decoration: none;
 	color:black;
 }
+.aLogout {
+	display:none;
+}
+
 #introduction {
 	display: flex;
 	align-items: center;
@@ -489,6 +496,7 @@ li:hover, .aLogin:hover, .Acontact:hover, .Aprojets:hover, .Amodifier:hover {
 	padding-left: 24px;
 	padding-top:15px;
 }
+
 .projectMod, .projectMod1 {
 	position:relative;
 	font-weight:400;
@@ -505,6 +513,9 @@ li:hover, .aLogin:hover, .Acontact:hover, .Aprojets:hover, .Amodifier:hover {
 .projectMod1 {
 	left:-20px;
 	bottom:19px;
+}
+.iconPen1, .iconPen2, .iconPen3 {
+	visibility: hidden;
 }
 /*--------------------------------Fin icons editions--------------------*/
 /*--------------------------------Début filtres-----------------------------*/

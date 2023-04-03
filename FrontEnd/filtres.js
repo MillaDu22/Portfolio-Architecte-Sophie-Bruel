@@ -7,7 +7,7 @@ const boutons = [{allId: "Tous", name: 'Tous'}, {id: 1, name:'Objets'}, {id:2, n
 const filters = [...new Set ( boutons.map (( bouton ) => {
     return bouton
     }
-))]
+))];
 
 document.getElementById('btnFilters').innerHTML=filters.map((bouton) => {
     var {name, id} = bouton;
@@ -32,18 +32,18 @@ let works = [
 
 ////////////////////////////////////////////////////////// Affichage des projets au filtrage /////////////////////////////////////////////////////////////////
 const categories =[...new Set(works.map((figure) => {
-    return figure} ))]
+    return figure} ))];
 const filterFigures =(a)=> {
     const filterCategories = categories.filter(figure);
     function figure(value) {
         if(value.categoryId==a || value.allId==a) {
-            return(
+            return (
                 value.categoryId || value.allId 
-            )
-        }
-    }
-    displayFigure(filterCategories)
-}
+            );
+        };
+    };
+    displayFigure(filterCategories);
+};
 
 const displayFigure = (figures) => {
     document.getElementById('projects').innerHTML= figures.map((figure) => {
@@ -53,7 +53,7 @@ const displayFigure = (figures) => {
             <img src= "${imageUrl}"/>
             <figcaption id="figcaption">${title}</figcaption>
             </figure>`
-        )
+        );
     }).join('');
-}
+};
 displayFigure(categories);

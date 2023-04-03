@@ -22,11 +22,11 @@ function displayModale1() {
             deleteImgIcon.className = "fa-regular fa-trash-can";
             deleteImgIcon.addEventListener('click', () => {
                 deleteWorks (element.id)
-            })   
-            const sectionEditImg = document.createElement('img')
+            });  
+            const sectionEditImg = document.createElement('img');
             sectionEditImg.classList="photo-edit";
             sectionEditImg.src= element.imageUrl;
-            const txtImg = document.createElement('p')
+            const txtImg = document.createElement('p');
             txtImg.className ="pGalleryEdit";
             txtImg.innerHTML ="éditer";
             if(index === 0) {
@@ -50,7 +50,7 @@ function displayModale1() {
                 })
                 .then (response => {
                     if (response.ok) {
-                        sectionEditDiv.style.dysplay="none"
+                        sectionEditDiv.style.dysplay="none";
                     }
                     else {
                         console.log("Impossible de supprimer le projet")
@@ -59,41 +59,19 @@ function displayModale1() {
                 .catch(error => {
                     console.error(error)
                 });
-            }
-                
-/////////////////////////////////////////////function supprimer tous les projets de la gallery par boutons//////////////////////////////////////////////////////////  
-            function clearGallery(id) {
-                fetch ("http://localhost:5678/api/works/"+id, {
-                    method: "DELETE",
-                    headers: {
-                        "Content-Type" : "application/json",
-                        "Authorization": "Bearer " + localStorage.getItem('token'),
-                    },
-                })
-                .then (response => {
-                    if (response.ok) {
-                        sectionEditDiv.style.display="none";
-                    }
-                    else {
-                        console.log("Impossible de supprimer les projets")
-                    }
-                })
-                .catch(error => {
-                    console.error(error)
-                });
             };
             sectionEdit.appendChild(sectionEditDiv);
             sectionEditDiv.appendChild(deleteImg);
-            sectionEditDiv.appendChild(deleteImgIcon)
+            sectionEditDiv.appendChild(deleteImgIcon);
             sectionEditDiv.appendChild(sectionEditImg);
             sectionEditDiv.appendChild(txtImg);
         })
     })
 }
-displayModale1()
+displayModale1();
 
 ///////////////////////////////////////////////////// input File type et size/////////////////////////////////////////////////////////////////////////////////
-const image = document.getElementById('view')
+const image = document.getElementById('view');
 const previewPicture = function(e) {
     const [picture] = e.files
     const types = ["image/jpg", "image/jpeg", "image/png"]
@@ -101,7 +79,7 @@ const previewPicture = function(e) {
     }
     if(image) {
         const taille = image.size;
-        const max = 4 * 129 * 193;
+        const max = 4000000;
         if (taille > max) {
             alert ("Trop lourd! jpg, png < 4mo max");
             return;
@@ -112,8 +90,8 @@ const previewPicture = function(e) {
         reader.onload=function(e) {
             image.src = e.target.result
         }
-        reader .readAsDataURL(picture)
-    }
+        reader.readAsDataURL(picture)
+    };
 };
 
 ////////////////////////////////////////////////// Fetch GET creation select List categories /////////////////////////////////////////////////////
@@ -136,35 +114,33 @@ const selectionCategorie = (categories, categorie)=> {
         option.value = category.id;
         console.log(option);
         categorie.appendChild(option);
-    })
-}
+    });
+};
 
 //////////////////////////////////////// Conditions d'ajout et style Bouton valider active ////////////////////////////////////////////////////////////////////////
 const formAjout= document.getElementById("display_image");
-const txtImg = document.getElementById('titre').value;
-categorie.value;
+const txtImg = document.getElementById('titre');
 const btnValider = document.getElementById('validerAjout');
-const inputFile =document.getElementById('image_input').files[0];
+const inputFile =document.getElementById('image_input');
 
 formAjout.addEventListener("input", () => {
     if(txtImg.value !== '' && image.value !== '' && categorie.value !== '') {
-        btnValider.style.background="#A7A7A7"
+        btnValider.style.background="#A7A7A7";
     }
     else {
-        btnValider.style.background="#1D6154"
-    }
-})
+        btnValider.style.background="#1D6154";
+    };
+});
 
 /////////////////////////////////////////////////////// fetch POST validation ajout ////////////////////////////////////////////////////////////
 btnValider.addEventListener("click", (event) => {
-    event.preventDefault()
-
-    const formData = new formData();
+    event.preventDefault();
+    let formData = new formData();
     formData.append("image", image);
     console.log(image);
     formData.append("title", txtImg);
     console.log(txtImg);
-    formData.append("category",categorie);
+    formData.append("category", categorie);
 
     fetch("http://localhost:5678/api/works", {
         method: "POST",
@@ -178,6 +154,7 @@ btnValider.addEventListener("click", (event) => {
         console.log ('Le projet a bien été ajouté', data);
     })
     .catch (error => {
-        console.error("Une erreur s'est produite, veuillez réenvoyer", error )
-    })
-})
+        console.error("Une erreur s'est produite, veuillez réenvoyer", error );
+    });
+});
+

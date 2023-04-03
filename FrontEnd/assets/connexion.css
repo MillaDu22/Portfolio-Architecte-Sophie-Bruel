@@ -33,7 +33,7 @@ nav ul {
 	align-items: center;
 	list-style-type: none;
 }
-nav li, .Acontact, .Aprojets, .aLogin{
+nav li, .Acontact, .Aprojets, .aLogin {
     font-family:"Work Sans";
     font-weight:400;
     line-height: 19px;
@@ -45,19 +45,19 @@ nav li, .Acontact, .Aprojets, .aLogin{
 li:hover, .aLogin:hover, .Acontact:hover, .Aprojets:hover, .Amodifier:hover {
 	color: #B1663C;
 }
-.aLogin, .Acontact, .Aprojets, .Amodifier {
+.aLogin, .Acontact, .Aprojets, .Amodifier{
 	text-decoration: none;
 	color:black;
+}
+#formLog {
+    display:flex;
+    flex-direction: column;
 }
 section {
     margin: 162px auto 355px auto;
     display:flex;
     flex-direction: column;
     align-items: center;
-}
-div {
-    display:flex;
-    flex-direction: column;
 }
 input{
     width:379px;
@@ -85,6 +85,9 @@ a, label {
     font-size:14px;
     line-height:16px;
     color:#3D3D3D;
+}
+a {
+    text-align: center;
 }
 label {
     padding-top:30px;

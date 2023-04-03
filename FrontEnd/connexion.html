@@ -9,7 +9,6 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/connexion.css">
-    <script src="./connexion.js"></script>
 </head>
 <body>
     <header>
@@ -18,23 +17,21 @@
             <ul>
                 <li><a href="/FrontEnd/index.html" class="Aprojets">projets</a></li>
                 <li><a href ="/FrontEnd/index.html" class="Acontact">contact</a></li>
-                <li class="liLogin"><a class="aLogin" id="logout" href="./connexion.html">login</a></li>
-                <li><a href="https://www.instagram.com/openclassrooms/?hl=fr"><img src="./assets/icons/instagram.png" alt="Instagram"></a></li>
+                <li class="liLogin"><a class="aLogin" id="login" href="./connexion.html">login</a></li>
+                <li id="liLogout"><a href="https://www.instagram.com/openclassrooms/?hl=fr"><img src="./assets/icons/instagram.png" alt="Instagram"></a></li>
             </ul>
         </nav>
     </header>
-    <section> 
+    <section>
         <h2>Log in</h2>
-        <div name="loginForm" onSubmit="return login();" action ="./index.html" method="post">
+        <form id ="formLog" action="./index.html" method="post" onsubmit="return validerConnexion(this);">
             <label for="email">E-mail</label>
-            <input type="text" name="username" id="username" placeholder="sophie.bluel@test.tld">
-        </div>
-        <div>
+            <input type="email" name="email" id="username" placeholder="sophie.bluel@test.tld"/>
             <label for="pass">Mot de passe</label>
-            <input type="password" placeholder="S0phie" name="password" id="password">
-        </div>
-        <input type="button" id="submit" value="Se connecter" class="submit" onclick="SeConnecter();"/>
-        <a href="#">Mot de passe oublié</a>
+            <input type="password" placeholder="S0phie" name="password" id="password"/>
+            <input type="submit" id="submitLog" value="Se connecter" class="submit"/>
+            <a href="#">Mot de passe oublié</a>
+        </form>
     </section>
     <footer>
         <nav>
@@ -43,6 +40,6 @@
             </ul>
         </nav>
     </footer>
-    <script src="./script.js"></script>
+    <script src="./connexion.js"></script>
 </body>
 </html>

@@ -13,21 +13,18 @@
 </head>
 <body>
 <!-----------------------------------------------------------Barre Edition haut de page---------------------------------------------------------->
-	<div class="editMod" id="ModeEdition">
-		<i class="fa-regular fa-pen-to-square"></i>Mode édition
-		<button type="button" name="ChangePost" class="changePost" onclick="openModale();">Publier les changements</button>
-	</div>
+	<div class="editMod" id="ModeEdition"></div>
 <!----------------------------------------------------------------Modale gallery----------------------------------------------------------------->
 	<div class="galleryEdit" id="GalleryWindow">
 		<div class="windowEdit">
 			<div class="iconsGallery">
-				<a href="./index.html" title="close" onclick="closeGalleryEdition();"><i class="fa-solid fa-xmark"></i></a>
+				<a href="./index.html" title="close" class="XGalleryModale"><i class="fa-solid fa-xmark"></i></a>
 			</div>
 			<h1 class="h1Edit">Gallerie photo</h1>
 			<div class="sectionEdit" id="sectionEdit">
 			</div>
 			<span class="liseretEdit"></span>
-			<button type="button" name="Ajout" class="ajoutEdit" onclick="openNextWindow();">Ajouter une photo</button>
+			<button type="button" name="Ajout" class="ajoutEdit">Ajouter une photo</button>
 			<button type="button" name="Suprim" class="suprimEdit" id="supprimEdit">Supprimer la gallerie</button>
 		</div>
 	</div>
@@ -35,8 +32,8 @@
 	<div class="ajout" id="ajoutWind"><a id="Amodifier"></a>
 		<div class="windowAjout">
 			<div class="iconsAjout">
-				<a href="./index.html" title="retour" onclick="retourModaleGallery();"><i class="fa-solid fa-arrow-left"></i></a>
-				<a href="./index.html" title="closeWindow" onclick="closeModaleAjout();"><i class="fa-solid fa-xmark" id="xmarkAjout"></i></a>
+				<a href="./index.html" title="retour" class="returnToGallery"><i class="fa-solid fa-arrow-left"></i></a>
+				<a href="./index.html" title="closeWindow" class="XBtnModale2"><i class="fa-solid fa-xmark" id="xmarkAjout"></i></a>
 			</div>
 			<form method="post" url="/upload-img" enctype="multipart/form-data" id="display_image">
 			<h1 class="h1Ajout">Ajout photo</h1>
@@ -68,7 +65,8 @@
 		<ul>
 			<li><a href="#Aprojets" class="Aprojets">projets</a></li>
 			<li><a href ="#Acontact" class="Acontact">contact</a></li>
-			<li class="liLogin"><a class="aLogin" id="logout" href="./connexion.html">login</a></li>
+			<li class="liLogin"><a class="aLogin" id="aLogin" href="./connexion.html">login</a></li>
+			<li class="liLogout"><a class="aLogout" id="aLogout" href="./index.html">logout</a></li>
 			<li><a href="https://www.instagram.com/openclassrooms/?hl=fr"><img src="./assets/icons/instagram.png" alt="Instagram"></a></li>
 		</ul>
 	</nav>
@@ -77,12 +75,11 @@
 <main>
 	<div id="introduction">
 		<figure>
-			<img src="./assets/images/sophie-bluel.png" alt="">
-
-			<span class="projectMod"><i class="fa-solid fa-pen-to-square"></i><a href="#Amofifier" class="Amodifier">modifier</a></span>
+			<img src="./assets/images/sophie-bluel.png" alt="#">
+			<span class="projectMod iconPen1"><i class="fa-solid fa-pen-to-square"></i><a href="#Amofifier" class="Amodifier">modifier</a></span>
 		</figure>
 		<article>
-			<span class="projectMod1"><i class="fa-solid fa-pen-to-square"></i><a href="#Amofifier" class="Amodifier">modifier</a></span>
+			<span class="projectMod1 iconPen2"><i class="fa-solid fa-pen-to-square"></i><a href="#Amofifier" class="Amodifier">modifier</a></span>
 			<h2>Designer d'espace</h2>
 			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
 			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
@@ -90,7 +87,7 @@
 		</article>
 	</div>
 	<section id="portfolio">
-		<h2><a id="Aprojets">Mes Projets</a><span class="projectMod"><i class="fa-solid fa-pen-to-square"></i><a href="#Amofifier" class="Amodifier">modifier</a></span></h2>
+		<h2><a id="Aprojets">Mes Projets</a><span class="projectMod iconPen3"><i class="fa-solid fa-pen-to-square"></i><a href="#Amofifier" class="Amodifier">modifier</a></span></h2>
 <!-----------------------------------------------------------Filtres-------------------------------------------------------------------------->
 		<div class="filterBtns" id="btnFilters"></div>
 <!-----------------------------------------------------------Gallerie des Projets------------------------------------------------------------->
