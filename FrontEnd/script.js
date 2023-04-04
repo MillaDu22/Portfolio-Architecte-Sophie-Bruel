@@ -26,12 +26,12 @@ const getWorks = () => {
     })
     .then(function (data){
         console.log(data)
-        /*for(works in data) {
+        for(works in data) {
             projets.innerHTML += `<figure class ="figure" data-figure="" id="figure">
             <img src= "${data[works].imageUrl}" alt="${data[works].altTxt}"/>
             <figcaption id="figcaption">${data[works].title}</figcaption>
             </figure>`
-        }*/
+        }
     });
 };
 getWorks();
@@ -48,6 +48,11 @@ const getCategories =() => {
         console.log(data);
         /*for(categories in data) {
             btns.innerHTML +=  `<button type = 'button' class = 'btnFilter' onclick ='filterFigures();'>${data[categories].name}</button>`
+            const btns = document.getElementById('btnFilters')
+            const btnTous = document.createElement('button');
+            btnTous.className "btnFilter tous";
+            btnTous.innerHTMl="Tous";
+            btns.appendChild('btnTous);
         }*/
     });
 };
@@ -75,7 +80,8 @@ displayPageConnected();
 /////////////////////////////////////////////////////////// Ouverture modale gallery ///////////////////////////////////////////////////////////////
 const galleryEdit = document.querySelector('.galleryEdit');
 function openModale() {
-    buttonBarre.addEventListener('click', function() {
+    buttonBarre.addEventListener('click', function(e) {
+        e.preventDefault()
         galleryEdit.style.visibility='visible';
     });
 };
@@ -84,7 +90,8 @@ openModale();
 const btnAjoutGallery = document.querySelector('.ajoutEdit');
 const next = document.querySelector('.ajout');
 function openNextWindow() {
-    btnAjoutGallery.addEventListener('click', function() {
+    btnAjoutGallery.addEventListener('click', function(e) {
+        e.preventDefault()
         next.style.visibility="visible";
         galleryEdit.style.visibility="hidden";
     });
@@ -93,16 +100,30 @@ openNextWindow();
 //////////////////////////////////////////////////////  <-- Fleche retourModale 2 vers Modale Gallery ////////////////////////////////////////////////////////////////////
 const returnToGallery = document.querySelector('.returnToGallery');
 function retourModaleGallery() {
-    returnToGallery.addEventListener('click', function() {
+    returnToGallery.addEventListener('click', function(e) {
+        e.preventDefault()
         next.style.visibility="hidden";
         galleryEdit.style.visibility="visible";
     });
 };
 retourModaleGallery();
+
+///////////////////////////////////////////////////////Affichage de la view Modale 2 /////////////////////////////////////////////////////////////////
+const landscape = document.querySelector('.fa-solid fa-image');
+const btnAjouterPhoto = document.querySelector('.ajoutAjout');
+const inputFile = document.querySelector('.inputFile');
+const spanSize = document.querySelector('.pAjout');
+function view() {
+landscape.style.display="none";
+btnAjouterPhoto.style.display="none";
+inputFile.style.display="none";
+spanSize.style.display="none";
+}
 ///////////////////////////////////////////////////// X Fermeture de Modale 2 ///////////////////////////////////////////////////////////////////////
 const XbtnModale2 = document.querySelector('.XBtnModale2');
 function closeModaleAjout() {
-    XbtnModale2.addEventListener('click', function() {
+    XbtnModale2.addEventListener('click', function(e) {
+        e.preventDefault()
         next.style.visibility="hidden";
     });
 };
@@ -111,15 +132,20 @@ closeModaleAjout();
 ////////////////////////////////////////////////////////////// X de fermeture Modale Gallery ////////////////////////////////////////////////////////////////////////
 const XGalleryModale =document.querySelector('.XGalleryModale');
 function closeGalleryEdition() {
-    XGalleryModale.addEventListener('click', function() {
+    XGalleryModale.addEventListener('click', function(e) {
+        e.preventDefault()
     galleryEdit.style.visibility="hidden";
     });
 };
 closeGalleryEdition();
 
 //////////////////////////////////////////////////////Se deconnecter///////////////////////////////////////////////////////////////////////////
+const token = localStorage.getItem('token')
 function SeDeconnecter() {
-    logout.addEventListener('click', function() {
+    logout.addEventListener('click', function(e) {
+        e.preventDefault()
+        localStorage.removeItem('token');
+        window.location('./index.html');
         filtres.style.display='flex';
         logout.style.display="none";
         login.style.display="flex";
@@ -127,7 +153,6 @@ function SeDeconnecter() {
         iconPen3.style.visibility='hidden';
         iconPen2.style.visibility='hidden';
         iconPen1.style.visibility='hidden';
-        localStorage.clear();
     });
 };
 SeDeconnecter();

@@ -20,7 +20,8 @@ function displayModale1() {
             deleteImg.classList ="trash"
             let deleteImgIcon = document.createElement('i')
             deleteImgIcon.className = "fa-regular fa-trash-can";
-            deleteImgIcon.addEventListener('click', () => {
+            deleteImgIcon.addEventListener('click', (e) => {
+                e.preventDefault()
                 deleteWorks (element.id)
             });  
             const sectionEditImg = document.createElement('img');
@@ -75,15 +76,7 @@ const image = document.getElementById('view');
 const previewPicture = function(e) {
     const [picture] = e.files
     const types = ["image/jpg", "image/jpeg", "image/png"]
-    if (types.includes(picture.type)) {              
-    }
-    if(image) {
-        const taille = image.size;
-        const max = 4000000;
-        if (taille > max) {
-            alert ("Trop lourd! jpg, png < 4mo max");
-            return;
-        }
+    if (types.includes(picture.type)) {          
     }
     if  (picture) {
         var reader =new FileReader();
@@ -119,42 +112,51 @@ const selectionCategorie = (categories, categorie)=> {
 
 //////////////////////////////////////// Conditions d'ajout et style Bouton valider active ////////////////////////////////////////////////////////////////////////
 const formAjout= document.getElementById("display_image");
-const txtImg = document.getElementById('titre');
+const titre = document.getElementById('titre');
 const btnValider = document.getElementById('validerAjout');
-const inputFile =document.getElementById('image_input');
+const picture =document.getElementById('picture');
 
 formAjout.addEventListener("input", () => {
-    if(txtImg.value !== '' && image.value !== '' && categorie.value !== '') {
-        btnValider.style.background="#A7A7A7";
+    if(titre.value !== '' && picture.value !== '' && categorie.value !== '') {
+        alert ("Veuillez selectionner la photo, son titre, et sa catégorie")
+        btnValider.style.background="#1D6154";
     }
     else {
-        btnValider.style.background="#1D6154";
+        btnValider.style.background="#A7A7A7";
     };
 });
 
+
 /////////////////////////////////////////////////////// fetch POST validation ajout ////////////////////////////////////////////////////////////
-btnValider.addEventListener("click", (event) => {
+formAjout.addEventListener("submit", event => {
     event.preventDefault();
-    let formData = new formData();
-    formData.append("image", image);
-    console.log(image);
-    formData.append("title", txtImg);
-    console.log(txtImg);
-    formData.append("category", categorie);
+    let formData = new FormData()
+    formData.append("image", picture.files[0])
+    console.log(picture.files);
+    formData.append("title", titre.value)
+    console.log(titre);
+    formData.append("category", categorie.value)
+
+
 
     fetch("http://localhost:5678/api/works", {
         method: "POST",
         body: formData,
         headers: {
-            "Authorization": "Bearer" + localStorage.getItem("token"),
+            "Authorization": "Bearer " + localStorage.getItem("token"),
         },
     })
-    .then (response => response.json())
+    .then (response => {
+        if(response.ok) {
+            return response.json();
+        }
+        throw new Error ("Une erreur s'est produite lors de l'appel à l'API, veuillez réessayer")
+    })
     .then (data => {
         console.log ('Le projet a bien été ajouté', data);
-    })
-    .catch (error => {
-        console.error("Une erreur s'est produite, veuillez réenvoyer", error );
+        getWorks()
+        .catch (error => {
+            console.error(error);
+        });
     });
 });
-

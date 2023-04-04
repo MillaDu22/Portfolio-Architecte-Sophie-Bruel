@@ -16,6 +16,7 @@ document.getElementById('btnFilters').innerHTML=filters.map((bouton) => {
     )
 }).join('');
 /////////////////////////////////////////////////////////////////////// Tableau 2 works /////////////////////////////////////////////////////////////////
+
 let works = [
     {"id": 1, "title": "Abajour Tahina", "imageUrl": "http://localhost:5678/images/abajour-tahina1651286843956.png", "categoryId": 1, "categoryName": "Objets", "userId": 1, "categoryAllId":4},
     {"id": 2, "title": "Appartement Paris V", "imageUrl": "http://localhost:5678/images/appartement-paris-v1651287270508.png", "categoryId": 2, "CategoryName": "Appartements", "userId": 1},
@@ -27,7 +28,8 @@ let works = [
     {"id": 8, "title": "Villa Ferneze - Isola d’Elba", "imageUrl": "http://localhost:5678/images/villa-ferneze1651287511604.png", "categoryId": 2, "categoryName": "Appartements",  "userId": 1},
     {"id": 9, "title": "Appartement Paris XVIII", "imageUrl": "http://localhost:5678/images/appartement-paris-xviii1651287541053.png", "categoryId": 2, "categoryName": "Appartements", "userId": 1},
     {"id": 10, "title": "Bar “Lullaby” - Paris", "imageUrl": "http://localhost:5678/images/bar-lullaby-paris1651287567130.png", "categoryId": 3, "categoryName": "Hotels & restaurants", "userId": 1},
-    {"id": 11, "title": "Hotel First Arte - New Delhi", "imageUrl": "http://localhost:5678/images/hotel-first-arte-new-delhi1651287605585.png", "categoryId": 3, "categoryName":"Hotels & restaurants", "userId": 1}
+    {"id": 11, "title": "Hotel First Arte - New Delhi", "imageUrl": "http://localhost:5678/images/hotel-first-arte-new-delhi1651287605585.png", "categoryId": 3, "categoryName":"Hotels & restaurants", "userId": 1},
+    {"id": 12, "title": "Malt & Juniper - New York", "imageUrl": "./assets/images/Malt & Juniper-New York.png", "categoryId": 3, "categoryName": "Hotels & restaurants", "userId": 1 }
 ] ;
 
 ////////////////////////////////////////////////////////// Affichage des projets au filtrage /////////////////////////////////////////////////////////////////
