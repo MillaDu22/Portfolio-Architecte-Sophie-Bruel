@@ -123,11 +123,24 @@ spanSize.style.display="none";
 const XbtnModale2 = document.querySelector('.XBtnModale2');
 function closeModaleAjout() {
     XbtnModale2.addEventListener('click', function(e) {
-        e.preventDefault()
+        e.preventDefault();
         next.style.visibility="hidden";
+        e.stopPropagation();
     });
 };
 closeModaleAjout();
+
+
+///////////////////////////////////////////////////// X Fermeture de Modale 2 ///////////////////////////////////////////////////////////////////////
+const sideClickCloseModale2 = document.querySelector('#ajoutWind');
+function sideCloseModaleAjout() {
+    sideClickCloseModale2.addEventListener('click', function(e) {
+        e.preventDefault();
+        next.style.visibility="hidden";
+        e.stopPropagation();
+    });
+};
+sideCloseModaleAjout();
 
 ////////////////////////////////////////////////////////////// X de fermeture Modale Gallery ////////////////////////////////////////////////////////////////////////
 const XGalleryModale =document.querySelector('.XGalleryModale');
@@ -135,15 +148,28 @@ function closeGalleryEdition() {
     XGalleryModale.addEventListener('click', function(e) {
         e.preventDefault()
     galleryEdit.style.visibility="hidden";
+    e.stopPropagation();
     });
 };
 closeGalleryEdition();
+
+
+////////////////////////////////////////////////////// Fermeture de la modale Gallery click à coté ///////////////////////////////////////////////
+const sideClickCloseModGallery =document.querySelector('#GalleryWindow');
+function sideClickCloseModale() {
+    sideClickCloseModGallery.addEventListener('click', function(e) {
+        e.preventDefault()
+    galleryEdit.style.visibility="hidden";
+    e.stopPropagation();
+    });
+};
+sideClickCloseModale();
 
 //////////////////////////////////////////////////////Se deconnecter///////////////////////////////////////////////////////////////////////////
 const token = localStorage.getItem('token')
 function SeDeconnecter() {
     logout.addEventListener('click', function(e) {
-        e.preventDefault()
+        e.preventDefault();
         localStorage.removeItem('token');
         window.location('./index.html');
         filtres.style.display='flex';
@@ -153,6 +179,7 @@ function SeDeconnecter() {
         iconPen3.style.visibility='hidden';
         iconPen2.style.visibility='hidden';
         iconPen1.style.visibility='hidden';
+        e.stopPropagation();
     });
 };
 SeDeconnecter();

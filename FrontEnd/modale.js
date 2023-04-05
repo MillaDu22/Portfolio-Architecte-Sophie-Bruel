@@ -52,6 +52,7 @@ function displayModale1() {
                 .then (response => {
                     if (response.ok) {
                         sectionEditDiv.style.dysplay="none";
+                        e.stopPropagation();
                     }
                     else {
                         console.log("Impossible de supprimer le projet")
@@ -72,11 +73,14 @@ function displayModale1() {
 displayModale1();
 
 ///////////////////////////////////////////////////// input File type et size/////////////////////////////////////////////////////////////////////////////////
+
+
+
 const image = document.getElementById('view');
 const previewPicture = function(e) {
     const [picture] = e.files
     const types = ["image/jpg", "image/jpeg", "image/png"]
-    if (types.includes(picture.type)) {          
+    if (types.includes(picture.type)) { 
     }
     if  (picture) {
         var reader =new FileReader();
