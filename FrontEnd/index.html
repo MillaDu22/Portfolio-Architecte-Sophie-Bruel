@@ -38,11 +38,11 @@
 			<form method="post" url="/upload-img" enctype="multipart/form-data" id="display_image">
 			<h1 class="h1Ajout">Ajout photo</h1>
 				<div class="sectionAjout">
-				<i class="fa-solid fa-image"></i>
-				<label class=" ajoutAjout">+ Ajouter photo</label>
-				<input type="file" class="inputFile" id="picture" accept=".png, .jpg" title="buttonFile" name="picture" onchange="previewPicture(this)" required>
-				<p class="pAjout">jpg, png : 4mo max</p>
-				<img src="#" alt="" id="view" />
+					<i class="fa-solid fa-image hiddenEl"></i>
+					<label class=" ajoutAjout hiddenEl">+ Ajouter photo</label>
+					<input type="file" class="inputFile hiddenEl" id="picture" accept=".png, .jpg" title="buttonFile" name="picture" onchange="previewPicture(this)" required>
+					<p class="pAjout hiddenEl">jpg, png : 4mo max</p>
+					<img src="#" alt="" id="view" />
 			</div>
 			<div class="formAjout">
 				<label class="labelAjout" for="titre-select">Titre</label>

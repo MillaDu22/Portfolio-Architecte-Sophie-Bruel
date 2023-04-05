@@ -74,20 +74,23 @@ displayModale1();
 ///////////////////////////////////////////////////// input File type et size/////////////////////////////////////////////////////////////////////////////////
 
 
+const hiddenEl = document.querySelectorAll('.hiddenEl')
 
 const image = document.getElementById('view');
 const previewPicture = function(e) {
     const [picture] = e.files
     const types = ["image/jpg", "image/jpeg", "image/png"]
     if (types.includes(picture.type)) { 
+        document.querySelectorAll('.hiddenEl').forEach((hiddenEl) =>  {hiddenEl.style.display="none"}) 
+        if  (picture) {
+            var reader =new FileReader();
+            reader.onload=function(e) {
+                image.src = e.target.result
+            }
+            reader.readAsDataURL(picture)
+
+        };
     }
-    if  (picture) {
-        var reader =new FileReader();
-        reader.onload=function(e) {
-            image.src = e.target.result
-        }
-        reader.readAsDataURL(picture)
-    };
 };
 
 ////////////////////////////////////////////////// Fetch GET creation select List categories /////////////////////////////////////////////////////
@@ -121,7 +124,7 @@ const picture =document.getElementById('picture');
 
 formAjout.addEventListener("input", () => {
     if(titre.value !== '' && picture.value !== '' && categorie.value !== '') {
-        alert ("Veuillez selectionner la photo, son titre, et sa catégorie")
+        //alert ("Veuillez selectionner la photo, son titre, et sa catégorie")
         btnValider.style.background="#1D6154";
     }
     else {

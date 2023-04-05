@@ -109,17 +109,6 @@ function retourModaleGallery() {
 };
 retourModaleGallery();
 
-///////////////////////////////////////////////////////Affichage de la view Modale 2 /////////////////////////////////////////////////////////////////
-const landscape = document.querySelector('.fa-solid fa-image');
-const btnAjouterPhoto = document.querySelector('.ajoutAjout');
-const inputFile = document.querySelector('.inputFile');
-const spanSize = document.querySelector('.pAjout');
-function view() {
-landscape.style.display="none";
-btnAjouterPhoto.style.display="none";
-inputFile.style.display="none";
-spanSize.style.display="none";
-}
 ///////////////////////////////////////////////////// X Fermeture de Modale 2 ///////////////////////////////////////////////////////////////////////
 const XbtnModale2 = document.querySelector('.XBtnModale2');
 function closeModaleAjout() {
