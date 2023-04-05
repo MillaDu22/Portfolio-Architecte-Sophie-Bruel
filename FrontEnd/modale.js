@@ -1,8 +1,8 @@
 
 //////////////////////////////////////////// Implementation de la modale 1 (gallery) /////////////////////////////////////////////////////////////////////////////////////////
-
+const urlWorksModale = "http://localhost:5678/api/works";
 function displayModale1() {
-    fetch (urlWorks)
+    fetch (urlWorksModale)
     .then (response => {
         if (response.ok) {
             return response.json();
@@ -52,7 +52,6 @@ function displayModale1() {
                 .then (response => {
                     if (response.ok) {
                         sectionEditDiv.style.dysplay="none";
-                        e.stopPropagation();
                     }
                     else {
                         console.log("Impossible de supprimer le projet")

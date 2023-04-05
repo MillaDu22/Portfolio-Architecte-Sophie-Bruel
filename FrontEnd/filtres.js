@@ -1,13 +1,17 @@
+
 ///////////////////////////////////////////// Filtrage fusion tableaux categories et works /////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////// Tableau 1 categories /////////////////////////////////////////////////////////////////
 const boutons = [{allId: "Tous", name: 'Tous'}, {id: 1, name:'Objets'}, {id:2, name: 'Appartements'}, {id: 3, name: 'Hotels & restaurants'} ];
+
+
 
 //////////////////////////////////////////////////////Function filtrage///////////////////////////////////////////////////////////////////////////
 const filters = [...new Set ( boutons.map (( bouton ) => {
     return bouton
     }
 ))];
+
 
 document.getElementById('btnFilters').innerHTML=filters.map((bouton) => {
     var {name, id} = bouton;
@@ -59,3 +63,8 @@ const displayFigure = (figures) => {
     }).join('');
 };
 displayFigure(categories);
+
+
+
+
+

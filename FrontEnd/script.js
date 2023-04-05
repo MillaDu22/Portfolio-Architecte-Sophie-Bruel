@@ -37,8 +37,14 @@ const getWorks = () => {
 getWorks();
 
 ////////////////////////////////////////////////////////////////// Fetch Catégories /////////////////////////////////////////////////////////////////
-
+const btns = document.getElementById('btnFilters')
 const urlCategories = "http://localhost:5678/api/categories";
+
+const btnTous = document.createElement('button');
+btnTous.className ="btnFilter tous";
+btnTous.innerText='Tous';
+btns.appendChild(btnTous);
+
 const getCategories =() => {
     fetch (urlCategories)
     .then (function (response) {
@@ -48,11 +54,6 @@ const getCategories =() => {
         console.log(data);
         /*for(categories in data) {
             btns.innerHTML +=  `<button type = 'button' class = 'btnFilter' onclick ='filterFigures();'>${data[categories].name}</button>`
-            const btns = document.getElementById('btnFilters')
-            const btnTous = document.createElement('button');
-            btnTous.className "btnFilter tous";
-            btnTous.innerHTMl="Tous";
-            btns.appendChild('btnTous);
         }*/
     });
 };
@@ -71,7 +72,7 @@ function displayPageConnected(){
     iconPen3.style.visibility='visible';
     iconPen2.style.visibility='visible';
     iconPen1.style.visibility='visible';
-    filtres.style.display='none';
+    //filtres.style.display='none';
     logout.style.display="flex";
     login.style.display="none";
 };
@@ -129,18 +130,6 @@ function closeModaleAjout() {
     });
 };
 closeModaleAjout();
-
-
-///////////////////////////////////////////////////// X Fermeture de Modale 2 ///////////////////////////////////////////////////////////////////////
-const sideClickCloseModale2 = document.querySelector('#ajoutWind');
-function sideCloseModaleAjout() {
-    sideClickCloseModale2.addEventListener('click', function(e) {
-        e.preventDefault();
-        next.style.visibility="hidden";
-        e.stopPropagation();
-    });
-};
-sideCloseModaleAjout();
 
 ////////////////////////////////////////////////////////////// X de fermeture Modale Gallery ////////////////////////////////////////////////////////////////////////
 const XGalleryModale =document.querySelector('.XGalleryModale');
