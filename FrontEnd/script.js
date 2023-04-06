@@ -52,9 +52,9 @@ const getCategories =() => {
     })
     .then(function (data){
         console.log(data);
-        /*for(categories in data) {
-            btns.innerHTML +=  `<button type = 'button' class = 'btnFilter' onclick ='filterFigures();'>${data[categories].name}</button>`
-        }*/
+        for(categories in data) {
+            btns.innerHTML +=  `<button type = 'button' class = 'btnFilter'>${data[categories].name}</button>`
+        }
     });
 };
 getCategories();
@@ -68,6 +68,7 @@ const logout = document.querySelector('.aLogout');
 const filtres = document.querySelector('.filterBtns');
 
 function displayPageConnected(){
+    if (localStorage.getItem('token')) {
     displayEditMod.style.visibility='visible';
     iconPen3.style.visibility='visible';
     iconPen2.style.visibility='visible';
@@ -75,6 +76,7 @@ function displayPageConnected(){
     //filtres.style.display='none';
     logout.style.display="flex";
     login.style.display="none";
+    }
 };
 displayPageConnected();
 
@@ -126,22 +128,22 @@ function closeGalleryEdition() {
     XGalleryModale.addEventListener('click', function(e) {
         e.preventDefault()
     galleryEdit.style.visibility="hidden";
-    e.stopPropagation();
     });
 };
 closeGalleryEdition();
 
 
 ////////////////////////////////////////////////////// Fermeture de la modale Gallery click à coté ///////////////////////////////////////////////
-const sideClickCloseModGallery =document.querySelector('#GalleryWindow');
+const sideClickCloseModGallery = document.querySelector('.galleryEdit');
 function sideClickCloseModale() {
     sideClickCloseModGallery.addEventListener('click', function(e) {
         e.preventDefault()
-    galleryEdit.style.visibility="hidden";
-    e.stopPropagation();
+        galleryEdit.style.visibility="hidden";
+        e.stopPropagation();
     });
 };
 sideClickCloseModale();
+
 
 //////////////////////////////////////////////////////Se deconnecter///////////////////////////////////////////////////////////////////////////
 const token = localStorage.getItem('token')
@@ -149,15 +151,7 @@ function SeDeconnecter() {
     logout.addEventListener('click', function(e) {
         e.preventDefault();
         localStorage.removeItem('token');
-        window.location('./index.html');
-        filtres.style.display='flex';
-        logout.style.display="none";
-        login.style.display="flex";
-        displayEditMod.style.visibility='hidden';
-        iconPen3.style.visibility='hidden';
-        iconPen2.style.visibility='hidden';
-        iconPen1.style.visibility='hidden';
-        e.stopPropagation();
+        window.location.href = "http://127.0.0.1:5500/FrontEnd/index.html"
     });
 };
 SeDeconnecter();

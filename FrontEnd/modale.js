@@ -71,11 +71,10 @@ function displayModale1() {
 }
 displayModale1();
 
-///////////////////////////////////////////////////// input File type et size/////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////// input File type/////////////////////////////////////////////////////////////////////////////////
 
 
-const hiddenEl = document.querySelectorAll('.hiddenEl')
-
+const hiddenEl = document.querySelectorAll('.hiddenEl');
 const image = document.getElementById('view');
 const previewPicture = function(e) {
     const [picture] = e.files
@@ -88,7 +87,6 @@ const previewPicture = function(e) {
                 image.src = e.target.result
             }
             reader.readAsDataURL(picture)
-
         };
     }
 };
