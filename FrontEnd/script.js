@@ -117,7 +117,6 @@ function closeModaleAjout() {
     XbtnModale2.addEventListener('click', function(e) {
         e.preventDefault();
         next.style.visibility="hidden";
-        e.stopPropagation();
     });
 };
 closeModaleAjout();
@@ -133,17 +132,42 @@ function closeGalleryEdition() {
 closeGalleryEdition();
 
 
-////////////////////////////////////////////////////// Fermeture de la modale Gallery click à coté ///////////////////////////////////////////////
+////////////////////////////////////////////////////// Fermeture de la modale Gallery "click à coté" ///////////////////////////////////////////////
 const sideClickCloseModGallery = document.querySelector('.galleryEdit');
-function sideClickCloseModale() {
+function sideClickCloseModale1() {
     sideClickCloseModGallery.addEventListener('click', function(e) {
         e.preventDefault()
         galleryEdit.style.visibility="hidden";
-        e.stopPropagation();
     });
 };
-sideClickCloseModale();
+sideClickCloseModale1();
 
+const windowEdit = document.querySelector('.windowEdit');
+windowEdit.addEventListener('click', stop )
+
+function stop(e) {
+    e.stopPropagation()
+}
+
+
+
+////////////////////////////////////////////////////// Fermeture de la modale 2 Ajout "click à coté" ///////////////////////////////////////////////
+
+const sideClickAjout = document.querySelector('#ajoutWind');
+function sideClickCloseModale2() {
+    sideClickAjout.addEventListener('click', function(e) {
+        e.preventDefault()
+        next.style.visibility="hidden";
+    });
+};
+sideClickCloseModale2();
+
+const windowAjout = document.querySelector('.windowAjout');
+windowAjout.addEventListener('click', stopped )
+
+function stopped(e) {
+    e.stopPropagation()
+}
 
 //////////////////////////////////////////////////////Se deconnecter///////////////////////////////////////////////////////////////////////////
 const token = localStorage.getItem('token')
