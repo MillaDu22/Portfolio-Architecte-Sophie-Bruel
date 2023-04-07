@@ -10,12 +10,19 @@ async function getWorksAsPromise() {
 async function renderWorks() {
     let works = await getWorksAsPromise();
     works.forEach(work => {
-        projets.innerHTML += `<figure class ="figure" data-figure="" id="figure">
+        projets.innerHTML += `<figure class ="figure" id="figure">
         <img src= "${work.imageUrl}" alt="${work.altTxt}"/>
         <figcaption id="figcaption">${work.title}</figcaption>
         </figure>`
         console.log(work);
     })
+    boutons = document.querySelectorAll('.btnFilter')
+    function activeBtn(e) {
+        boutons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+        e.target.classList.add('active')
+    };
 
     btnTous.addEventListener('click', function(e) {
         e.preventDefault();
@@ -25,6 +32,7 @@ async function renderWorks() {
             }
         })
         console.log(tous)
+        activeBtn(e)
     })
 
     btnObjets.addEventListener('click', function(e) {
@@ -35,6 +43,7 @@ async function renderWorks() {
             }
         })
         console.log(objets);
+        activeBtn(e)
     })
 
     btnAppartements.addEventListener('click', function(e) {
@@ -44,7 +53,8 @@ async function renderWorks() {
             return true
             }
         })
-        console.log(appartements)
+        console.log(appartements);
+        activeBtn(e)
     })
     
     btnRestaurants.addEventListener('click', function(e) {
@@ -54,7 +64,8 @@ async function renderWorks() {
                 return true
             }
         })
-        console.log(restaurants)
+        console.log(restaurants);
+        activeBtn(e);
     })
 }
 renderWorks();

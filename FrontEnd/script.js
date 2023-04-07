@@ -20,7 +20,7 @@ const btns = document.getElementById('btnFilters')
 const urlCategories = "http://localhost:5678/api/categories";
 
 const btnTous = document.createElement('button');
-btnTous.className ="btnFilter tous";
+btnTous.className ="btnFilter tous active";
 btnTous.innerText='Tous';
 btns.appendChild(btnTous);
 
