@@ -1,5 +1,6 @@
 
-//////////////////////////////////////////// Implementation de la modale 1 (gallery) /////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////// Implementation de la modale 1 (gallery) //////////////////////////////////////////////////////////////
+
 const urlWorksModale = "http://localhost:5678/api/works";
 function displayModale1() {
     fetch (urlWorksModale)
@@ -39,7 +40,7 @@ function displayModale1() {
                 sectionEditDiv.appendChild(maximize);
             }
 
-///////////////////////////////function supprimer projet par projet de la gallery (via icon delete) ////////////////////////////////////////////////////////// 
+/////////////////////////////// function supprimer projet par projet de la gallery (via icon delete) ////////////////////////////////////////////////////////// 
                 
             function deleteWorks(id) {
                 fetch ("http://localhost:5678/api/works/"+id, {
@@ -71,7 +72,7 @@ function displayModale1() {
 }
 displayModale1();
 
-///////////////////////////////////////////////////// input File type/////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////// input File type///////////////////////////////////////////////////////////////////////////
 
 
 const hiddenEl = document.querySelectorAll('.hiddenEl');
@@ -92,6 +93,7 @@ const previewPicture = function(e) {
 };
 
 ////////////////////////////////////////////////// Fetch GET creation select List categories /////////////////////////////////////////////////////
+
 const categorie = document.getElementById('categorie');
 fetch ('http://localhost:5678/api/categories', {
     method:'GET', 
@@ -114,7 +116,8 @@ const selectionCategorie = (categories, categorie)=> {
     });
 };
 
-//////////////////////////////////////// Conditions d'ajout et style Bouton valider active ////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////// Conditions d'ajout et style Bouton valider //////////////////////////////////////////////////////////////
+
 const formAjout= document.getElementById("display_image");
 const titre = document.getElementById('titre');
 const btnValider = document.getElementById('validerAjout');
@@ -130,8 +133,8 @@ formAjout.addEventListener("input", () => {
     };
 });
 
-
 /////////////////////////////////////////////////////// fetch POST validation ajout ////////////////////////////////////////////////////////////
+
 formAjout.addEventListener("submit", event => {
     event.preventDefault();
     let formData = new FormData()
@@ -140,8 +143,6 @@ formAjout.addEventListener("submit", event => {
     formData.append("title", titre.value)
     console.log(titre);
     formData.append("category", categorie.value)
-
-
 
     fetch("http://localhost:5678/api/works", {
         method: "POST",
@@ -158,7 +159,7 @@ formAjout.addEventListener("submit", event => {
     })
     .then (data => {
         console.log ('Le projet a bien été ajouté', data);
-        getWorks()
+        renderWorks()
         .catch (error => {
             console.error(error);
         });

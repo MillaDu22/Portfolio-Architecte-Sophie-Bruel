@@ -1,4 +1,4 @@
-////////////////////////////////////Création de la Barre au dessus du header//////////////////////////////////////////////////////////////////////
+//////////////////////////////////// Création de la Barre au dessus du header /////////////////////////////////////////////////////////////////
 
 const displayEditMod = document.querySelector('.editMod');
 const iconSquare = document.createElement('i');
@@ -14,7 +14,32 @@ displayEditMod.appendChild(iconSquare);
 displayEditMod.appendChild(pBarre);
 displayEditMod.appendChild(buttonBarre);
 
-////////////////////////////////////////////////////////////Fetch Works /////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////// creation boutons filtrage /////////////////////////////////////////////////////////////////
+const btns = document.getElementById('btnFilters')
+const urlCategories = "http://localhost:5678/api/categories";
+
+const btnTous = document.createElement('button');
+btnTous.className ="btnFilter tous";
+btnTous.innerText='Tous';
+btns.appendChild(btnTous);
+
+const btnObjets = document.createElement('button');
+btnObjets.className ="btnFilter objets";
+btnObjets.innerText='Objets';
+btns.appendChild(btnObjets);
+
+const btnAppartements = document.createElement('button');
+btnAppartements.className ="btnFilter appartements";
+btnAppartements.innerText='Appartements';
+btns.appendChild(btnAppartements);
+
+const btnRestaurants = document.createElement('button');
+btnRestaurants.className ="btnFilter restaurants";
+btnRestaurants.innerText='Hôtels & restaurants';
+btns.appendChild(btnRestaurants);
+
+//////////////////////////////////////////////////////////// Fetch Works //////////////////////////////////////////////////////////////////////
 
 const projets = document.getElementById('projects');
 const urlWorks = "http://localhost:5678/api/works";
@@ -26,40 +51,10 @@ const getWorks = () => {
     })
     .then(function (data){
         console.log(data)
-        for(works in data) {
-            projets.innerHTML += `<figure class ="figure" data-figure="" id="figure">
-            <img src= "${data[works].imageUrl}" alt="${data[works].altTxt}"/>
-            <figcaption id="figcaption">${data[works].title}</figcaption>
-            </figure>`
-        }
     });
 };
 getWorks();
-
-////////////////////////////////////////////////////////////////// Fetch Catégories /////////////////////////////////////////////////////////////////
-const btns = document.getElementById('btnFilters')
-const urlCategories = "http://localhost:5678/api/categories";
-
-const btnTous = document.createElement('button');
-btnTous.className ="btnFilter tous";
-btnTous.innerText='Tous';
-btns.appendChild(btnTous);
-
-const getCategories =() => {
-    fetch (urlCategories)
-    .then (function (response) {
-        return response.json()
-    })
-    .then(function (data){
-        console.log(data);
-        for(categories in data) {
-            btns.innerHTML +=  `<button type = 'button' class = 'btnFilter'>${data[categories].name}</button>`
-        }
-    });
-};
-getCategories();
-
-////////////////////////////////////////////////////////////////Affichage homepage connectée////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////// Affichage homepage connectée ///////////////////////////////////////////////////
 const iconPen1 = document.querySelector('.iconPen1');
 const iconPen2 = document.querySelector('.iconPen2');
 const iconPen3 = document.querySelector('.iconPen3');
@@ -80,7 +75,7 @@ function displayPageConnected(){
 };
 displayPageConnected();
 
-/////////////////////////////////////////////////////////// Ouverture modale gallery ///////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////// Ouverture modale gallery ///////////////////////////////////////////////////////
 const galleryEdit = document.querySelector('.galleryEdit');
 function openModale() {
     buttonBarre.addEventListener('click', function(e) {
@@ -89,7 +84,7 @@ function openModale() {
     });
 };
 openModale();
-/////////////////////////////////////////////////////////// Ouverture modale Uploader ///////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////// Ouverture modale Uploader //////////////////////////////////////////////////////
 const btnAjoutGallery = document.querySelector('.ajoutEdit');
 const next = document.querySelector('.ajout');
 function openNextWindow() {
@@ -100,7 +95,7 @@ function openNextWindow() {
     });
 };
 openNextWindow();
-//////////////////////////////////////////////////////  <-- Fleche retourModale 2 vers Modale Gallery ////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////  <-- Fleche retourModale 2 vers Modale Gallery //////////////////////////////////////
 const returnToGallery = document.querySelector('.returnToGallery');
 function retourModaleGallery() {
     returnToGallery.addEventListener('click', function(e) {
@@ -111,7 +106,7 @@ function retourModaleGallery() {
 };
 retourModaleGallery();
 
-///////////////////////////////////////////////////// X Fermeture de Modale 2 ///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////// X Fermeture de Modale 2 /////////////////////////////////////////////////////////////
 const XbtnModale2 = document.querySelector('.XBtnModale2');
 function closeModaleAjout() {
     XbtnModale2.addEventListener('click', function(e) {
@@ -121,7 +116,7 @@ function closeModaleAjout() {
 };
 closeModaleAjout();
 
-////////////////////////////////////////////////////////////// X de fermeture Modale Gallery ////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////// X de fermeture Modale Gallery //////////////////////////////////////////////
 const XGalleryModale =document.querySelector('.XGalleryModale');
 function closeGalleryEdition() {
     XGalleryModale.addEventListener('click', function(e) {
@@ -132,7 +127,7 @@ function closeGalleryEdition() {
 closeGalleryEdition();
 
 
-////////////////////////////////////////////////////// Fermeture de la modale Gallery "click à coté" ///////////////////////////////////////////////
+////////////////////////////////////////////////////// Fermeture de la modale Gallery "click à coté" ////////////////////////////////////////
 const sideClickCloseModGallery = document.querySelector('.galleryEdit');
 function sideClickCloseModale1() {
     sideClickCloseModGallery.addEventListener('click', function(e) {
@@ -151,7 +146,7 @@ function stop(e) {
 
 
 
-////////////////////////////////////////////////////// Fermeture de la modale 2 Ajout "click à coté" ///////////////////////////////////////////////
+////////////////////////////////////////////////////// Fermeture de la modale 2 Ajout "click à coté" /////////////////////////////////////
 
 const sideClickAjout = document.querySelector('#ajoutWind');
 function sideClickCloseModale2() {
@@ -169,7 +164,7 @@ function stopped(e) {
     e.stopPropagation()
 }
 
-//////////////////////////////////////////////////////Se deconnecter///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////// Se deconnecter //////////////////////////////////////////////////////////////////////
 const token = localStorage.getItem('token')
 function SeDeconnecter() {
     logout.addEventListener('click', function(e) {
