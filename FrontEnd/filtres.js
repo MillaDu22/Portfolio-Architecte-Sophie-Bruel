@@ -7,65 +7,77 @@ async function getWorksAsPromise() {
     return await promise;
 }
 
-async function renderWorks() {
-    let works = await getWorksAsPromise();
-    works.forEach(work => {
-        projets.innerHTML += `<figure class ="figure" id="figure">
-        <img src= "${work.imageUrl}" alt="${work.altTxt}"/>
-        <figcaption id="figcaption">${work.title}</figcaption>
-        </figure>`
-        console.log(work);
-    })
-    boutons = document.querySelectorAll('.btnFilter')
-    function activeBtn(e) {
-        boutons.forEach(btn => {
-            btn.classList.remove('active');
-        });
-        e.target.classList.add('active')
-    };
+async function renderWorks(work) {
+    let works= await getWorksAsPromise();
+        /*works.forEach((work)=> {
+            projets.innerHTML += `<figure class ="figure" id="figure">
+            <img src= "${work.imageUrl}" alt="${work.altTxt}"/>
+            <figcaption id="figcaption">${work.title}</figcaption>
+            </figure>`
+        })*/
 
-    btnTous.addEventListener('click', function(e) {
-        e.preventDefault();
-        let tous = works.filter(function(works) {
-            if (works.categoryId != '1, 2, 3') {
-                return true;
-            }
-        })
-        console.log(tous)
-        activeBtn(e)
-    })
+        boutons = document.querySelectorAll('.btnFilter')
+        function activeBtn(e) {
+            boutons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            e.target.classList.add('active');
+        };
 
-    btnObjets.addEventListener('click', function(e) {
-        e.preventDefault();
-        let objets = works.filter(function(works) {
-            if (works.categoryId == '1') {
-                return true;
-            }
+        btnTous.addEventListener('click', function(e) {
+            e.preventDefault();
+            const tous = works.filter (work => work.categoryId!= 0)
+            console.log(tous);
+            activeBtn(e);
+            tous.forEach((work)=> {
+                projets.innerHTML += `<figure class ="figure" id="figure">
+                <img src= "${work.imageUrl}" alt="${work.altTxt}"/>
+                <figcaption id="figcaption">${work.title}</figcaption>
+                </figure>`
+                console.log(work);
+            })
         })
-        console.log(objets);
-        activeBtn(e)
-    })
 
-    btnAppartements.addEventListener('click', function(e) {
-        e.preventDefault();
-        let appartements = works.filter(function(works) {
-            if (works.categoryId == '2') {
-            return true
-            }
+        btnObjets.addEventListener('click', function(e) {
+            e.preventDefault();
+            const objets = works.filter (work => work.categoryId==1)
+            console.log(objets);
+            activeBtn(e);
+            objets.forEach((work)=> {
+                projets.innerHTML += `<figure class ="figure" id="figure">
+                <img src= "${work.imageUrl}" alt="${work.altTxt}"/>
+                <figcaption id="figcaption">${work.title}</figcaption>
+                </figure>`
+                console.log(work);
+            })
         })
+
+        btnAppartements.addEventListener('click', function(e) {
+        e.preventDefault();
+        const appartements = works.filter (work => work.categoryId==2)
         console.log(appartements);
-        activeBtn(e)
+        activeBtn(e);
+        appartements.forEach((work)=> {
+            projets.innerHTML += `<figure class ="figure" id="figure">
+            <img src= "${work.imageUrl}" alt="${work.altTxt}"/>
+            <figcaption id="figcaption">${work.title}</figcaption>
+            </figure>`
+            console.log(work);
+        })
     })
     
     btnRestaurants.addEventListener('click', function(e) {
         e.preventDefault();
-        let restaurants = works.filter(function(works) {
-            if (works.categoryId == '3') {
-                return true
-            }
-        })
+        const restaurants = works.filter (work => work.categoryId==3)
         console.log(restaurants);
         activeBtn(e);
+        restaurants.forEach((work)=> {
+            projets.innerHTML += `<figure class ="figure" id="figure">
+            <img src= "${work.imageUrl}" alt="${work.altTxt}"/>
+            <figcaption id="figcaption">${work.title}</figcaption>
+            </figure>`
+            console.log(work);
+        })
     })
 }
 renderWorks();
