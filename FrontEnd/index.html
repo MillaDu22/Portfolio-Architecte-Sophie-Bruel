@@ -53,11 +53,12 @@
 				<select id="categorie"  name="categorie" class="navAjout">
 				</select>
 			</div>
-			<span class="liseretAjout"></span>
+			<div id="liseretAjout"></div>
 			<input type="submit" value="Valider" class="submitAjout" id="validerAjout">
 			</form>
 		</div>
 	</div>
+	<div class="container">
 <!-------------------------------------------------------------Header----------------------------------------------------------------------------->
 <header>
 	<h1>Sophie Bluel <span>Architecte d'interieur</span></h1>
@@ -87,7 +88,7 @@
 		</article>
 	</div>
 	<section id="portfolio">
-		<h2><a id="Aprojets">Mes Projets</a><span class="projectMod iconPen3"><i class="fa-solid fa-pen-to-square"></i><a href="#Amofifier" class="Amodifier">modifier</a></span></h2>
+		<h2 id="Aprojets">Mes Projets<a class= "lienGallery"><span class="projectMod iconPen3"><i class="fa-solid fa-pen-to-square"></i>modifier</span></a></h2>
 <!-----------------------------------------------------------Filtres-------------------------------------------------------------------------->
 		<div class="filterBtns" id="btnFilters"></div>
 <!-----------------------------------------------------------Gallerie des Projets------------------------------------------------------------->
@@ -115,6 +116,7 @@
 		</ul>
 	</nav>
 </footer>
+</div>
 <script src="./script.js"></script>
 <script src="./filtres.js"></script>
 <script src="./connexion.js"></script>

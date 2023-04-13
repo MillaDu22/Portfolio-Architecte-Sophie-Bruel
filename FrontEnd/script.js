@@ -68,7 +68,7 @@ function displayPageConnected(){
     iconPen3.style.visibility='visible';
     iconPen2.style.visibility='visible';
     iconPen1.style.visibility='visible';
-    //filtres.style.display='none';
+    filtres.style.display='none';
     logout.style.display="flex";
     login.style.display="none";
     }
@@ -76,9 +76,10 @@ function displayPageConnected(){
 displayPageConnected();
 
 /////////////////////////////////////////////////////////// Ouverture modale gallery ///////////////////////////////////////////////////////
+const ButtonModif = document.querySelector('.lienGallery');
 const galleryEdit = document.querySelector('.galleryEdit');
 function openModale() {
-    buttonBarre.addEventListener('click', function(e) {
+    ButtonModif.addEventListener('click', function(e) {
         e.preventDefault()
         galleryEdit.style.visibility='visible';
     });
@@ -112,6 +113,7 @@ function closeModaleAjout() {
     XbtnModale2.addEventListener('click', function(e) {
         e.preventDefault();
         next.style.visibility="hidden";
+        window.location=('./index.html');
     });
 };
 closeModaleAjout();
@@ -122,6 +124,7 @@ function closeGalleryEdition() {
     XGalleryModale.addEventListener('click', function(e) {
         e.preventDefault()
     galleryEdit.style.visibility="hidden";
+    window.location=('./index.html');
     });
 };
 closeGalleryEdition();
@@ -133,6 +136,7 @@ function sideClickCloseModale1() {
     sideClickCloseModGallery.addEventListener('click', function(e) {
         e.preventDefault()
         galleryEdit.style.visibility="hidden";
+        window.location=('./index.html');
     });
 };
 sideClickCloseModale1();
@@ -153,6 +157,7 @@ function sideClickCloseModale2() {
     sideClickAjout.addEventListener('click', function(e) {
         e.preventDefault()
         next.style.visibility="hidden";
+        window.location=('./index.html');
     });
 };
 sideClickCloseModale2();

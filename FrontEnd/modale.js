@@ -23,7 +23,7 @@ function displayModale1() {
             deleteImgIcon.className = "fa-regular fa-trash-can";
             deleteImgIcon.addEventListener('click', (e) => {
                 e.preventDefault()
-                deleteWorks (element.id)
+                deleteWorks(element.id)
             });  
             const sectionEditImg = document.createElement('img');
             sectionEditImg.classList="photo-edit";
@@ -38,7 +38,9 @@ function displayModale1() {
                 maximize.className="fa-solid fa-maximize";
                 sectionEditDiv.appendChild(maximizeImg);
                 sectionEditDiv.appendChild(maximize);
+                sectionEdit.appendChild(sectionEditDiv);
             }
+        
 
 /////////////////////////////// function supprimer projet par projet de la gallery (via icon delete) ////////////////////////////////////////////////////////// 
                 
@@ -52,7 +54,8 @@ function displayModale1() {
                 })
                 .then (response => {
                     if (response.ok) {
-                        sectionEditDiv.style.dysplay="none";
+                        deleteWorks(id);
+                        sectionEditDiv.style.display="none";
                     }
                     else {
                         console.log("Impossible de supprimer le projet")
@@ -70,7 +73,8 @@ function displayModale1() {
         })
     })
 }
-displayModale1();
+displayModale1()
+
 
 ///////////////////////////////////////////////////// input File type///////////////////////////////////////////////////////////////////////////
 
@@ -81,7 +85,9 @@ const previewPicture = function(e) {
     const [picture] = e.files
     const types = ["image/jpg", "image/jpeg", "image/png"]
     if (types.includes(picture.type)) { 
-        document.querySelectorAll('.hiddenEl').forEach((hiddenEl) =>  {hiddenEl.style.display="none"}) 
+        document.querySelectorAll('.hiddenEl').forEach((hiddenEl) =>  {
+            hiddenEl.style.display="none"
+        }) 
         if  (picture) {
             var reader =new FileReader();
             reader.onload=function(e) {
@@ -111,13 +117,12 @@ const selectionCategorie = (categories, categorie)=> {
         const option = document.createElement('option');
         option.innerText = category.name;
         option.value = category.id;
-        console.log(option);
         categorie.appendChild(option);
     });
 };
 
 //////////////////////////////////////// Conditions d'ajout et style Bouton valider //////////////////////////////////////////////////////////////
-
+//const boutonAjout = document.getElementById("validerAjout");
 const formAjout= document.getElementById("display_image");
 const titre = document.getElementById('titre');
 const btnValider = document.getElementById('validerAjout');
@@ -153,13 +158,13 @@ formAjout.addEventListener("submit", event => {
     })
     .then (response => {
         if(response.ok) {
+            renderWorks()
             return response.json();
         }
         throw new Error ("Une erreur s'est produite lors de l'appel à l'API, veuillez réessayer")
     })
     .then (data => {
-        console.log ('Le projet a bien été ajouté', data);
-        renderWorks()
+        console.log ('Le projet a bien été ajouté', data)
         .catch (error => {
             console.error(error);
         });

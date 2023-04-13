@@ -22,12 +22,7 @@ async function renderWorks(work) {
  ///////////////////////////////////////////////////// Suppression afficahage travaux au filtrage /////////////////////////////////////////
 
     function deleteWorks(works) {
-            works.forEach((work)=> {
-            projets.innerHTML -= `<figure class ="figure" id="figure">
-            <img src= "${work.imageUrl}" alt="${work.altTxt}"/>
-            <figcaption id="figcaption">${work.title}</figcaption>
-            </figure>`
-        })
+        projets.innerHTML =''
     }
 /////////////////////////////////////////////////////// function bouton active ///////////////////////////////////////////////////////////////
     boutons = document.querySelectorAll('.btnFilter')
@@ -41,7 +36,7 @@ async function renderWorks(work) {
     btnTous.addEventListener('click',function(e) {
         deleteWorks(works);
         e.preventDefault();
-        let tous = works.filter (work => work.categoryId!= 0)
+        let tous = works.filter (work => work.categoryId != 0)
         console.log(tous);
         activeBtn(e);
         displayWorks(tous);
