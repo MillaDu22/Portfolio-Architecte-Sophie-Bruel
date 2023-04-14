@@ -42,7 +42,8 @@ function displayModale1() {
             }
         
 
-/////////////////////////////// function supprimer projet par projet de la gallery (via icon delete) ////////////////////////////////////////////////////////// 
+/////////////////////////////// function supprimer projet par projet de la gallery (via icon delete) //////////////////////////////////////////////////////////  
+
             function deleteWorks(id) {
                 fetch ("http://localhost:5678/api/works/"+id, {
                     method: "DELETE",
@@ -57,7 +58,7 @@ function displayModale1() {
                         sectionEditDiv.style.display="none";
                     }
                     else {
-                        console.log("Impossible de supprimer le projet")
+                        console.log("Impossible de supprimer le projet.")
                     }
                 })
                 .catch((error) => {
@@ -137,6 +138,7 @@ formAjout.addEventListener("input", () => {
     }
     else {
         btnValider.style.background="#A7A7A7";
+        console.log("Erreur, le formulaire n'est pas correctement rempli");
     };
 });
 
@@ -144,12 +146,12 @@ formAjout.addEventListener("input", () => {
 
 formAjout.addEventListener("submit", event => {
     event.preventDefault();
-    let formData = new FormData()
-    formData.append("image", picture.files[0])
+    let formData = new FormData();
+    formData.append("image", picture.files[0]);
     console.log(picture.files);
-    formData.append("title", titre.value)
+    formData.append("title", titre.value);
     console.log(titre);
-    formData.append("category", categorie.value)
+    formData.append("category", categorie.value);
 
     function reset() {
         document.querySelectorAll('.hiddenEl').forEach((hiddenEl) =>  {
@@ -168,13 +170,10 @@ formAjout.addEventListener("submit", event => {
     })
     .then (response => {
         if(response.ok) {
-            renderWorks()
             reset()
+            alert('Le projet a bien été ajouté')
             return response.json();
         }
         throw new Error ("Une erreur s'est produite lors de l'appel à l'API, veuillez réessayer")
     })
-    .then (data => {
-        console.log ('Le projet a bien été ajouté', data)
-    });
 });

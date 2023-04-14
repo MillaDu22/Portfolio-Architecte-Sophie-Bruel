@@ -260,7 +260,7 @@ margin:6px 6.37px 81.08px 55.5px ;
     flex-direction: column;
     align-items: center;
     width:45%;
-    padding:29.37px 36px 64px 30px;
+    padding:29.37px 36px 29px 30px;
     background:white;
     border-radius:10px;
 	z-index: 5;
@@ -299,7 +299,7 @@ margin:6px 6.37px 81.08px 55.5px ;
 	width:80%;
 	display:flex;
 	flex-direction: column;
-	height:650px;
+	height:660px;
 }
 .sectionAjout {
     display:flex;
@@ -314,7 +314,6 @@ margin:6px 6.37px 81.08px 55.5px ;
     margin:28px auto 0px auto;
     font-size: 46px;
     color: #B9C5CC;
-	/*display:none;*/
 }
 .ajoutAjout {
 	display:flex;
@@ -385,31 +384,7 @@ margin:6px 6.37px 81.08px 55.5px ;
     overflow: hidden;
     text-align: start;
 }
-.fa-chevron-down {
-	position:relative;
-	top:3px;
-    padding-right:15px;
-    padding-top: 17px;
-}
-.navAjout:hover {  
-    overflow:visible;
-}
-.ulAjout {
-	position:relative;
-	left:15px;
-	top:-12px;
-    display:flex;
-    flex-direction: column;
-}
-.liAjout{
-    list-style: none;
-    font-family:"Work Sans";
-    font-weight:400;
-    font-size:14px;
-    line-height:26px;
-    color:#444444;
-    text-align: start;
-}
+
 #liseretAjout{
     position:relative;
 	top:17px;
@@ -428,7 +403,7 @@ margin:6px 6.37px 81.08px 55.5px ;
 #validerAjout {
 	display:flex;
 	position: relative;
-	top:32px;
+	top:0px;
 	margin-left: auto;
 	margin-right: auto;
     width:45%;
