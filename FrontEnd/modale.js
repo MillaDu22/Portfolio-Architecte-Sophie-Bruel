@@ -100,6 +100,10 @@ const previewPicture = function(e) {
 ////////////////////////////////////////////////// Fetch GET creation select List categories /////////////////////////////////////////////////////
 
 const categorie = document.getElementById('categorie');
+const optionChoice = document.createElement('option');
+optionChoice.innerText='';
+categorie.appendChild(optionChoice);
+
 fetch ('http://localhost:5678/api/categories', {
     method:'GET', 
     headers: {
@@ -121,7 +125,7 @@ const selectionCategorie = (categories, categorie)=> {
 };
 
 //////////////////////////////////////// Conditions d'ajout et style Bouton valider //////////////////////////////////////////////////////////////
-//const boutonAjout = document.getElementById("validerAjout");
+
 const formAjout= document.getElementById("display_image");
 const titre = document.getElementById('titre');
 const btnValider = document.getElementById('validerAjout');
@@ -147,6 +151,14 @@ formAjout.addEventListener("submit", event => {
     console.log(titre);
     formData.append("category", categorie.value)
 
+    function reset() {
+        document.querySelectorAll('.hiddenEl').forEach((hiddenEl) =>  {
+            hiddenEl.style.display="inherit"
+        }) 
+        image.src=""
+        document.getElementById('display_image').reset();
+    }
+
     fetch("http://localhost:5678/api/works", {
         method: "POST",
         body: formData,
@@ -157,11 +169,7 @@ formAjout.addEventListener("submit", event => {
     .then (response => {
         if(response.ok) {
             renderWorks()
-            view.style.display="none"
-            document.getElementById('display_image').reset();
-            document.querySelectorAll('.hiddenEl').forEach((hiddenEl) =>  {
-                hiddenEl.style.display="flex"
-            }) 
+            reset()
             return response.json();
         }
         throw new Error ("Une erreur s'est produite lors de l'appel à l'API, veuillez réessayer")
