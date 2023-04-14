@@ -35,7 +35,7 @@
 				<a href="./index.html" title="retour" class="returnToGallery"><i class="fa-solid fa-arrow-left"></i></a>
 				<a href="./index.html" title="closeWindow" class="XBtnModale2"><i class="fa-solid fa-xmark" id="xmarkAjout"></i></a>
 			</div>
-			<form method="post" url="/upload-img" enctype="multipart/form-data" id="display_image">
+			<form method="post" url="/upload-img" enctype="multipart/form-data" id="display_image" name="picture">
 			<h1 class="h1Ajout">Ajout photo</h1>
 				<div class="sectionAjout">
 					<i class="fa-solid fa-image hiddenEl"></i>
@@ -54,7 +54,7 @@
 				</select>
 			</div>
 			<div id="liseretAjout"></div>
-			<input type="submit" value="Valider" class="submitAjout" id="validerAjout">
+			<input type="submit" value="Valider" class="submitAjout" id="validerAjout" onClick="document.getElementById('formAjouter').reset();">
 			</form>
 		</div>
 	</div>

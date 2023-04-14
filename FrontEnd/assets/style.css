@@ -22,6 +22,7 @@ time, mark, audio, video{
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	overflow:auto;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -296,6 +297,9 @@ margin:6px 6.37px 81.08px 55.5px ;
 }
 #display_image {
 	width:80%;
+	display:flex;
+	flex-direction: column;
+	height:650px;
 }
 .sectionAjout {
     display:flex;

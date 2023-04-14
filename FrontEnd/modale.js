@@ -43,7 +43,6 @@ function displayModale1() {
         
 
 /////////////////////////////// function supprimer projet par projet de la gallery (via icon delete) ////////////////////////////////////////////////////////// 
-                
             function deleteWorks(id) {
                 fetch ("http://localhost:5678/api/works/"+id, {
                     method: "DELETE",
@@ -61,10 +60,10 @@ function displayModale1() {
                         console.log("Impossible de supprimer le projet")
                     }
                 })
-                .catch(error => {
+                .catch((error) => {
                     console.error(error)
                 });
-            };
+            }
             sectionEdit.appendChild(sectionEditDiv);
             sectionEditDiv.appendChild(deleteImg);
             sectionEditDiv.appendChild(deleteImgIcon);
@@ -130,7 +129,6 @@ const picture =document.getElementById('picture');
 
 formAjout.addEventListener("input", () => {
     if(titre.value !== '' && picture.value !== '' && categorie.value !== '') {
-        //alert ("Veuillez selectionner la photo, son titre, et sa catégorie")
         btnValider.style.background="#1D6154";
     }
     else {
@@ -159,14 +157,16 @@ formAjout.addEventListener("submit", event => {
     .then (response => {
         if(response.ok) {
             renderWorks()
+            view.style.display="none"
+            document.getElementById('display_image').reset();
+            document.querySelectorAll('.hiddenEl').forEach((hiddenEl) =>  {
+                hiddenEl.style.display="flex"
+            }) 
             return response.json();
         }
         throw new Error ("Une erreur s'est produite lors de l'appel à l'API, veuillez réessayer")
     })
     .then (data => {
         console.log ('Le projet a bien été ajouté', data)
-        .catch (error => {
-            console.error(error);
-        });
     });
 });
