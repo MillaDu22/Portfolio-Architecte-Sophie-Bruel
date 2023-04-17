@@ -9,7 +9,7 @@ function displayModale1() {
             return response.json();
         }
         else {
-            throw new error ("erreur");
+            console.log("Erreur, lors de l'appel API");
         }          
     })
     .then(data => {
@@ -75,11 +75,8 @@ function displayModale1() {
 }
 displayModale1()
 
-
 ///////////////////////////////////////////////////// input File type///////////////////////////////////////////////////////////////////////////
 
-
-const hiddenEl = document.querySelectorAll('.hiddenEl');
 const image = document.getElementById('view');
 const previewPicture = function(e) {
     const [picture] = e.files
@@ -94,9 +91,10 @@ const previewPicture = function(e) {
                 image.src = e.target.result
             }
             reader.readAsDataURL(picture)
-        };
+        }
     }
 };
+previewPicture;
 
 ////////////////////////////////////////////////// Fetch GET creation select List categories /////////////////////////////////////////////////////
 
@@ -139,7 +137,7 @@ formAjout.addEventListener("input", () => {
     else {
         btnValider.style.background="#A7A7A7";
         console.log("Erreur, le formulaire n'est pas correctement rempli");
-    };
+    }
 });
 
 /////////////////////////////////////////////////////// fetch POST validation ajout ////////////////////////////////////////////////////////////

@@ -1,5 +1,16 @@
+const projets = document.getElementById('projects');
+const urlWorks = "http://localhost:5678/api/works";
 
-
+const getWorks = () => {
+    fetch (urlWorks)
+    .then(function (response) {
+        return response.json()
+    })
+    .then(function (data){
+        console.log(data)
+    });
+};
+getWorks();
 //////////////////////////////////////////////////////////// Filtres ////////////////////////////////////////////////////////////////////////
 async function getWorksAsPromise() {
     var promise = await fetch (urlWorks).then(response => {return response.json()});
@@ -7,7 +18,7 @@ async function getWorksAsPromise() {
     return await promise;
 }
 ///////////////////////////////////////////////////////// Affichage des travaux ///////////////////////////////////////////////////////////
-async function renderWorks(work) {
+async function renderWorks() {
     let works= await getWorksAsPromise();
     function displayWorks(works) {
         works.forEach((work)=> {
@@ -19,19 +30,43 @@ async function renderWorks(work) {
     }
     displayWorks(works);
 
- ///////////////////////////////////////////////////// Suppression afficahage travaux au filtrage /////////////////////////////////////////
-
-    function deleteWorks(works) {
-        projets.innerHTML =''
+ ///////////////////////////////////////////////////// Suppression affichage travaux au filtrage /////////////////////////////////////////
+    function deleteWorks() {
+    projets.innerHTML =''
     }
+
+////////////////////////////////////////////////// creation boutons filtrage /////////////////////////////////////////////////////////////////
+    const btns = document.getElementById('btnFilters');
+    const btnTous = document.createElement('button');
+    btnTous.className ="btnFilter tous active";
+    btnTous.innerText='Tous';
+    btns.appendChild(btnTous);
+
+    const btnObjets = document.createElement('button');
+    btnObjets.className ="btnFilter objets";
+    btnObjets.innerText='Objets';
+    btns.appendChild(btnObjets);
+
+    const btnAppartements = document.createElement('button');
+    btnAppartements.className ="btnFilter appartements";
+    btnAppartements.innerText='Appartements';
+    btns.appendChild(btnAppartements);
+
+    const btnRestaurants = document.createElement('button');
+    btnRestaurants.className ="btnFilter restaurants";
+    btnRestaurants.innerText='Hôtels & restaurants';
+    btns.appendChild(btnRestaurants);
+
 /////////////////////////////////////////////////////// function bouton active ///////////////////////////////////////////////////////////////
-    boutons = document.querySelectorAll('.btnFilter')
+
+    const boutons = document.querySelectorAll('.btnFilter')
     function activeBtn(e) {
         boutons.forEach(btn => {
             btn.classList.remove('active');
         });
         e.target.classList.add('active');
-    };
+    }
+
 /////////////////////////////////////// gestion des boutons filtrage tous, objets, appartements, hotels & restaurants ////////////////////////
     btnTous.addEventListener('click',function(e) {
         deleteWorks(works);

@@ -14,46 +14,6 @@ displayEditMod.appendChild(iconSquare);
 displayEditMod.appendChild(pBarre);
 displayEditMod.appendChild(buttonBarre);
 
-
-////////////////////////////////////////////////// creation boutons filtrage /////////////////////////////////////////////////////////////////
-const btns = document.getElementById('btnFilters')
-const urlCategories = "http://localhost:5678/api/categories";
-
-const btnTous = document.createElement('button');
-btnTous.className ="btnFilter tous active";
-btnTous.innerText='Tous';
-btns.appendChild(btnTous);
-
-const btnObjets = document.createElement('button');
-btnObjets.className ="btnFilter objets";
-btnObjets.innerText='Objets';
-btns.appendChild(btnObjets);
-
-const btnAppartements = document.createElement('button');
-btnAppartements.className ="btnFilter appartements";
-btnAppartements.innerText='Appartements';
-btns.appendChild(btnAppartements);
-
-const btnRestaurants = document.createElement('button');
-btnRestaurants.className ="btnFilter restaurants";
-btnRestaurants.innerText='Hôtels & restaurants';
-btns.appendChild(btnRestaurants);
-
-//////////////////////////////////////////////////////////// Fetch Works //////////////////////////////////////////////////////////////////////
-
-const projets = document.getElementById('projects');
-const urlWorks = "http://localhost:5678/api/works";
-
-const getWorks = () => {
-    fetch (urlWorks)
-    .then(function (response) {
-        return response.json()
-    })
-    .then(function (data){
-        console.log(data)
-    });
-};
-getWorks();
 //////////////////////////////////////////////////////////////// Affichage homepage connectée ///////////////////////////////////////////////////
 const iconPen1 = document.querySelector('.iconPen1');
 const iconPen2 = document.querySelector('.iconPen2');
@@ -72,7 +32,7 @@ function displayPageConnected(){
     logout.style.display="flex";
     login.style.display="none";
     }
-};
+}
 displayPageConnected();
 
 /////////////////////////////////////////////////////////// Ouverture modale gallery ///////////////////////////////////////////////////////
@@ -81,9 +41,9 @@ const galleryEdit = document.querySelector('.galleryEdit');
 function openModale() {
     ButtonModif.addEventListener('click', function(e) {
         e.preventDefault()
-        galleryEdit.style.visibility='visible';
+        galleryEdit.style.visibility="visible";
     });
-};
+}
 openModale();
 /////////////////////////////////////////////////////////// Ouverture modale Uploader //////////////////////////////////////////////////////
 const btnAjoutGallery = document.querySelector('.ajoutEdit');
@@ -94,7 +54,7 @@ function openNextWindow() {
         next.style.visibility="visible";
         galleryEdit.style.visibility="hidden";
     });
-};
+}
 openNextWindow();
 //////////////////////////////////////////////////////  <-- Fleche retourModale 2 vers Modale Gallery //////////////////////////////////////
 const returnToGallery = document.querySelector('.returnToGallery');
@@ -104,7 +64,7 @@ function retourModaleGallery() {
         next.style.visibility="hidden";
         galleryEdit.style.visibility="visible";
     });
-};
+}
 retourModaleGallery();
 
 ///////////////////////////////////////////////////// X Fermeture de Modale 2 /////////////////////////////////////////////////////////////
@@ -115,7 +75,7 @@ function closeModaleAjout() {
         next.style.visibility="hidden";
         window.location=('./index.html');
     });
-};
+}
 closeModaleAjout();
 
 ////////////////////////////////////////////////////////////// X de fermeture Modale Gallery //////////////////////////////////////////////
@@ -126,7 +86,7 @@ function closeGalleryEdition() {
     galleryEdit.style.visibility="hidden";
     window.location=('./index.html');
     });
-};
+}
 closeGalleryEdition();
 
 
@@ -138,7 +98,7 @@ function sideClickCloseModale1() {
         galleryEdit.style.visibility="hidden";
         window.location=('./index.html');
     });
-};
+}
 sideClickCloseModale1();
 
 const windowEdit = document.querySelector('.windowEdit');
@@ -159,7 +119,7 @@ function sideClickCloseModale2() {
         next.style.visibility="hidden";
         window.location=('./index.html');
     });
-};
+}
 sideClickCloseModale2();
 
 const windowAjout = document.querySelector('.windowAjout');
@@ -170,14 +130,14 @@ function stopped(e) {
 }
 
 ////////////////////////////////////////////////////// Se deconnecter //////////////////////////////////////////////////////////////////////
-const token = localStorage.getItem('token')
+
 function SeDeconnecter() {
     logout.addEventListener('click', function(e) {
         e.preventDefault();
         localStorage.removeItem('token');
-        window.location.href = "http://127.0.0.1:5500/FrontEnd/index.html"
+        window.location = ("./index.html")
     });
-};
+}
 SeDeconnecter();
 
 

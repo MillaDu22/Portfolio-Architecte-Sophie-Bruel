@@ -1,7 +1,4 @@
-
-const email ='sophie.bluel@test.tld';
-const password= 'S0phie';
-        
+   
 function SeConnecter() {
     const email = document.getElementById('username');
     const password= document.getElementById('password');
@@ -31,7 +28,8 @@ function SeConnecter() {
         return false;         
     })
     .catch (error => console.error(error));
-};
+}
+SeConnecter;
 
 
 
