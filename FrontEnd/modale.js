@@ -1,4 +1,3 @@
-
 //////////////////////////////////////////// Implementation de la modale 1 (gallery) //////////////////////////////////////////////////////////////
 
 const urlWorksModale = "http://localhost:5678/api/works";
@@ -40,8 +39,7 @@ function displayModale1() {
                 sectionEditDiv.appendChild(maximize);
                 sectionEdit.appendChild(sectionEditDiv);
             }
-        
-
+            
 /////////////////////////////// function supprimer projet par projet de la gallery (via icon delete) //////////////////////////////////////////////////////////  
 
             function deleteWorks(id) {
@@ -172,6 +170,8 @@ formAjout.addEventListener("submit", event => {
             alert('Le projet a bien été ajouté')
             return response.json();
         }
-        throw new Error ("Une erreur s'est produite lors de l'appel à l'API, veuillez réessayer")
+        else { 
+            console.log("Une erreur s'est produite lors de l'appel à l'API, veuillez réessayer")
+        }
     })
 });

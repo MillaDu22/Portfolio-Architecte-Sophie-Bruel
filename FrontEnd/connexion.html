@@ -18,17 +18,17 @@
                 <li><a href="./index.html" class="Aprojets">projets</a></li>
                 <li><a href ="./index.html" class="Acontact">contact</a></li>
                 <li class="liLogin"><a class="aLogin" id="login" href="./connexion.html">login</a></li>
-                <li id="liLogout"><a href="https://www.instagram.com/openclassrooms/?hl=fr"><img src="./assets/icons/instagram.png" alt="Instagram"></a></li>
+                <li><a href="https://www.instagram.com/openclassrooms/?hl=fr"><img src="./assets/icons/instagram.png" alt="Instagram"></a></li>
             </ul>
         </nav>
     </header>
     <section>
         <h2>Log in</h2>
-        <form id ="formLog" action="./index.html" method="post" onsubmit="return validerConnexion(this);">
+        <form id ="formLog" action="./index.html" method="post">
             <label id="email">E-mail</label>
-            <input type="email" name="email" id="username" placeholder="sophie.bluel@test.tld">
+            <input type="email" name="email" id="username" placeholder="Veuillez entrer votre identifiant">
             <label id="pass">Mot de passe</label>
-            <input type="password" placeholder="S0phie" name="password" id="password">
+            <input type="password" placeholder="Veuillez entrer votre mot de passe" name="password" id="password">
             <input type="button" id="submitLog" value="Se connecter" class="submit" onclick="SeConnecter();">
             <a href="#">Mot de passe oublié</a>
         </form>

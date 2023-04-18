@@ -89,7 +89,6 @@ function closeGalleryEdition() {
 }
 closeGalleryEdition();
 
-
 ////////////////////////////////////////////////////// Fermeture de la modale Gallery "click à coté" ////////////////////////////////////////
 const sideClickCloseModGallery = document.querySelector('.galleryEdit');
 function sideClickCloseModale1() {
@@ -107,8 +106,6 @@ windowEdit.addEventListener('click', stop )
 function stop(e) {
     e.stopPropagation()
 }
-
-
 
 ////////////////////////////////////////////////////// Fermeture de la modale 2 Ajout "click à coté" /////////////////////////////////////
 

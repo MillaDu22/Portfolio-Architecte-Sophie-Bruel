@@ -1,4 +1,3 @@
-   
 function SeConnecter() {
     const email = document.getElementById('username');
     const password= document.getElementById('password');
