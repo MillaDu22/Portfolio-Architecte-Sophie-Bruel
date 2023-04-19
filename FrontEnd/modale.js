@@ -169,6 +169,7 @@ formAjout.addEventListener("submit", event => {
             alert('Le projet a bien été ajouté')
             window.location=("./index.html")
             return response.json();
+            
         }
         else { 
             console.log("Une erreur s'est produite lors de l'appel à l'API, veuillez réessayer")

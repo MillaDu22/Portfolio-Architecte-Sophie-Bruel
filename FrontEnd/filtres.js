@@ -1,20 +1,11 @@
 const projets = document.getElementById('projects');
 const urlWorks = "http://localhost:5678/api/works";
 
-const getWorks = () => {
-    fetch (urlWorks)
-    .then(function (response) {
-        return response.json()
-    })
-    .then(function (data){
-        console.log(data)
-    });
-};
-getWorks();
 //////////////////////////////////////////////////////////// Filtres ////////////////////////////////////////////////////////////////////////
 async function getWorksAsPromise() {
-    var promise = await fetch (urlWorks).then(response => {return response.json()});
-
+    var promise = await fetch (urlWorks)
+    .then(response => {return response.json()
+    });
     return await promise;
 }
 ///////////////////////////////////////////////////////// Affichage des travaux ///////////////////////////////////////////////////////////
@@ -31,7 +22,7 @@ async function renderWorks() {
     displayWorks(works);
 
  ///////////////////////////////////////////////////// Suppression affichage travaux au filtrage /////////////////////////////////////////
-    function deleteWorks() {
+    function removeWorks() {
     projets.innerHTML =''
     }
 
@@ -69,37 +60,33 @@ async function renderWorks() {
 
 /////////////////////////////////////// gestion des boutons filtrage tous, objets, appartements, hotels & restaurants ////////////////////////
     btnTous.addEventListener('click',function(e) {
-        deleteWorks(works);
+        removeWorks(works);
         e.preventDefault();
         let tous = works.filter (work => work.categoryId != 0)
-        console.log(tous);
         activeBtn(e);
         displayWorks(tous);
     });
     
     btnObjets.addEventListener('click', function(e) {
         e.preventDefault();
-        deleteWorks(works);
+        removeWorks(works);
         let objets = works.filter (work => work.categoryId==1)
-        console.log(objets);
         activeBtn(e);
         displayWorks(objets);
     })
 
     btnAppartements.addEventListener('click', function(e) {
         e.preventDefault();
-        deleteWorks(works);
+        removeWorks(works);
         let appartements = works.filter (work => work.categoryId==2)
-        console.log(appartements);
         activeBtn(e);
         displayWorks(appartements);
     })
     
     btnRestaurants.addEventListener('click', function(e) {
         e.preventDefault();
-        deleteWorks(works);
+        removeWorks(works);
         let restaurants = works.filter (work => work.categoryId==3)
-        console.log(restaurants);
         activeBtn(e);
         displayWorks(restaurants);
     })
