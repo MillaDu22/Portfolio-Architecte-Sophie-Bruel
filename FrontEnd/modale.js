@@ -52,7 +52,6 @@ function displayModale1() {
                 })
                 .then (response => {
                     if (response.ok) {
-                        deleteWorks(id);
                         sectionEditDiv.style.display="none";
                     }
                     else {
@@ -168,6 +167,7 @@ formAjout.addEventListener("submit", event => {
         if(response.ok) {
             reset()
             alert('Le projet a bien été ajouté')
+            window.location=("./index.html")
             return response.json();
         }
         else { 
