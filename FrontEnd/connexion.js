@@ -23,8 +23,11 @@ function SeConnecter() {
             window.location = ('./index.html');
             return true;
         }
-        else (alert("Erreur dans l'identifiant ou le mot de passe."));
-        return false;         
+        else  {
+            const errorLog = document.querySelector(".erreurLog");
+            errorLog.style.display="flex";
+            return false;   
+        }        
     })
     .catch (error => console.error(error));
 }

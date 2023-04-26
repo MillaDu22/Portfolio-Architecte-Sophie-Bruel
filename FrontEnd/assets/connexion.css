@@ -92,6 +92,18 @@ label {
     padding-top:30px;
     padding-bottom:7px;
 }
+.erreurLog {
+    position:relative;
+    margin-top: 10px;
+    font-family:"Work Sans";
+    font-weight: 500;
+    font-size:14px;
+    line-height:16px;
+    color:red;
+    width:379px;
+    justify-content: center;
+    display:none;
+}
 footer nav ul {
     font-family:"Work Sans";
     font-weight:300;
