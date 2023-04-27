@@ -68,7 +68,7 @@ header {
 	align-items: center;
 	width:100%;
 	box-sizing: border-box;
-	display:flex;
+	display:none;
 	flex-direction:row;
 	justify-content: center;
 	background:black;
@@ -79,7 +79,6 @@ header {
 	color:white;
 	padding-top:10px;
 	padding-bottom:11px;
-	visibility:hidden;
 }
 .fa-regular.fa-pen-to-square {
 	color:white;
@@ -105,7 +104,7 @@ header {
 /*------------------------------------Fin barre mode édition----------------------------*/
 /*------------------------------------Début galleryEdit---------------------------------*/
 .galleryEdit {
-	display:flex;
+	display:none;
 	position:absolute;
 	justify-content: center;
 	width:100%;
@@ -113,7 +112,6 @@ header {
     left:0;
 	z-index: 2;
 	padding-bottom:3600px;
-	visibility:hidden;
 }
 .windowEdit {
 	display:flex;
@@ -241,15 +239,14 @@ margin:6px 6.37px 81.08px 55.5px ;
 /*--------------------------------Fin galleryEdit----------------------------------*/
 /*-------------------------------Début window édition------------------------------*/
 .ajout {
+	display:none;
 	justify-content: center;
-	display:flex;
 	position:absolute;
 	width:100%;
     background: rgba(128, 128, 128, 0.424);
     margin:0;
 	z-index: 4;
 	padding-bottom: 3600px;
-	visibility: hidden;
 }
 .windowAjout {
 	position:absolute;

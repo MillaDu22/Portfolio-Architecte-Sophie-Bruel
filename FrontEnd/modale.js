@@ -8,7 +8,7 @@ function displayModale1() {
             return response.json();
         }
         else {
-            console.log("Erreur, lors de l'appel API");
+            console.log(response);
         }          
     })
     .then(data => {
@@ -52,6 +52,7 @@ function displayModale1() {
                 })
                 .then (response => {
                     if (response.ok) {
+                        console.log(response);
                         sectionEditDiv.style.display="none";
                     }
                     else {
@@ -171,6 +172,7 @@ formAjout.addEventListener("submit", event => {
             window.location=("./index.html");
         }
         else { 
+            console.log(response);
             const erreurAjout = document.querySelector(".erreurAjout");
             erreurAjout.style.display="flex";
         }

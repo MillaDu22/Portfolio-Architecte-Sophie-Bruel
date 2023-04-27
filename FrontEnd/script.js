@@ -24,7 +24,7 @@ const filtres = document.querySelector('.filterBtns');
 
 function displayPageConnected(){
     if (localStorage.getItem('token')) {
-    displayEditMod.style.visibility='visible';
+    displayEditMod.style.display='flex';
     iconPen3.style.visibility='visible';
     iconPen2.style.visibility='visible';
     iconPen1.style.visibility='visible';
@@ -41,7 +41,7 @@ const galleryEdit = document.querySelector('.galleryEdit');
 function openModale() {
     ButtonModif.addEventListener('click', function(e) {
         e.preventDefault()
-        galleryEdit.style.visibility="visible";
+        galleryEdit.style.display="flex";
     });
 }
 openModale();
@@ -51,8 +51,8 @@ const next = document.querySelector('.ajout');
 function openNextWindow() {
     btnAjoutGallery.addEventListener('click', function(e) {
         e.preventDefault()
-        next.style.visibility="visible";
-        galleryEdit.style.visibility="hidden";
+        next.style.display="flex";
+        galleryEdit.style.display="none";
     });
 }
 openNextWindow();
@@ -61,8 +61,8 @@ const returnToGallery = document.querySelector('.returnToGallery');
 function retourModaleGallery() {
     returnToGallery.addEventListener('click', function(e) {
         e.preventDefault()
-        next.style.visibility="hidden";
-        galleryEdit.style.visibility="visible";
+        next.style.display="none";
+        galleryEdit.style.display="flex";
     });
 }
 retourModaleGallery();
@@ -72,7 +72,7 @@ const XbtnModale2 = document.querySelector('.XBtnModale2');
 function closeModaleAjout() {
     XbtnModale2.addEventListener('click', function(e) {
         e.preventDefault();
-        next.style.visibility="hidden";
+        next.style.display="none";
         window.location=('./index.html');
     });
 }
@@ -83,7 +83,7 @@ const XGalleryModale =document.querySelector('.XGalleryModale');
 function closeGalleryEdition() {
     XGalleryModale.addEventListener('click', function(e) {
         e.preventDefault()
-    galleryEdit.style.visibility="hidden";
+    galleryEdit.style.display="none";
     window.location=('./index.html');
     });
 }
@@ -94,7 +94,7 @@ const sideClickCloseModGallery = document.querySelector('.galleryEdit');
 function sideClickCloseModale1() {
     sideClickCloseModGallery.addEventListener('click', function(e) {
         e.preventDefault()
-        galleryEdit.style.visibility="hidden";
+        galleryEdit.style.display="none";
         window.location=('./index.html');
     });
 }
@@ -113,7 +113,7 @@ const sideClickAjout = document.querySelector('#ajoutWind');
 function sideClickCloseModale2() {
     sideClickAjout.addEventListener('click', function(e) {
         e.preventDefault()
-        next.style.visibility="hidden";
+        next.style.display="none";
         window.location=('./index.html');
     });
 }
