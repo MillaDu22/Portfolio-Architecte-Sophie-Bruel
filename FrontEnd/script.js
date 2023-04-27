@@ -18,8 +18,8 @@ displayEditMod.appendChild(buttonBarre);
 const iconPen1 = document.querySelector('.iconPen1');
 const iconPen2 = document.querySelector('.iconPen2');
 const iconPen3 = document.querySelector('.iconPen3');
-const login = document.querySelector('.aLogin');
-const logout = document.querySelector('.aLogout');
+const login = document.querySelector('.liLogin');
+const logout = document.querySelector('.liLogout');
 const filtres = document.querySelector('.filterBtns');
 
 function displayPageConnected(){

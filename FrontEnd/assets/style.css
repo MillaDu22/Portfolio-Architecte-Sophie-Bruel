@@ -476,11 +476,9 @@ li:hover, .aLogin:hover, .Acontact:hover, .Aprojets:hover, .Amodifier:hover, .aL
 	text-decoration: none;
 	color:black;
 }
-
-.aLogout {
+.liLogout {
 	display:none;
 }
-
 #introduction {
 	display: flex;
 	align-items: center;

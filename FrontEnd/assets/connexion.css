@@ -39,7 +39,6 @@ nav li, .Acontact, .Aprojets, .aLogin {
 	padding: 0 10px;
 	font-size: 16px;
     color:black;
-    text-align:center;
 }
 li:hover, .aLogin:hover, .Acontact:hover, .Aprojets:hover, .Amodifier:hover {
 	color: #B1663C;
