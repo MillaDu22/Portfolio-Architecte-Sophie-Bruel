@@ -111,6 +111,7 @@ fetch ('http://localhost:5678/api/categories', {
     selectionCategorie (data, categorie);
 })
 .catch(error => console.error(error));
+
 const selectionCategorie = (categories, categorie)=> {
     categories.forEach((category) => {
         const option = document.createElement('option');

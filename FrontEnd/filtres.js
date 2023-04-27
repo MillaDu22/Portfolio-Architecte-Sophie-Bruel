@@ -13,10 +13,16 @@ async function renderWorks() {
     let works= await getWorksAsPromise();
     function displayWorks(works) {
         works.forEach((work)=> {
-            projets.innerHTML += `<figure class ="figure" id="figure">
-            <img src= "${work.imageUrl}" alt="${work.altTxt}"/>
-            <figcaption id="figcaption">${work.title}</figcaption>
-            </figure>`
+            const figure = document.createElement('figure');
+            figure.className="figure";
+            projets.appendChild(figure);
+            const imgWork = document.createElement('img');
+            imgWork.src = work.imageUrl ;
+            figure.appendChild(imgWork);
+            const figcaption = document.createElement('figcaption');
+            figcaption.classname= "figcaption";
+            figcaption.innerHTML= work.title;
+            figure.appendChild(figcaption);
         })
     }
     displayWorks(works);
