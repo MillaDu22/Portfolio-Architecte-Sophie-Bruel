@@ -384,6 +384,19 @@ margin:6px 6.37px 81.08px 55.5px ;
     overflow: hidden;
     text-align: start;
 }
+.erreurAjout {
+	position:relative;
+    margin-top: 10px;
+	width:98%;
+    font-family:"Work Sans";
+    font-weight:500;
+    font-size:14px;
+    line-height:16px;
+    color:red;
+	justify-content: center;
+    text-align: center;
+	display:none;
+}
 
 #liseretAjout{
     position:relative;

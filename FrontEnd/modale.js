@@ -55,7 +55,7 @@ function displayModale1() {
                         sectionEditDiv.style.display="none";
                     }
                     else {
-                        console.log("Impossible de supprimer le projet.")
+                        console.log(response)
                     }
                 })
                 .catch((error) => {
@@ -130,10 +130,11 @@ const picture =document.getElementById('picture');
 formAjout.addEventListener("input", () => {
     if(titre.value !== '' && picture.value !== '' && categorie.value !== '') {
         btnValider.style.background="#1D6154";
+        const erreurAjout = document.querySelector(".erreurAjout");
+        erreurAjout.style.display="none";
     }
     else {
         btnValider.style.background="#A7A7A7";
-        console.log("Erreur, le formulaire n'est pas correctement rempli");
     }
 });
 
@@ -143,9 +144,7 @@ formAjout.addEventListener("submit", event => {
     event.preventDefault();
     let formData = new FormData();
     formData.append("image", picture.files[0]);
-    console.log(picture.files);
     formData.append("title", titre.value);
-    console.log(titre);
     formData.append("category", categorie.value);
 
     function reset() {
@@ -165,14 +164,14 @@ formAjout.addEventListener("submit", event => {
     })
     .then (response => {
         if(response.ok) {
+            console.log(response);
             reset()
             alert('Le projet a bien été ajouté')
-            window.location=("./index.html")
-            return response.json();
-            
+            window.location=("./index.html");
         }
         else { 
-            console.log("Une erreur s'est produite lors de l'appel à l'API, veuillez réessayer")
+            const erreurAjout = document.querySelector(".erreurAjout");
+            erreurAjout.style.display="flex";
         }
     })
 });
