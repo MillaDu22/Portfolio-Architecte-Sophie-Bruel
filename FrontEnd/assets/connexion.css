@@ -1,14 +1,18 @@
 body {
-    max-width: 1440px;
+    max-width: 100%;
     margin:0;
     background: #FFFEF8;
+    padding-left:7%;
+    padding-right:7%;
 }
 header {
-	display: flex;
-	justify-content: space-between;
-	padding: 50px 150px 0px 150px;
+	margin: 50px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 h1 {
+    width:20%;
 	display: flex;
 	flex-direction: column;
 	font-family: 'Syne';
@@ -17,22 +21,29 @@ h1 {
 	color: #B1663C;
 }
 h1 > span {
+    width:100%;
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
 }
+
 h2 {
+    width:25%;
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
-	color: #1D6154
+	color: #1D6154;
+    text-align:center;
 }
-nav ul {
+.navHeader {
+    display:block;
+}
+.navHeader ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
 }
-nav li, .Acontact, .Aprojets, .aLogin {
+.navHeader ul li {
     font-family:"Work Sans";
     font-weight:400;
     line-height: 19px;
@@ -40,25 +51,27 @@ nav li, .Acontact, .Aprojets, .aLogin {
 	font-size: 16px;
     color:black;
 }
-li:hover, .aLogin:hover, .Acontact:hover, .Aprojets:hover, .Amodifier:hover {
+.aLogin:hover, .Acontact:hover, .Aprojets:hover, .aFooter:hover, .aMDP:hover{
 	color: #B1663C;
 }
-.aLogin, .Acontact, .Aprojets, .Amodifier{
+.aLogin, .Acontact, .Aprojets {
 	text-decoration: none;
 	color:black;
 }
 #formLog {
+    width:30%;
     display:flex;
     flex-direction: column;
+    align-items: center;
 }
 section {
-    margin: 162px auto 355px auto;
+    width:100%;
     display:flex;
     flex-direction: column;
     align-items: center;
 }
 input{
-    width:379px;
+    width:98%;
     height:51px;
     background: white;
     box-shadow:0px 4px 14px rgba(0, 0, 0, 0.09);
@@ -71,13 +84,15 @@ input{
     font-size: 14px;
     color:white;
     background: #1D6154;
-    margin:2em auto; 
-    width:180px;
+    margin-top:2em; 
+    margin-bottom:2em;
+    width:150px;
     border-radius:60px;
     text-align: center;
     border:none;
 }
 a, label {
+    width:100%;
     font-family:"Work Sans";
     font-weight: 500;
     font-size:14px;
@@ -85,6 +100,7 @@ a, label {
     color:#3D3D3D;
 }
 a {
+    width:100%;
     text-align: center;
 }
 label {
@@ -99,24 +115,38 @@ label {
     font-size:14px;
     line-height:16px;
     color:red;
-    width:379px;
+    width:100%;
     justify-content: center;
     display:none;
 }
-footer nav ul {
+footer {
+    display:flex;
+    justify-content: flex-end;
+}
+.navFooter {
+    display:flex;
+    justify-content: flex-end;
+    width:20%;
+}
+footer .navFooter ul {
     font-family:"Work Sans";
     font-weight:300;
     font-size:14px;
     line-height:16px;
     color:black;
-    width:97%;
-    margin:0;
+    width:60%;
 	display: flex;
 	justify-content: flex-end;
     background: white;
 }
-footer nav ul li {
-    padding:24px 107px 20px;
+footer .navFooter ul li {
+    display:flex;
+    justify-content: flex-end;
+    width:100%;
+    padding:24px 0% 20px;
+}
+.aFooter {
+    width:100%;
 }
 
 
